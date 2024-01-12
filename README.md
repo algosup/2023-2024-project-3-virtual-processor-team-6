@@ -4,7 +4,7 @@
 
 | **Photo** | **Name** | **Role** | **Links** |
 |:---:|---|:---:|---|
-| <img src="https://ca.slack-edge.com/T06BRJXQJLT-U06BB6L4QHM-gd2bfd349a46-512" width="75px" height="75px"> | RIFF Michel | Project Manager | <a href="https://www.linkedin.com/in/michel-riff-693007293/" target="_blank">LinkedIn</a><br><a href="https://github.com/MichelRiff" target="_blank">GitHub</a> |
+| <img src="https://ca.slack-edge.com/T06BRJXQJLT-U06BB6L4QHM-gd2bfd349a46-512" width="75px" height="75px"> | Michel RIFF | Project Manager | <a href="https://www.linkedin.com/in/michel-riff-693007293/" target="_blank">LinkedIn</a><br><a href="https://github.com/MichelRiff" target="_blank">GitHub</a> |
 | <img src="https://ca.slack-edge.com/T06BRJXQJLT-U06C4BPFBLZ-g10c7c642461-512" width="75px" height="75px"> | Raphael DESCAMPS | Program Manager | <a href="https://www.linkedin.com/in/rapha%C3%ABl-descamps-201112293/" target="_blank">LinkedIn</a><br> <a href="https://github.com/Raphaeldcp" target="_blank">GitHub</a> |
 | <img src="https://ca.slack-edge.com/T06BRJXQJLT-U06BB6L2087-g852fc97e876-512" width="75px" height="75px"> | Habi CAILLEAU | Technical Leader | <a href="https://www.linkedin.com/in/habi-cailleau-3b72b5293/" target="_blank">LinkedIn</a><br> <a href="https://github.com/habicll" target="_blank">GitHub</a> |
 | <img src="https://ca.slack-edge.com/T06BRJXQJLT-U06BK3PNCGN-g034e0d2085c-512" width="75px" height="75px"> | Vivien Bistrel TSANGUE CHOUNGOU | Junior Software Engineer | <a href="https://www.linkedin.com/in/bistrel-tsangue-603635261/" target="_blank">LinkedIn</a><br> <a href="https://github.com/Bistrel2002" target="_blank">GitHub</a> |
