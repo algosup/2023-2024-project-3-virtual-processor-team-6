@@ -16,6 +16,9 @@
 
 ---
 ## 1. Document handling 
+
+### 1.1 Document information 
+
 | Document Type | Specification |
 |---|---|
 | Document Owner | Raphaël Descamps |
@@ -46,9 +49,14 @@
 | "C" | Le langage C est un langage de programmation haut niveau, efficace et portable, initialement développé pour UNIX. |
 | "Virtual Processor" | Le terme "virtual processor" fait référence à une unité de traitement simulée dans un environnement informatique virtualisé. |
 
+### 2.2 Project Overview 
+
+Our team was tasked with creating a virtual processor and an interpreter for running assembly code on 
+that processor.
+
 
 ### 2.2 Goals of this Project
-The primary goal of this project is to design, implement, and deliver a virtual processor in the C programming language capable of interpreting and executing assembly language instructions. The virtual processor should emulate key functionalities of a physical processor, including the execution of arithmetic operations, data transfers, jumps, and effective management of registers and virtual memory.
+The primary goal of our team for this project is to design, implement, and deliver a virtual processor in the C programming language capable of interpreting and executing assembly language instructions. The virtual processor should emulate key functionalities of a physical processor, including the execution of arithmetic operations, data transfers, jumps, and effective management of registers and virtual memory.
 
 ### 2.3 Our objectives
 
@@ -84,43 +92,28 @@ Design the virtual processor to be extensible, allowing for the straightforward 
 
 Incorporate security measures to prevent buffer overflow attacks and ensure the secure execution of programs. Ensure proper isolation between different executing processes.
 
-## 3. Key Features
 
-### 3.1 Execution of Assembly Instructions
-The virtual processor must be capable of reading, interpreting, and executing assembly instructions. Supported instructions include, but are not limited to, arithmetic operations, data transfers, conditional and unconditional jumps.
+### 2.4 Project Roles 
 
-### 2.2 Register Management
-The virtual processor must include a set of registers to store temporary data and intermediate results. Register management should adhere to the standard calling convention.
+As defined by the project owner (ALGOSUP), the team is arranged in the following way :
 
-### 2.3 Virtual Memory
-The virtual processor must simulate virtual memory for storing program instructions and data. It should be capable of loading and saving programs to and from memory.
+| Role | Description | Name |
+|---|---|---|
+| Project Manager | Is in charge of organization, planing and budgeting.<br>Keep the team motivated.  | Michel Riff |
+| Program Manager | Makes sure the project meets expectation.<br>Is in charge of design.<br>Is responsible for writing the Functional Specifications | Raphaël Descamps |
+| Tech Lead | Makes the technical decision in the project.<br>Translates the Functional Specification into Technical Specifications.<br> Does code review. | Habi Cailleau |
+| Software Engineer | Writes the code.<br>Writes documentation<br>Participate in the technical design. | Lucas Aubard |
+| Software Engineer | Writes the code.<br>Writes documentation<br>Participate in the technical  | Vivien Bistrel Tsangue |
+| Quality Assurance |  Tests all the functionalities of a product to find bugs and issue.<br>Document bugs and issues.<br>Write the test plan.<br>Check that issues have been fixed.| Loris De Mattia Segalata |
 
-### 2.4 Interrupt Handling
-The virtual processor should handle interruptions, including both software and hardware interruptions. It must appropriately respond to interrupt signals.
+<br></br>
 
-## 3. User Interface
+### 2.5 StakeHolders 
 
-### 3.1 Supported Assembly Language
-The virtual processor must support a specific subset of the assembly language. Detailed documentation for this assembly language must be provided.
+| Stakeholder | Might have/find an interest in... |
+|---|---|
+| Franck JEANNIN | Having the student learn assembly  |
+| ALGOSUP Students | Learning assembly and getting experience |
+| B3 | Geting an arcade machnine in the breakroom |
 
-### 3.2 Command-Line Interface (CLI)
-The virtual processor should have a command-line interface allowing users to load, execute, and debug assembly programs. This interface should also provide information about the processor and memory state.
-
-## 4. Non-Functional Requirements
-
-### 4.1 Performance
-The virtual processor should achieve acceptable performance for the execution of moderate-sized assembly programs.
-
-### 4.2 Portability
-The source code of the virtual processor should be portable and compatible with different operating systems.
-
-### 4.3 Extensibility
-The virtual processor should be designed to facilitate the addition of new instructions and features.
-
-## 5. Security Requirements
-
-### 5.1 Buffer Overflow Prevention
-The virtual processor should be designed to prevent buffer overflow attacks and ensure the security of program execution.
-
-### 5.2 Process Isolation
-The virtual processor should ensure proper isolation between different executing processes.
+## 3 
