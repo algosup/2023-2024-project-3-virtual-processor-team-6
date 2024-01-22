@@ -116,4 +116,10 @@ As defined by the project owner (ALGOSUP), the team is arranged in the following
 | ALGOSUP Students | Learning assembly and getting experience |
 | B3 | Geting an arcade machnine in the breakroom |
 
+### Project Plan 
+
+- Picutre for a retro planning 
+
+- Milestones 
+
 ## 3 
