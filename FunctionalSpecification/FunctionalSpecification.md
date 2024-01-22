@@ -37,15 +37,56 @@
 
 ## 2. Introduction
 
-### 2.1 Objective
-This document outlines the functional specifications of a virtual processor in C capable of reading and executing assembly instructions.
+### 2.1 Glossary
 
-### 1.2 Context
-The virtual processor aims to provide an environment for the execution of programs written in assembly language, while emulating the key features of a physical processor.
+| Term used | Definition |
+|---|---|
+| "Team" | ALGOSUP team 6 (2023-2024 - Project 3) |
+| "Assembly" | Low-level language for direct processor programming. |
+| "C" | Le langage C est un langage de programmation haut niveau, efficace et portable, initialement développé pour UNIX. |
+| "Virtual Processor" | Le terme "virtual processor" fait référence à une unité de traitement simulée dans un environnement informatique virtualisé. |
 
-## 2. Key Features
 
-### 2.1 Execution of Assembly Instructions
+### 2.2 Goals of this Project
+The primary goal of this project is to design, implement, and deliver a virtual processor in the C programming language capable of interpreting and executing assembly language instructions. The virtual processor should emulate key functionalities of a physical processor, including the execution of arithmetic operations, data transfers, jumps, and effective management of registers and virtual memory.
+
+### 2.3 Our objectives
+
+<b>Assembly Language Support:</b>
+
+Develop a virtual processor that supports a specific subset of the assembly language, with a focus on essential instructions commonly used in low-level programming.
+
+<b>Execution Accuracy:</b>
+
+Ensure the virtual processor accurately interprets and executes assembly language instructions, maintaining compatibility with established conventions and standards.
+
+<b>User Interface:</b>
+
+Implement a command-line interface (CLI) to facilitate user interaction, allowing for the loading, execution, and debugging of assembly programs. The CLI should provide relevant information about the processor's state and memory usage.
+
+<b>Register and Memory Management:</b>
+
+Design the virtual processor to effectively manage registers for temporary data storage and intermediate results. Simulate virtual memory to store program instructions and data, with the capability to load and save programs.
+
+<b>Interrupt Handling:</b>
+
+Implement a robust mechanism for handling interruptions, encompassing both software and hardware interruptions. The virtual processor should respond appropriately to interrupt signals.
+
+<b>Performance and Portability:</b>
+
+Achieve acceptable performance for the execution of moderate-sized assembly programs. Ensure the source code's portability, allowing compatibility with various operating systems.
+
+<b>Extensibility:</b>
+
+Design the virtual processor to be extensible, allowing for the straightforward addition of new instructions and features as needed.
+
+<b>Security Measures:</b>
+
+Incorporate security measures to prevent buffer overflow attacks and ensure the secure execution of programs. Ensure proper isolation between different executing processes.
+
+## 3. Key Features
+
+### 3.1 Execution of Assembly Instructions
 The virtual processor must be capable of reading, interpreting, and executing assembly instructions. Supported instructions include, but are not limited to, arithmetic operations, data transfers, conditional and unconditional jumps.
 
 ### 2.2 Register Management
