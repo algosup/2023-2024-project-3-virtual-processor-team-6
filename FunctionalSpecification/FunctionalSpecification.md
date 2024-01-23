@@ -46,8 +46,8 @@
 |---|---|
 | "Team" | ALGOSUP team 6 (2023-2024 - Project 3) |
 | "Assembly" | Low-level language for direct processor programming. |
-| "C" | Le langage C est un langage de programmation haut niveau, efficace et portable, initialement développé pour UNIX. |
-| "Virtual Processor" | Le terme "virtual processor" fait référence à une unité de traitement simulée dans un environnement informatique virtualisé. |
+| "C" | The C language is a high-level, efficient and portable programming language, originally developed for UNIX. |
+| "Virtual Processor" | The term "virtual processor" refers to a simulated processing unit in a virtualized computing environment. |
 
 ### 2.2 Project Overview 
 
@@ -116,7 +116,7 @@ As defined by the project owner (ALGOSUP), the team is arranged in the following
 | ALGOSUP Students | Learning assembly and getting experience |
 | B3 | Geting an arcade machnine in the breakroom |
 
-### Project Plan 
+### 2.6 Project Plan 
 
 - Picutre for a retro planning 
 
@@ -125,4 +125,4 @@ Milestone :
  <img src="../FunctionalSpecification/Pictures/Milestone.png" alt="a yellow ball with a mouth" width>
 
 
-## 3 
+## 3 Functional Requirement
