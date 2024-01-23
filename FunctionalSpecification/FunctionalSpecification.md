@@ -120,6 +120,9 @@ As defined by the project owner (ALGOSUP), the team is arranged in the following
 
 - Picutre for a retro planning 
 
-- Milestones 
+Milestone :  
+
+ <img src="../FunctionalSpecification/Pictures/Milestone.png" alt="a yellow ball with a mouth" width>
+
 
 ## 3 
