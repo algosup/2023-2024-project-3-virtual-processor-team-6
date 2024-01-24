@@ -48,50 +48,54 @@
 | "Assembly" | Low-level language for direct processor programming. |
 | "C" | The C language is a high-level, efficient and portable programming language, originally developed for UNIX. |
 | "Virtual Processor" | The term "virtual processor" refers to a simulated processing unit in a virtualized computing environment. |
+| "IDE" | An IDE (Integrated Development Environment) combines code editing, compilation, and debugging tools in a single interface for efficient development. |
 
-### 2.2 Project Overview 
+### 2.2 Project Definition. 
+
+The project involves creating a virtual processor and an interpreter to run assembly code on that processor. The development will be in plain, portable C language, utilizing only C standard libraries and avoiding external libraries. The recommended tools include using gcc as a compiler and Visual Studio Code as the IDE.
+
+- #### Goals of this Project
+    
+    The primary goal of our team for this project is to design, implement, and deliver a virtual processor in the C programming language capable of interpreting and executing assembly language instructions. The virtual processor should emulate key functionalities of a physical processor, including the execution of arithmetic operations, data transfers, jumps, and effective management of registers and virtual memory.
+
+- #### Our objectives
+    
+    <b>Assembly Language Support:</b>
+
+    Develop a virtual processor that supports a specific subset of the assembly language, with a focus on essential instructions commonly used in low-level programming.
+
+    <b>Execution Accuracy:</b>
+
+    Ensure the virtual processor accurately interprets and executes assembly language instructions, maintaining compatibility with established conventions and standards.
+
+    <b>User Interface:</b>
+
+    Implement a command-line interface (CLI) to facilitate user interaction, allowing for the loading, execution, and debugging of assembly programs. The CLI should provide relevant information about the processor's state and memory usage.
+
+    <b>Register and Memory Management:</b>
+
+    Design the virtual processor to effectively manage registers for temporary data storage and intermediate results. Simulate virtual memory to store program instructions and data, with the capability to load and save programs.
+
+    <b>Interrupt Handling:</b>
+
+    Implement a robust mechanism for handling interruptions, encompassing both software and hardware interruptions. The virtual processor should respond appropriately to interrupt signals.
+
+    <b>Performance and Portability:</b>
+
+    Achieve acceptable performance for the execution of moderate-sized assembly programs. Ensure the source code's portability, allowing compatibility with various operating systems.
+
+    <b>Extensibility:</b>
+
+    Design the virtual processor to be extensible, allowing for the straightforward addition of new instructions and features as needed.
+
+    <b>Security Measures:</b>
+
+    Incorporate security measures to prevent buffer overflow attacks and ensure the secure execution of programs. Ensure proper isolation between different executing processes.
+
+### 2.3 Project Overview 
 
 Our team was tasked with creating a virtual processor and an interpreter for running assembly code on 
 that processor.
-
-
-### 2.2 Goals of this Project
-The primary goal of our team for this project is to design, implement, and deliver a virtual processor in the C programming language capable of interpreting and executing assembly language instructions. The virtual processor should emulate key functionalities of a physical processor, including the execution of arithmetic operations, data transfers, jumps, and effective management of registers and virtual memory.
-
-### 2.3 Our objectives
-
-<b>Assembly Language Support:</b>
-
-Develop a virtual processor that supports a specific subset of the assembly language, with a focus on essential instructions commonly used in low-level programming.
-
-<b>Execution Accuracy:</b>
-
-Ensure the virtual processor accurately interprets and executes assembly language instructions, maintaining compatibility with established conventions and standards.
-
-<b>User Interface:</b>
-
-Implement a command-line interface (CLI) to facilitate user interaction, allowing for the loading, execution, and debugging of assembly programs. The CLI should provide relevant information about the processor's state and memory usage.
-
-<b>Register and Memory Management:</b>
-
-Design the virtual processor to effectively manage registers for temporary data storage and intermediate results. Simulate virtual memory to store program instructions and data, with the capability to load and save programs.
-
-<b>Interrupt Handling:</b>
-
-Implement a robust mechanism for handling interruptions, encompassing both software and hardware interruptions. The virtual processor should respond appropriately to interrupt signals.
-
-<b>Performance and Portability:</b>
-
-Achieve acceptable performance for the execution of moderate-sized assembly programs. Ensure the source code's portability, allowing compatibility with various operating systems.
-
-<b>Extensibility:</b>
-
-Design the virtual processor to be extensible, allowing for the straightforward addition of new instructions and features as needed.
-
-<b>Security Measures:</b>
-
-Incorporate security measures to prevent buffer overflow attacks and ensure the secure execution of programs. Ensure proper isolation between different executing processes.
-
 
 ### 2.4 Project Roles 
 
@@ -106,6 +110,7 @@ As defined by the project owner (ALGOSUP), the team is arranged in the following
 | Software Engineer | Writes the code.<br>Writes documentation<br>Participate in the technical  | Vivien Bistrel Tsangue |
 | Quality Assurance |  Tests all the functionalities of a product to find bugs and issue.<br>Document bugs and issues.<br>Write the test plan.<br>Check that issues have been fixed.| Loris De Mattia Segalata |
 
+
 <br></br>
 
 ### 2.5 StakeHolders 
@@ -117,12 +122,31 @@ As defined by the project owner (ALGOSUP), the team is arranged in the following
 | B3 | Geting an arcade machnine in the breakroom |
 
 ### 2.6 Project Plan 
-
-- Picutre for a retro planning 
-
+ 
 Milestone :  
 
  <img src="../FunctionalSpecification/Pictures/Milestone.png" alt="a yellow ball with a mouth" width>
 
 
-## 3 Functional Requirement
+## 3. Historical Information 
+
+### 3.1 Context : 
+
+The idea of creating a virtual processor dates back to the early days of computing when researchers and developers sought ways to simulate the behavior of a real processor in a controlled environment. The initial emulations of processors were developed to test software on different hardware architectures without the need for physical access to each type of processor.
+
+The need for virtual processors became more pronounced with the evolution of computer architectures and the emergence of distributed systems, virtual machines, and isolated execution environments.
+
+
+### 3.2 Assembly Language : 
+
+Assembly language, often referred to as assembly code, is a low-level language specific to a particular hardware architecture. Each assembly language instruction typically corresponds to a machine instruction, making it conducive to direct programming of the processor. Programmers use assembly language to write more efficient programs by fully leveraging the hardware's capabilities.
+
+However, assembly language can be challenging to learn and maintain due to its close connection to the underlying hardware architecture. Nevertheless, it provides precise control over the hardware, making it essential for developing embedded systems, device drivers, and other low-level software.
+
+### 3.2 C Language : 
+
+The C language, created by Dennis Ritchie in the early 1970s, is a higher-level programming language compared to assembly language. It offers a higher level of abstraction from the hardware, allowing programmers to write portable and easily understandable code while maintaining efficiency close to that of assembly language.
+
+It is an imperative and procedural language, providing features such as memory management through pointers, bit manipulation, and the ability to code critical portions in assembly language for fine optimization.
+
+## 4. Functional Requirements 
