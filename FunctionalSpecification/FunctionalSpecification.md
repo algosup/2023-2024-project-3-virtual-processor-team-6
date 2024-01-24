@@ -49,6 +49,7 @@
 | "C" | The C language is a high-level, efficient and portable programming language, originally developed for UNIX. |
 | "Virtual Processor" | The term "virtual processor" refers to a simulated processing unit in a virtualized computing environment. |
 | "IDE" | An IDE (Integrated Development Environment) combines code editing, compilation, and debugging tools in a single interface for efficient development. |
+| "GCC" | GCC, or GNU Compiler Collection, is a set of open-source compilers for various languages, providing cross-platform compatibility and code optimization. |
 
 ### 2.2 Project Definition. 
 
@@ -70,7 +71,7 @@ The project involves creating a virtual processor and an interpreter to run asse
 
     <b>User Interface:</b>
 
-    Implement a command-line interface (CLI) to facilitate user interaction, allowing for the loading, execution, and debugging of assembly programs. The CLI should provide relevant information about the processor's state and memory usage.
+    Implement a command-line interface (CLI) to facilitate user interaction, allowing for the loading, execution of assembly programs. The CLI should provide relevant information about the processor's state and memory usage.
 
     <b>Register and Memory Management:</b>
 
@@ -78,15 +79,11 @@ The project involves creating a virtual processor and an interpreter to run asse
 
     <b>Interrupt Handling:</b>
 
-    Implement a robust mechanism for handling interruptions, encompassing both software and hardware interruptions. The virtual processor should respond appropriately to interrupt signals.
+    Implement a mechanism for handling interruptions, encompassing both software and hardware interruptions. The virtual processor should respond appropriately to interrupt signals.
 
     <b>Performance and Portability:</b>
 
     Achieve acceptable performance for the execution of moderate-sized assembly programs. Ensure the source code's portability, allowing compatibility with various operating systems.
-
-    <b>Extensibility:</b>
-
-    Design the virtual processor to be extensible, allowing for the straightforward addition of new instructions and features as needed.
 
     <b>Security Measures:</b>
 
@@ -94,8 +91,7 @@ The project involves creating a virtual processor and an interpreter to run asse
 
 ### 2.3 Project Overview 
 
-Our team was tasked with creating a virtual processor and an interpreter for running assembly code on 
-that processor.
+Our team was tasked with creating a virtual processor and an interpreter for running assembly code on that processor.
 
 ### 2.4 Project Roles 
 
@@ -150,3 +146,41 @@ The C language, created by Dennis Ritchie in the early 1970s, is a higher-level 
 It is an imperative and procedural language, providing features such as memory management through pointers, bit manipulation, and the ability to code critical portions in assembly language for fine optimization.
 
 ## 4. Functional Requirements 
+
+### 4.1 Processeur Virtuel
+
+**Pointeur d'Instruction :**
+   - Un pointeur d'instruction doit être maintenu pour suivre l'emplacement de l'instruction en cours d'exécution dans la mémoire.
+
+### 4.2 Interpréteur Assembleur
+
+**Gestion des Labels et des Symboles :**
+   - Permettre l'utilisation de labels et de symboles dans le code assembleur, facilitant ainsi la gestion des sauts et des adresses mémoire sans avoir à spécifier des adresses absolues.
+
+**Optimisations de Code :**
+   - Implémenter des techniques d'optimisation de base lors de l'interprétation du code assembleur pour améliorer les performances, comme la réduction des sauts inconditionnels consécutifs.
+
+### 4.3 Interface Utilisateur (Optionnelle)
+
+**Coloration Syntaxique :**
+   - Si possible, mettre en œuvre une coloration syntaxique pour le code assembleur dans l'IDE, facilitant la lecture et le repérage des erreurs.
+
+**Débogage Interactif :**
+   - Intégrer des fonctionnalités de débogage interactif, permettant aux développeurs de mettre des points d'arrêt, d'exécuter le code pas à pas, et d'inspecter l'état du processeur virtuel à des points spécifiques.
+
+## 4.4 Contraintes Techniques
+
+**Portabilité :**
+   - Assurer que le code est portable sur différentes plates-formes en évitant les dépendances spécifiques à un système d'exploitation.
+
+**Tests Unitaires :**
+   - Mettre en place un ensemble de tests unitaires pour valider le fonctionnement correct du processeur virtuel et de l'interpréteur. Ces tests doivent couvrir divers scénarios, y compris des cas limites et des situations d'erreur.
+
+## 5. Livrables
+
+**Exemples de Code Assembleur :**
+   - Inclure des exemples de code assembleur illustrant les fonctionnalités du processeur virtuel, facilitant ainsi la compréhension et la prise en main par d'autres développeurs.
+
+**Manuel d'Utilisation :**
+   - Rédiger un manuel d'utilisation détaillé expliquant comment compiler, exécuter, et déboguer le code assembleur sur le processeur virtuel.
+
