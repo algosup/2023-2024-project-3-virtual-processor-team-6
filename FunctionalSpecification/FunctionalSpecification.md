@@ -149,13 +149,13 @@ It is an imperative and procedural language, providing features such as memory m
 
 ## 4. Functional Requirements 
 
-### 4.1 Processeur Virtuel
+### 4.1 Virtual processor
 
-### 4.2 Interpréteur Assembleur
+### 4.2 Assembly interpreter
 
-### 4.3 Interface Utilisateur (Optionnelle)
+### 4.3 User Interface (Optional)
 
-### 4.4 Contraintes Techniques
+### 4.4 Technical constraints
 
 ## 5. Non Functional Requirement
 
