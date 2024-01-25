@@ -235,7 +235,8 @@ for a processor to do its job.
 
 | Instruction | Objective | 
 |---|---|
-| | |
+| "ADD" | Takes two numbers, adds them together and stores the result in a register. |
+| "AND" | | 
 
 #### 4.1.2 Register File
 
@@ -252,6 +253,24 @@ understands, and acts upon these scripts. So, let’s
 outline the steps for fetching, decoding, and
 executing each instruction. It's like teaching our
 processor a well-rehearsed routine.
+
+#### 4.1.4 Memory
+
+Our processor needs a memory system – a mental
+space to store data and instructions. Let's sketch
+out how this memory works: the addressing method,
+its size, and the steps for loading and storing
+data. It's like building a mental filing cabinet
+for our processor's thoughts.
+
+#### 4.1.5 Interrupts
+
+Sometimes our processor needs to take a break for
+important tasks – that's where interrupts come in.
+Let's design a system for managing these
+interruptions, deciding their types, priority, and
+how our processor responds when it gets a tap on
+the virtual shoulder.
 
 ### 4.2 Assembly interpreter
 
