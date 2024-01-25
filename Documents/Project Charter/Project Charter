@@ -71,7 +71,7 @@ Virtual System Call Implementation:
 
 ### RACI
 
-![RACI](RACI.png)
+![RACI](picture/RACI.png)
 
 ### Milestones
 
@@ -88,8 +88,8 @@ Virtual System Call Implementation:
 ### Deliverables
 In accordance with the outlined milestones, the project will culminate in the delivery of the following key deliverables:
 
-- [Final Product](Documents\FunctionalSpecification\FunctionalSpecification.md)
-- [Functional]()
+- [Final Product]
+- [Functional](Documents\FunctionalSpecification\FunctionalSpecification.md)
 - [Technical]()
 - [Test Plan]()
 - [Weekly Reports and Management Planning]()
