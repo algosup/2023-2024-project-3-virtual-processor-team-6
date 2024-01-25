@@ -30,12 +30,12 @@
 
 | Role | Name | Signature | Date |
 |---|---|---|---|
-| Project Manager | Michelle Riff | ✅ | 30/01/2023 |
-| Program Manager | Raphaël Descamps| ✅ |30/01/2023 |
-| Tech Lead | Habi Cailleau | ✅ | 11/13/2023 |
-| Software Developer | Lucas Aubard | ✅ | 30/01/2023 |
-| Software Developer | Vivien Bistrel Tsangue |✅ | 30/01/2023|
-| Quality Assurance | Loris De Mattia Segalat | ✅ | 30/01/2023 |
+| Project Manager | Michelle Riff | <center>✅</center> | 30/01/2023 |
+| Program Manager | Raphaël Descamps|<center>✅</center> |30/01/2023 |
+| Tech Lead | Habi Cailleau | <center>✅</center>| 11/13/2023 |
+| Software Developer | Lucas Aubard | <center>✅</center> | 30/01/2023 |
+| Software Developer | Vivien Bistrel Tsangue |<center>✅</center> | 30/01/2023|
+| Quality Assurance | Loris De Mattia Segalat | <center>✅</center> | 30/01/2023 |
 
 
 ## 2. Introduction
@@ -235,7 +235,7 @@ through pointers, bit manipulation, and the ability
 to code critical portions in assembly language for
 fine optimization.
 
-#### 3.4 Our Assembly Language 
+#### 4.1.3 Our Assembly Language 
 
 | Instruction | Objective | 
 |---|---|
