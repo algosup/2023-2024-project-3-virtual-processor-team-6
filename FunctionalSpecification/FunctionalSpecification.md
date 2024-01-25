@@ -139,7 +139,12 @@ The need for virtual processors became more pronounced with the evolution of com
 
 Assembly language, often referred to as assembly code, is a low-level language specific to a particular hardware architecture. Each assembly language instruction typically corresponds to a machine instruction, making it conducive to direct programming of the processor. Programmers use assembly language to write more efficient programs by fully leveraging the hardware's capabilities.
 
-However, assembly language can be challenging to learn and maintain due to its close connection to the underlying hardware architecture. Nevertheless, it provides precise control over the hardware, making it essential for developing embedded systems, device drivers, and other low-level software.
+However, assembly language can be challenging to learn and maintain due to its close connection to the underlying hardware architecture. Nevertheless, it provides precise control over the hardware, making it essential for developing embedded systems, device drivers, and other low-level
+software.
+
+### 3.1.1 Our Assmebly Language :
+
+    
 
 ### 3.2 C Language : 
 
