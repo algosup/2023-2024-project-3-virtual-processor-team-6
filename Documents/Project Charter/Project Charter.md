@@ -1,7 +1,7 @@
 # Project Charter - Virtual Processor - Team n°6
 
-| ---- | ---- |
 | **Document Name** | Project Charter |
+| ---- | ---- |
 | **Document Writer** | Michel Riff |
 | **Last Update** | 25 January 2024 |
 | **Creation Date** | 22 january 2024 |
@@ -71,7 +71,7 @@ Virtual System Call Implementation:
 
 ### RACI
 
-![RACI](./Documents\Project Charter\picture\RACI.png)
+![RACI](picture/RACI.png)
 
 ### Milestones
 
@@ -88,10 +88,10 @@ Virtual System Call Implementation:
 ### Deliverables
 In accordance with the outlined milestones, the project will culminate in the delivery of the following key deliverables:
 
-- [Final Product] (##\FunctionalSpecification\FunctionalSpecification.md)
-- [Functional] ()
-- [Technical] ()
-- [Test Plan] ()
-- [Weekly Reports and Management Planning] ()
+- [Final Product]
+- [Functional](Documents\FunctionalSpecification\FunctionalSpecification.md)
+- [Technical]()
+- [Test Plan]()
+- [Weekly Reports and Management Planning]()
 
 In conclusion, the project will be officially presented to the client through a concise and informative 15-minute presentation, summarizing the accomplished work and highlighting the key features and functionalities of the virtual processor system.
