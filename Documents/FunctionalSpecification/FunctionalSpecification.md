@@ -45,6 +45,7 @@
 | Term used | Definition |
 |---|---|
 | "Team" | ALGOSUP team 6 (2023-2024 - Project 3) |
+| "Language" | | 
 | "Assembly" | Low-level language for direct processor programming. |
 | "C" | The C language is a high-level, efficient and portable programming language, originally developed for UNIX. |
 | "Virtual Processor" | The term "virtual processor" refers to a simulated processing unit in a virtualized computing environment. |
@@ -150,9 +151,8 @@ As defined by the project owner (ALGOSUP), the team is arranged in the following
 
 | Stakeholder | Might have/find an interest in... |
 |---|---|
-| Franck JEANNIN | Having the student learn assembly  |
-| ALGOSUP Students | Learning assembly and getting experience |
-| B3 | Geting an arcade machnine in the breakroom |
+| Franck JEANNIN | Having the student learn assembly and C  |
+| ALGOSUP Students | Learning assembly and getting experience about programming |
 
 ### 2.6 Project Plan 
  
@@ -160,10 +160,29 @@ Milestone :
 
  <img src="../FunctionalSpecification/Pictures/Milestone.png" alt="a yellow ball with a mouth">
 
+<br></br>
 
-## 3. Virtual Processor and languages Overview 
+Assumptions/Constraints : 
 
-### 3.1 Context : 
+| Assumptions |
+|---|
+|  |
+|  |
+|  |
+
+| Constraints |
+|---|
+| We have to code in C |
+|  |
+|  |
+
+<br></br> 
+
+## 4. Functional Requirements 
+
+### 4.1 Virtual Processor and languages Overview 
+
+#### 4.1.2 Context : 
 
 The idea of creating a virtual processor dates back
 to the early days of computing when researchers and
@@ -181,7 +200,7 @@ systems, virtual machines, and isolated execution
 environments.
 
 
-### 3.2 Assembly Language : 
+#### 4.1.3 Assembly Language : 
 
 Assembly language, often referred to as assembly
 code, is a low-level language specific to a
@@ -200,11 +219,7 @@ making it essential for developing embedded
 systems, device drivers, and other low-level
 software.
 
-### 3.1.1 Our Assmebly Language :
-
-
-
-### 3.2 C Language : 
+#### 4.1.4 C Language : 
 
 The C language, created by Dennis Ritchie in the
 early 1970s, is a higher-level programming language
@@ -220,11 +235,16 @@ through pointers, bit manipulation, and the ability
 to code critical portions in assembly language for
 fine optimization.
 
-## 4. Functional Requirements 
+#### 3.4 Our Assembly Language 
 
-### 4.1 Virtual processor
+| Instruction | Objective | 
+|---|---|
+| "ADD" | Takes two numbers, adds them together and stores the result in a register. |
+| "AND" | |
 
-#### 4.1.1 Instruction Set
+### 4.2 Virtual processor
+
+#### 4.2.1 Instruction Set
 
 Let's define a solid set of assembly instructions
 that our virtual processor will comprehend. We need
@@ -233,19 +253,14 @@ maneuvers, and instructions to shuffle data in and
 out of memory. Essentially, anything fundamental
 for a processor to do its job.
 
-| Instruction | Objective | 
-|---|---|
-| "ADD" | Takes two numbers, adds them together and stores the result in a register. |
-| "AND" | | 
-
-#### 4.1.2 Register File
+#### 4.2.2 Register File
 
 Our processor needs a set of internal registers to
 keep things organized during computation. Let's lay
 out the purpose and limits of each register, like a
 choreography for our processor dance.
 
-#### 4.1.3 Instruction Execution
+#### 4.2.3 Instruction Execution
 
 Imagine each assembly instruction as a script. We
 need to decide how our virtual processor reads,
@@ -254,7 +269,7 @@ outline the steps for fetching, decoding, and
 executing each instruction. It's like teaching our
 processor a well-rehearsed routine.
 
-#### 4.1.4 Memory
+#### 4.2.4 Memory
 
 Our processor needs a memory system – a mental
 space to store data and instructions. Let's sketch
@@ -263,7 +278,7 @@ its size, and the steps for loading and storing
 data. It's like building a mental filing cabinet
 for our processor's thoughts.
 
-#### 4.1.5 Interrupts
+#### 4.2.5 Interrupts
 
 Sometimes our processor needs to take a break for
 important tasks – that's where interrupts come in.
@@ -272,10 +287,10 @@ interruptions, deciding their types, priority, and
 how our processor responds when it gets a tap on
 the virtual shoulder.
 
-### 4.2 Assembly interpreter
+### 4.4 Assembly interpreter
 
-### 4.3 User Interface (Optional)
+### 4.5 User Interface (Optional)
 
-### 4.4 Technical constraints
+### 4.6 Technical constraints
 
 ## 5. Non Functional Requirement
