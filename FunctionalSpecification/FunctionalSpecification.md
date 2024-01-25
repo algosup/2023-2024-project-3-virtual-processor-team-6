@@ -55,15 +55,32 @@
 
 ### 2.2 Project Overview 
 
-Our team was tasked with creating a virtual processor and an interpreter for running assembly code on that processor.
+Our team was tasked with creating a virtual
+processor and an interpreter for running assembly
+code on that processor.
 
 ### 2.3 Project Definition. 
 
-The project involves creating a virtual processor and an interpreter to run assembly code on that processor. The development will be in plain, portable C language, utilizing only C standard libraries and avoiding external libraries. The recommended tools include using gcc as a compiler and Visual Studio Code as the IDE.
+The project involves creating a virtual processor
+and an interpreter to run assembly code on that
+processor. The development will be in plain,
+portable C language, utilizing only C standard
+libraries and avoiding external libraries. The
+recommended tools include using gcc as a compiler
+and Visual Studio Code as the IDE.
 
 - #### Goals of this Project
     
-    The primary goal of our team for this project is to design, implement, and deliver a virtual processor in the C programming language capable of interpreting and executing assembly language instructions. The virtual processor should emulate key functionalities of a physical processor, including the execution of arithmetic operations, data transfers, jumps, and effective management of registers and virtual memory.
+    The primary goal of our team for this project
+    is to design, implement, and deliver a virtual
+    processor in the C programming language capable
+    of interpreting and executing assembly language
+    instructions. The virtual processor should
+    emulate key functionalities of a physical
+    processor, including the execution of
+    arithmetic operations, data transfers, jumps,
+    and effective management of registers and
+    virtual memory.
 
 - #### Our objectives
     
@@ -141,7 +158,7 @@ As defined by the project owner (ALGOSUP), the team is arranged in the following
  
 Milestone :  
 
- <img src="../FunctionalSpecification/Pictures/Milestone.png" alt="a yellow ball with a mouth" width>
+ <img src="../FunctionalSpecification/Pictures/Milestone.png" alt="a yellow ball with a mouth">
 
 
 ## 3. Virtual Processor and languages Overview 
