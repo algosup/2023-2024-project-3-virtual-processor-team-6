@@ -71,7 +71,7 @@ Virtual System Call Implementation:
 
 ### RACI
 
-![](RACI.png)
+![RACI](./Documents\Project Charter\picture\RACI.png)
 
 ### Milestones
 
@@ -88,10 +88,10 @@ Virtual System Call Implementation:
 ### Deliverables
 In accordance with the outlined milestones, the project will culminate in the delivery of the following key deliverables:
 
-- Final Product (link to the document)
-- Functional Specifications (link to the document)
-- Technical Specifications (link to the document)
-- Test Plan (link to the document)
-- Weekly Reports and Management Planning (link to the document)
+- [Final Product] (##\FunctionalSpecification\FunctionalSpecification.md)
+- [Functional] ()
+- [Technical] ()
+- [Test Plan] ()
+- [Weekly Reports and Management Planning] ()
 
 In conclusion, the project will be officially presented to the client through a concise and informative 15-minute presentation, summarizing the accomplished work and highlighting the key features and functionalities of the virtual processor system.
