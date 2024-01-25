@@ -235,12 +235,15 @@ through pointers, bit manipulation, and the ability
 to code critical portions in assembly language for
 fine optimization.
 
-#### 4.1.3 Our Assembly Language 
+#### 4.1.3 Our Assembly Language s
 
 | Instruction | Objective | 
 |---|---|
 | "ADD" | Takes two numbers, adds them together and stores the result in a register. |
 | "AND" | |
+|||
+|||
+|||
 
 ### 4.2 Virtual processor
 
