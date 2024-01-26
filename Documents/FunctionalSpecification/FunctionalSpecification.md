@@ -70,66 +70,47 @@ libraries and avoiding external libraries. The
 recommended tools include using gcc as a compiler
 and Visual Studio Code as the IDE.
 
-- #### Goals of this Project
+#### 2.3.1 Goals of this Project
     
-    The primary goal of our team for this project
-    is to design, implement, and deliver a virtual
-    processor in the C programming language capable
-    of interpreting and executing assembly language
-    instructions. The virtual processor should
-    emulate key functionalities of a physical
-    processor, including the execution of
-    arithmetic operations, data transfers, jumps,
-    and effective management of registers and
-    virtual memory.
+The primary goal of our team for this project is to design, implement, and deliver a virtual processor in the C programming language capable of interpreting and executing assembly language instructions. The virtual processor should emulate key functionalities of a physical processor, including the execution of arithmetic operations, data transfers, jumps, and effective management of registers and virtual memory.
 
-- #### Our objectives
+####  2.3.2 Our objectives
     
-    <b>Assembly Language Support:</b>
+<b>Assembly Language Support:</b>
 
-    Develop a virtual processor that supports a
-    specific subset of the assembly language, with
-    a focus on essential instructions commonly used
-    in low-level programming.
+Develop a virtual processor that supports a simple assembly language, with a focus on essential instructions commonly used in low-level programming.
 
-    <b>Execution Accuracy:</b>
+<b>Execution Accuracy:</b>
 
-    Ensure the virtual processor accurately
-    interprets and executes assembly language
-    instructions, maintaining compatibility with
-    established conventions and standards.
+Ensure the virtual processor accurately
+interprets and executes assembly language instructions, maintaining compatibility with established conventions and standards.
 
-    <b>User Interface:</b>
+<b>User Interface:</b>
 
-    Implement a command-line interface (CLI) to
-    facilitate user interaction, allowing for the
-    loading, execution of assembly programs. The
-    CLI should provide relevant information about
-    the processor's state and memory usage.
+Implement a command-line interface (CLI) to facilitate user interaction, allowing for the
+loading, execution of assembly programs. The CLI should provide relevant information about the processor's state and memory usage.
 
-    <b>Register and Memory Management:</b>
+<b>Register and Memory Management:</b>
 
-    Design the virtual processor to effectively
-    manage registers for temporary data storage and
-    intermediate results. Simulate virtual memory
-    to store program instructions and data, with
-    the capability to load and save programs.
+Design the virtual processor to effectively
+manage registers for temporary data storage and
+intermediate results in 16-bits. Simulate virtual memory to store program instructions and data, with the capability to load and save programs.
 
-    <b>Interrupt Handling:</b>
+<b>Interrupt Handling:</b>
 
-    Implement a mechanism for handling
-    interruptions, encompassing both software and
-    hardware interruptions. The virtual processor
-    should respond appropriately to interrupt
-    signals.
+Implement a mechanism for handling
+interruptions, encompassing both software and
+hardware interruptions. The virtual processor
+should respond appropriately to interrupt
+signals.
 
-    <b>Performance and Portability:</b>
+<b>Performance and Portability:</b>
 
-    Achieve acceptable performance for the execution of moderate-sized assembly programs. Ensure the source code's portability, allowing compatibility with various operating systems.
+Achieve acceptable performance for the execution of moderate-sized assembly programs. Ensure the source code's portability, allowing compatibility with various operating systems.
 
-    <b>Security Measures:</b>
+<b>Security Measures:</b>
 
-    Incorporate security measures to prevent buffer overflow attacks and ensure the secure execution of programs. Ensure proper isolation between different executing processes.
+Incorporate security measures to prevent buffer overflow attacks and ensure the secure execution of programs. Ensure proper isolation between different executing processes.
 
 ### 2.4 Project Roles 
 
@@ -156,7 +137,7 @@ As defined by the project owner (ALGOSUP), the team is arranged in the following
 
 ### 2.6 Project Plan 
  
-Milestone :  
+- Milestone :  
 
  <img src="../FunctionalSpecification/Pictures/Milestone.png" alt="a yellow ball with a mouth">
 
