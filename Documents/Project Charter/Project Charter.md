@@ -3,8 +3,10 @@
 | **Document Name** | Project Charter |
 | ---- | ---- |
 | **Document Writer** | Michel Riff |
-| **Last Update** | 25 January 2024 |
+| **Last Update** | 26 January 2024 |
 | **Creation Date** | 22 january 2024 |
+
+- - -
 
 ## Table of content
 
@@ -18,9 +20,13 @@
     - [Milestones](#milestones)
     - [Deliverables](#deliverables)
 
+- - -
+
 ### Project Overview
 
 This project aims to develop and implement a virtual processor, complete with a specialized interpreter for executing assembly code specifically designed for this processor. The entire project will be constructed using the straightforward and portable C language. Emphasizing portability, the approach will strictly adhere to utilizing only C standard libraries, excluding external libraries from the project.
+
+- - -
 
 ### Project Scope
 
@@ -44,13 +50,15 @@ Provide a comprehensive description of the assembly language in the functional s
   
 Virtual System Call Implementation:
 - Develop a virtual system call for displaying text in a virtual terminal from the assembly code.
-- Include functionalities such as displaying register contents and incorporating a built-in debugger to facilitate program observation.
+- Include functionalities such as displaying register contents.
 - The technical specification should detail the workings of the virtual system call.
 
-3. Testing and Validation:
+1. Testing and Validation:
 - Create small assembly programs serving as conceptual unit tests to verify the correct functioning of the virtual processor and interpreter.
 - Conduct thorough testing to validate the overall integrity of the system.
 - Document the testing procedures and results in the project documentation.
+
+- - -
 
 ### Stakeholders
 
@@ -69,29 +77,34 @@ Virtual System Call Implementation:
 | Lucas AUBARD | Software Engineer | Writing code<br>Fixing bugs<br>Document the code |
 | Loris DE MATTIA SEGALAT | Quality Assurance | Verify documents<br>Test the program<br>Confirm we match the client needs<br>Overall quality of the project<br>Test plan |
 
+- - -
+
 ### RACI
 
 ![RACI](picture/RACI.png)
+
+- - -
 
 ### Milestones
 
 | Milestone | Due Date |
 | ---- | ---- |
-| Project Charter | 9 November 2023 9a.m. |
-| Functional Specifications | 13 November 2023 1.30p.m. |
-| Technical Specifications | 27 November 2023 1.30p.m. |
-| Test Plan | 8 December 2023 5p.m. |
-| Working Prototype | 11 December 2023 5p.m. |
-| Final Product | 21 December 2023 5p.m. |
-| Presentation | 22 December 2023 9a.m. |
+| Project Charter | 26 February, 2024 |
+| Functional Specifications | 30 January, 2024 |
+| Technical Specifications | 9 February, 2024 |
+| Test Plan | 16 February, 2024 |
+| Final Product | 23 February, 2024 |
+| Presentation | 23 February ,2024 |
+
+- - -
 
 ### Deliverables
 In accordance with the outlined milestones, the project will culminate in the delivery of the following key deliverables:
 
-- [Final Product]
-- [Functional](Documents\FunctionalSpecification\FunctionalSpecification.md)
-- [Technical]()
-- [Test Plan]()
-- [Weekly Reports and Management Planning]()
+- Final Product
+- [Functional](./Documents/FunctionalSpecification/FunctionalSpecification.md)
+- [Technical](./Documents/TechnicalSpecification/TechnicalSpecification.md)
+- [Test Plan](./Documents/TestPlan/TestPlan.md)
+- [Weekly Reports and Management Planning](./Documents/Weeklyreports/Management.md)
 
 In conclusion, the project will be officially presented to the client through a concise and informative 15-minute presentation, summarizing the accomplished work and highlighting the key features and functionalities of the virtual processor system.
