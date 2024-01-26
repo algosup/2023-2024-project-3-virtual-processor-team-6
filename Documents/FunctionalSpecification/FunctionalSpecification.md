@@ -162,19 +162,12 @@ Milestone :
 
 <br></br>
 
-Assumptions/Constraints : 
-
-| Assumptions |
-|---|
-|  |
-|  |
-|  |
 
 | Constraints |
 |---|
 | We have to code in C |
-|  |
-|  |
+| We can't use any external library beside C standard libraries. |
+| On doit creer un assembly avec les instructions de base |
 
 <br></br> 
 
@@ -240,10 +233,10 @@ fine optimization.
 | Instruction | Objective | 
 |---|---|
 | "ADD" | Takes two numbers, adds them together and stores the result in a register. |
-| "AND" | |
-|||
-|||
-|||
+| "SUB" ||
+| "DIV" ||
+| "MUL" ||
+| "" ||
 
 ### 4.2 Virtual processor
 
@@ -290,7 +283,7 @@ interruptions, deciding their types, priority, and
 how our processor responds when it gets a tap on
 the virtual shoulder.
 
-### 4.4 Assembly interpreter
+### 4.4 Assembly interpreter 
 
 ### 4.5 User Interface (Optional)
 
