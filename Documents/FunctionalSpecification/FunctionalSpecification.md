@@ -235,7 +235,7 @@ fine optimization.
 #### 3.1.3 Our Assembly Language s
 
 | Instruction | Objective | 
-|---|---|
+|---|---|---| 
 | "ADD" | Takes two numbers, adds them together and stores the result in a register. |
 | "SUB" ||
 | "DIV" ||
@@ -253,12 +253,14 @@ maneuvers, and instructions to shuffle data in and
 out of memory. Essentially, anything fundamental
 for a processor to do its job.
 
-#### 3.2.2 Register File
+#### 3.2.2 Register
 
 Our processor needs a set of internal registers to
 keep things organized during computation. Let's lay
 out the purpose and limits of each register, like a
 choreography for our processor dance.
+
+Our virtual processor will be based on 16-bits, so we'll have a total of 16 registers. 
 
 #### 3.2.3 Instruction Execution
 
@@ -289,8 +291,6 @@ the virtual shoulder.
 
 ### 3.4 Assembly interpreter 
 
-### 3.5 User Interface (Optional)
-
-### 3.6 Technical constraints
+### 3.5 User Interface 
 
 ## 4. Non Functional Requirement
