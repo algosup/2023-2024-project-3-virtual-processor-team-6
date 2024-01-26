@@ -126,23 +126,46 @@ As defined by the project owner (ALGOSUP), the team is arranged in the following
 | Quality Assurance |  Tests all the functionalities of a product to find bugs and issue.<br>Document bugs and issues.<br>Write the test plan.<br>Check that issues have been fixed.| Loris De Mattia Segalata |
 
 
-<br></br>
+### 2.5 Project Representatives
 
-### 2.5 StakeHolders 
+| Project Owner   | Represented by...                                |
+| --------------- | ------------------------------------------------ |
+| **ALGOSUP**     | Represented by Franck JEANNIN                    |
+| Michel Riff  | Represented by Raphaël Descamps (Program Manager) |
+
+The project sponsors (highlighted in **bold**) are expected to be in charge of:
+
+- Defining the vision and high-level objectives for the project.
+- Approving the requirements, timetable, resources and budget (if necessary).
+- Authorising the provision of funds/resources (internal or external) (if necessary).
+- Approving the functional and technical specifications written by the team.
+- Ensuring that major business risks are identified and managed by the team.
+- Approving any major changes in scope.
+- Received Project Weekly Reports and take action accordingly to resolve issues escalated by the Project Manager.
+- Ensuring business/operational support arrangements are put in place.
+- Ensuring the participation of a business resource (if required).
+- Providing final acceptance of the solution upon project completion.
+
+### 2.6 StakeHolders 
 
 | Stakeholder | Might have/find an interest in... |
 |---|---|
 | Franck JEANNIN | Having the student learn assembly and C  |
 | ALGOSUP Students | Learning assembly and getting experience about programming |
 
-### 2.6 Project Plan 
- 
-- Milestone :  
+### 2.7 Project Plan 
 
- <img src="../FunctionalSpecification/Pictures/Milestone.png" alt="a yellow ball with a mouth">
+#### 2.7.1 Retro Planning : 
+
+<img src="../FunctionalSpecification/Pictures/RetroPlanning.png" alt="a yellow ball with a mouth">
+ 
+#### 2.7.2 Milestone :  
+
+<img src="../FunctionalSpecification/Pictures/Milestone.png" alt="a yellow ball with a mouth">
 
 <br></br>
 
+#### 2.7.3 Porject Constraints
 
 | Constraints |
 |---|
@@ -152,11 +175,11 @@ As defined by the project owner (ALGOSUP), the team is arranged in the following
 
 <br></br> 
 
-## 4. Functional Requirements 
+## 3. Functional Requirements 
 
-### 4.1 Virtual Processor and languages Overview 
+### 3.1 Virtual Processor and languages Overview 
 
-#### 4.1.2 Context : 
+#### 3.1.2 Context : 
 
 The idea of creating a virtual processor dates back
 to the early days of computing when researchers and
@@ -174,7 +197,7 @@ systems, virtual machines, and isolated execution
 environments.
 
 
-#### 4.1.3 Assembly Language : 
+#### 3.1.3 Assembly Language : 
 
 Assembly language, often referred to as assembly
 code, is a low-level language specific to a
@@ -193,7 +216,7 @@ making it essential for developing embedded
 systems, device drivers, and other low-level
 software.
 
-#### 4.1.4 C Language : 
+#### 3.1.4 C Language : 
 
 The C language, created by Dennis Ritchie in the
 early 1970s, is a higher-level programming language
@@ -209,7 +232,7 @@ through pointers, bit manipulation, and the ability
 to code critical portions in assembly language for
 fine optimization.
 
-#### 4.1.3 Our Assembly Language s
+#### 3.1.3 Our Assembly Language s
 
 | Instruction | Objective | 
 |---|---|
@@ -219,9 +242,9 @@ fine optimization.
 | "MUL" ||
 | "" ||
 
-### 4.2 Virtual processor
+### 3.2 Virtual processor
 
-#### 4.2.1 Instruction Set
+#### 3.2.1 Instruction Set
 
 Let's define a solid set of assembly instructions
 that our virtual processor will comprehend. We need
@@ -230,14 +253,14 @@ maneuvers, and instructions to shuffle data in and
 out of memory. Essentially, anything fundamental
 for a processor to do its job.
 
-#### 4.2.2 Register File
+#### 3.2.2 Register File
 
 Our processor needs a set of internal registers to
 keep things organized during computation. Let's lay
 out the purpose and limits of each register, like a
 choreography for our processor dance.
 
-#### 4.2.3 Instruction Execution
+#### 3.2.3 Instruction Execution
 
 Imagine each assembly instruction as a script. We
 need to decide how our virtual processor reads,
@@ -246,7 +269,7 @@ outline the steps for fetching, decoding, and
 executing each instruction. It's like teaching our
 processor a well-rehearsed routine.
 
-#### 4.2.4 Memory
+#### 3.2.4 Memory
 
 Our processor needs a memory system – a mental
 space to store data and instructions. Let's sketch
@@ -255,7 +278,7 @@ its size, and the steps for loading and storing
 data. It's like building a mental filing cabinet
 for our processor's thoughts.
 
-#### 4.2.5 Interrupts
+#### 3.2.5 Interrupts
 
 Sometimes our processor needs to take a break for
 important tasks – that's where interrupts come in.
@@ -264,10 +287,10 @@ interruptions, deciding their types, priority, and
 how our processor responds when it gets a tap on
 the virtual shoulder.
 
-### 4.4 Assembly interpreter 
+### 3.4 Assembly interpreter 
 
-### 4.5 User Interface (Optional)
+### 3.5 User Interface (Optional)
 
-### 4.6 Technical constraints
+### 3.6 Technical constraints
 
-## 5. Non Functional Requirement
+## 4. Non Functional Requirement
