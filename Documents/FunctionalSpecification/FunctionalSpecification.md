@@ -1,15 +1,41 @@
 # Functional Specifiactions | Team 6 
 
----
-
 <br>
 <details>
-<summary> Table of content </summary>
+<summary> Table of Contents </summary>
 
-- [Functional Specifications | Team 6]
-(#functional-specifications--team-4)
-    - [Table of content](#Table of content)
-    
+- [Functional Specifiactions | Team 6](#functional-specifiactions--team-6)
+  - [1. Document handling](#1-document-handling)
+    - [1.1 Document information](#11-document-information)
+    - [1.2 Document Approval](#12-document-approval)
+  - [2. Introduction](#2-introduction)
+    - [2.1 Glossary](#21-glossary)
+    - [2.2 Project Overview](#22-project-overview)
+    - [2.3 Project Definition.](#23-project-definition)
+      - [2.3.1 Goals of this Project](#231-goals-of-this-project)
+      - [2.3.2 Our objectives](#232-our-objectives)
+    - [2.4 Project Roles](#24-project-roles)
+    - [2.5 Project Representatives](#25-project-representatives)
+    - [2.6 StakeHolders](#26-stakeholders)
+    - [2.7 Project Plan](#27-project-plan)
+      - [2.7.1 Retro Planning :](#271-retro-planning-)
+      - [2.7.2 Milestone :](#272-milestone-)
+      - [2.7.3 Porject Constraints](#273-porject-constraints)
+  - [3. Functional Requirements](#3-functional-requirements)
+    - [3.1 Virtual Processor and languages Overview](#31-virtual-processor-and-languages-overview)
+      - [3.1.2 Context :](#312-context-)
+      - [3.1.3 Assembly Language :](#313-assembly-language-)
+      - [3.1.4 C Language :](#314-c-language-)
+      - [3.1.3 Our Assembly Language s](#313-our-assembly-language-s)
+    - [3.2 Virtual processor](#32-virtual-processor)
+      - [3.2.1 Instruction Set](#321-instruction-set)
+      - [3.2.2 Register](#322-register)
+      - [3.2.3 Instruction Execution](#323-instruction-execution)
+      - [3.2.4 Memory](#324-memory)
+      - [3.2.5 Interrupts](#325-interrupts)
+    - [3.4 Assembly interpreter](#34-assembly-interpreter)
+    - [3.5 User Interface](#35-user-interface)
+  - [4. Non Functional Requirement](#4-non-functional-requirement)
 
 </details>
 </br>
