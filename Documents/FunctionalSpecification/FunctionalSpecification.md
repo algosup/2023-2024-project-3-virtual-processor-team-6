@@ -85,6 +85,10 @@
 | "Register"     | A small, fast storage location in the CPU for temporary data and quick operations. |
 | "Label"        | A symbolic name in code used to mark positions, often the target of jumps or branches. |
 | "Interpreter"  | A program that directly executes code without prior compilation, translating and executing it line by line. |
+| "IP" | Instruction Pointer, a register that holds the memory address of the next instruction to be executed. |
+| "SP" | Stack Pointer, a register that holds the memory address of the top of the stack. |
+| "LR" | Link Register, a register used to store the return address when calling subroutines or functions. |
+| "PC" | Program Counter, a register that holds the memory address of the current instruction being executed. |
 
 ### 2.2 Project Overview 
 
@@ -118,7 +122,7 @@ Develop a virtual processor that supports a simple assembly language, with a foc
 
 <b>Interpreter: </b>
 
-The interpreter reads each line to find an error when the program is launched. This allows detecting an error on a specific line in an assembly code written in a text file. 
+The interpreter will return error messages find out during execution, for example, if there is an error at the level “add: R1 ” Here we can see that we will have an error as we just having a single register that is the destination register as such the interpreter will send an error message specifying at what line we have an error
 
 <b>Execution Accuracy:</b>
 
@@ -130,15 +134,14 @@ interprets and executes assembly language instructions, maintaining compatibilit
 Implement an virtual system to facilitate user interaction, allowing for the
 loading, execution of assembly programs. The virtual system should provide relevant information about the assembly .
 
-<b> Architectur: </b>
+<b> Architecture: </b>
 
-Pour crée notre propore assembleur on s'insprire du ARM architecture 16-bits et du LC3 architecture
+Architecture: To implement our assembly code, we will inspire ourselves from the ARM 16-bit architecture and the LC3 architecture 16-bit too, as both of them are closely similar in their implementation.
 
 <b>Register and Memory Management:</b>
 
-Design the virtual processor to effectively
-manage registers for temporary data storage and
-intermediate results in 16-bits. Store program instructions and data, with the capability to load and save programs.
+Design the virtual processor to effectively manage registers for temporary data storage and
+intermediate results in 16 bits. Store and Load, jump, call, copy, compute operations, and compare program instructions and data.
 
 <b>Interrupt Handling:</b>
 
@@ -299,11 +302,11 @@ As described in the table above in section 3.1.3, we have decided to select the 
 #### 3.2.2 Register
 
 Our processor needs a set of internal registers to
-keep things organized during computation. Let's lay
+keep things organized during computation. Let’s lay
 out the purpose and limits of each register, like a
 choreography for our processor dance.
 
-Our virtual processor will be based on 16-bits, so we'll have a total of 16 registers. 
+Our virtual processor will be based on 16 bits, so we’ll have a total of 16 registers ranging from (R1 to R12, and we will have R_IP, (also known as Intra-Procedure-call scratch register), R_SP, (also known as Stack Pointer) R_LR, (also known as Link Register), R_PC, (also known as program counter) ). 
 
 #### 3.2.3 Instruction Execution
 
