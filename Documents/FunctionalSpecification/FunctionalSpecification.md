@@ -26,7 +26,7 @@
       - [3.1.3 Assembly Language](#313-assembly-language)
       - [3.1.4 C Language](#314-c-language)
       - [3.1.3 Our Assembly Language](#313-our-assembly-language)
-      - [3.1.4 Syntaxe Caracteristique](#314-syntaxe-caracteristique)
+      - [3.1.4 Characteristic Syntax](#314-characteristic-syntax)
     - [3.2 Virtual processor](#32-virtual-processor)
       - [3.2.1 Instruction Set](#321-instruction-set)
       - [3.2.2 Register](#322-register)
@@ -96,15 +96,15 @@ and Visual Studio Code as the IDE.
 
 #### 2.3.1 Goals of this Project
     
-The primary goal of our team for this project is to Have a meeting with the team members to invented assembly instructions and how we gonna implement it. 
+The primary goal of our team for this project is to have a meeting with the team members to invent assembly instructions and discuss how we are going to implement them.
 
-Secondly, we have to write all the documents, both functional specifiaction and technical specification. We aloso need to deep into the phase of the project.
+Secondly, we have to write all the documents, both functional specification and technical specification. We also need to delve into the project's phase.
 
-Thirdly, we enter into the implementation phase of the Project. 
+Thirdly, we enter the implementation phase of the project.
 
-Fourthly, we have to test all the difference functione of the implemented code. And compile with the desire result.
+Fourthly, we have to test all the different functions of the implemented code and compare with the desired results.
 
-Finaly, make sure that the code works properly and deliver at time the project. 
+Finally, make sure that the code works properly and deliver the project on time
 
 ####  2.3.2 Our objectives
     
@@ -114,7 +114,7 @@ Develop a virtual processor that supports a simple assembly language, with a foc
 
 <b>Interpreter: </b>
 
-L'interreteur permet de lire chaque ligne pour trouver une erreur lorsque l'on lance le programme. Cela permet donc de detecter une erreur sur une ligne precise dans un code en assembly qui a était ecrit en text file. 
+The interpreter reads each line to find an error when the program is launched. This allows detecting an error on a specific line in an assembly code written in a text file. 
 
 <b>Execution Accuracy:</b>
 
@@ -165,9 +165,7 @@ As defined by the project owner (ALGOSUP), the team is arranged in the following
 | Software Engineer | Writes the code.<br>Writes documentation<br>Participate in the technical  | Vivien Bistrel Tsangue |
 | Quality Assurance |  Tests all the functionalities of a product to find bugs and issue.<br>Document bugs and issues.<br>Write the test plan.<br>Check that issues have been fixed.| Loris De Mattia Segalata |
 
-
 ### 2.5 Project Representatives
-
 
 ### 2.7 Project Plan 
 
@@ -185,9 +183,9 @@ As defined by the project owner (ALGOSUP), the team is arranged in the following
 
 | Constraints |
 |---|
-| We have to code in C |
+| We have to code in C. |
 | We can't use any external library beside C standard libraries. |
-| On doit creer un assembly avec les instructions de base |
+| We have to create an assembly with basic instructions. |
 
 <br></br> 
 
@@ -251,43 +249,48 @@ fine optimization.
 #### 3.1.3 Our Assembly Language 
 
 | Instruction | Objective | 
-|---|---|---| 
+|---|---|
 | "ADD" | Takes two numbers, adds them together and stores the result in a register. |
-| "SUB" ||
-| "DIV" ||
-| "MUL" ||
-| "CPY" ||
-| "CMP" ||
-| "OR" ||
-| "XOR" ||
-| "JMP" ||
-| "NOR" ||
+| **"SUB"** |Subtracts the second number from the first and stores the result in a register.|
+| **"DIV"** |Divides the first number by the second and stores the result in a register.|
+| **"MUL"** |Multiplies two numbers and stores the result in a register.|
+| **"CPY"** |Copies the value from one register to another.|
+| **"CMP"** |Compares two numbers and sets flags in the status register based on the result.|
+| **"OR"** | Performs a bitwise OR operation on two numbers and stores the result in a register.|
+| **"XOR"** |Performs a bitwise XOR operation on two numbers and stores the result in a register.|
+| **"JMP"** |Jumps to a specified memory address or label.|
+| **"NOR"** |Performs a bitwise NOR operation on two numbers and stores the result in a register.|
+| **"LOAD"** | Loads a value from memory into a register.|
+| **"STORE"** |Stores the value from a register into memory.|
+| **"JE"** |Jumps to a specified memory address or label if the result of the last comparison was equal.|
+| **"CALL"** |Calls a subroutine or function at a specified memory address.| 
+| **"RET"** | Returns from a subroutine or function.|
 
 Voici ci-dessus toutes les instructions que notre assembly sera composé. Ce sont les instructions basique de l'assembly normal. 
 
-#### 3.1.4 Syntaxe Caracteristique 
+#### 3.1.4 Characteristic Syntax 
 
-Voici un exemple de ce qu'il faudrait ecrire dans l'invité de commande de notre virutal processor pour executer une instruction : 
+Voici un exemple de ce qu'il faudrait ecrire dans l'invité de commande de notre virutal processor pour executer une ou plusieurs instruction: 
 
-ADD: R1, 1 , 4
+**ADD: R1, 1 , 4**
 
-ADD = Instruction 
-R1 = Register numéro 1 
-1 = valeur 1 
-2 = valeur 2 
-Objectif de l'instruction = Ajouter 1 a 4 puis stocker le resultat dans le registre nommé R1. 
+"ADD" = Instruction
+
+R1 = Register number 1
+
+1 = value 1
+
+2 = value 2
+
+Instruction Objective = Add 1 to 2, then store the result in the register named R1. 
 
 
 ### 3.2 Virtual processor
 
 #### 3.2.1 Instruction Set
 
-Let's define a solid set of assembly instructions
-that our virtual processor will comprehend. We need
-the basics – arithmetic operations, logical
-maneuvers, and instructions to shuffle data in and
-out of memory. Essentially, anything fundamental
-for a processor to do its job.
+As described in the table above in section 3.1.3, we have decided to select the basic instructions of the assembly language to avoid getting lost. Furthermore, the chosen instructions are those that allow arithmetic operations, logical maneuvers, and instructions to shuffle data in and out of memory. Essentially, anything fundamental for a processor to do its job.
+
 
 #### 3.2.2 Register
 
