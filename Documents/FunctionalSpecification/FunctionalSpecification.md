@@ -16,17 +16,17 @@
       - [2.3.2 Our objectives](#232-our-objectives)
     - [2.4 Project Roles](#24-project-roles)
     - [2.5 Project Representatives](#25-project-representatives)
-    - [2.6 StakeHolders](#26-stakeholders)
     - [2.7 Project Plan](#27-project-plan)
-      - [2.7.1 Retro Planning :](#271-retro-planning-)
-      - [2.7.2 Milestone :](#272-milestone-)
+      - [2.7.1 Retro Planning](#271-retro-planning)
+      - [2.7.2 Milestone](#272-milestone)
       - [2.7.3 Porject Constraints](#273-porject-constraints)
   - [3. Functional Requirements](#3-functional-requirements)
     - [3.1 Virtual Processor and languages Overview](#31-virtual-processor-and-languages-overview)
-      - [3.1.2 Context :](#312-context-)
-      - [3.1.3 Assembly Language :](#313-assembly-language-)
-      - [3.1.4 C Language :](#314-c-language-)
-      - [3.1.3 Our Assembly Language s](#313-our-assembly-language-s)
+      - [3.1.2 Context](#312-context)
+      - [3.1.3 Assembly Language](#313-assembly-language)
+      - [3.1.4 C Language](#314-c-language)
+      - [3.1.3 Our Assembly Language](#313-our-assembly-language)
+      - [3.1.4 Syntaxe Caracteristique](#314-syntaxe-caracteristique)
     - [3.2 Virtual processor](#32-virtual-processor)
       - [3.2.1 Instruction Set](#321-instruction-set)
       - [3.2.2 Register](#322-register)
@@ -34,7 +34,7 @@
       - [3.2.4 Memory](#324-memory)
       - [3.2.5 Interrupts](#325-interrupts)
     - [3.4 Assembly interpreter](#34-assembly-interpreter)
-    - [3.5 User Interface](#35-user-interface)
+    - [3.5 User Interface zé](#35-user-interface-zé)
   - [4. Non Functional Requirement](#4-non-functional-requirement)
 
 </details>
@@ -77,34 +77,44 @@
 | "Virtual Processor" | The term "virtual processor" refers to a simulated processing unit in a virtualized computing environment. |
 | "IDE" | An IDE (Integrated Development Environment) combines code editing, compilation, and debugging tools in a single interface for efficient development. |
 | "GCC" | GCC, or GNU Compiler Collection, is a set of open-source compilers for various languages, providing cross-platform compatibility and code optimization. |
-| "Register"| |
+| "Register"|  |
 | "Label" | | 
+| "Interpreter"|  |
+| "Interpreter"|  |
 
 ### 2.2 Project Overview 
 
 Our team was tasked with creating a virtual
-processor and an interpreter for running assembly
-code on that processor.
+processor and an interpreter for running and interpreting an assembly code on that virtual processor. Also creating a virtual system in order to see that the assembly program is actually running, and displaying text in a virtual terminal, that can be accessed from the assembly code.
 
 ### 2.3 Project Definition. 
 
 The project involves creating a virtual processor
-and an interpreter to run assembly code on that
-processor. The development will be in plain,
-portable C language, utilizing only C standard
-libraries and avoiding external libraries. The
+and an interpreter to run and interprete an assembly code. The development will be in plain, portable C language, utilizing only C standard libraries and avoiding external libraries. The
 recommended tools include using gcc as a compiler
 and Visual Studio Code as the IDE.
 
 #### 2.3.1 Goals of this Project
     
-The primary goal of our team for this project is to design, implement, and deliver a virtual processor in the C programming language capable of interpreting and executing assembly language instructions. The virtual processor should emulate key functionalities of a physical processor, including the execution of arithmetic operations, data transfers, jumps, and effective management of registers and virtual memory.
+The primary goal of our team for this project is to Have a meeting with the team members to invented assembly instructions and how we gonna implement it. 
+
+Secondly, we have to write all the documents, both functional specifiaction and technical specification. We aloso need to deep into the phase of the project.
+
+Thirdly, we enter into the implementation phase of the Project. 
+
+Fourthly, we have to test all the difference functione of the implemented code. And compile with the desire result.
+
+Finaly, make sure that the code works properly and deliver at time the project. 
 
 ####  2.3.2 Our objectives
     
 <b>Assembly Language Support:</b>
 
 Develop a virtual processor that supports a simple assembly language, with a focus on essential instructions commonly used in low-level programming.
+
+<b>Interpreter: </b>
+
+L'interreteur permet de lire chaque ligne pour trouver une erreur lorsque l'on lance le programme. Cela permet donc de detecter une erreur sur une ligne precise dans un code en assembly qui a était ecrit en text file. 
 
 <b>Execution Accuracy:</b>
 
@@ -113,14 +123,18 @@ interprets and executes assembly language instructions, maintaining compatibilit
 
 <b>User Interface:</b>
 
-Implement a command-line interface (CLI) to facilitate user interaction, allowing for the
-loading, execution of assembly programs. The CLI should provide relevant information about the processor's state and memory usage.
+Implement an virtual system to facilitate user interaction, allowing for the
+loading, execution of assembly programs. The virtual system should provide relevant information about the assembly .
+
+<b> Architectur </b>
+
+Pour crée notre propore assembleur on s'insprire du ARM architecture 16-bits et du LC3 architecture
 
 <b>Register and Memory Management:</b>
 
 Design the virtual processor to effectively
 manage registers for temporary data storage and
-intermediate results in 16-bits. Simulate virtual memory to store program instructions and data, with the capability to load and save programs.
+intermediate results in 16-bits. Store program instructions and data, with the capability to load and save programs.
 
 <b>Interrupt Handling:</b>
 
@@ -154,38 +168,14 @@ As defined by the project owner (ALGOSUP), the team is arranged in the following
 
 ### 2.5 Project Representatives
 
-| Project Owner   | Represented by...                                |
-| --------------- | ------------------------------------------------ |
-| **ALGOSUP**     | Represented by Franck JEANNIN                    |
-| Michel Riff  | Represented by Raphaël Descamps (Program Manager) |
-
-The project sponsors (highlighted in **bold**) are expected to be in charge of:
-
-- Defining the vision and high-level objectives for the project.
-- Approving the requirements, timetable, resources and budget (if necessary).
-- Authorising the provision of funds/resources (internal or external) (if necessary).
-- Approving the functional and technical specifications written by the team.
-- Ensuring that major business risks are identified and managed by the team.
-- Approving any major changes in scope.
-- Received Project Weekly Reports and take action accordingly to resolve issues escalated by the Project Manager.
-- Ensuring business/operational support arrangements are put in place.
-- Ensuring the participation of a business resource (if required).
-- Providing final acceptance of the solution upon project completion.
-
-### 2.6 StakeHolders 
-
-| Stakeholder | Might have/find an interest in... |
-|---|---|
-| Franck JEANNIN | Having the student learn assembly and C  |
-| ALGOSUP Students | Learning assembly and getting experience about programming |
 
 ### 2.7 Project Plan 
 
-#### 2.7.1 Retro Planning : 
+#### 2.7.1 Retro Planning  
 
 <img src="../FunctionalSpecification/Pictures/RetroPlanning.png" alt="a yellow ball with a mouth">
  
-#### 2.7.2 Milestone :  
+#### 2.7.2 Milestone   
 
 <img src="../FunctionalSpecification/Pictures/Milestone.png" alt="a yellow ball with a mouth">
 
@@ -205,7 +195,7 @@ The project sponsors (highlighted in **bold**) are expected to be in charge of:
 
 ### 3.1 Virtual Processor and languages Overview 
 
-#### 3.1.2 Context : 
+#### 3.1.2 Context  
 
 The idea of creating a virtual processor dates back
 to the early days of computing when researchers and
@@ -223,7 +213,7 @@ systems, virtual machines, and isolated execution
 environments.
 
 
-#### 3.1.3 Assembly Language : 
+#### 3.1.3 Assembly Language  
 
 Assembly language, often referred to as assembly
 code, is a low-level language specific to a
@@ -242,7 +232,7 @@ making it essential for developing embedded
 systems, device drivers, and other low-level
 software.
 
-#### 3.1.4 C Language : 
+#### 3.1.4 C Language  
 
 The C language, created by Dennis Ritchie in the
 early 1970s, is a higher-level programming language
@@ -258,7 +248,7 @@ through pointers, bit manipulation, and the ability
 to code critical portions in assembly language for
 fine optimization.
 
-#### 3.1.3 Our Assembly Language s
+#### 3.1.3 Our Assembly Language 
 
 | Instruction | Objective | 
 |---|---|---| 
@@ -266,7 +256,27 @@ fine optimization.
 | "SUB" ||
 | "DIV" ||
 | "MUL" ||
-| "" ||
+| "CPY" ||
+| "CMP" ||
+| "OR" ||
+| "XOR" ||
+| "JMP" ||
+| "NOR" ||
+
+Voici ci-dessus toutes les instructions que notre assembly sera composé. Ce sont les instructions basique de l'assembly normal. 
+
+#### 3.1.4 Syntaxe Caracteristique 
+
+Voici un exemple de ce qu'il faudrait ecrire dans l'invité de commande de notre virutal processor pour executer une instruction : 
+
+ADD: R1, 1 , 4
+
+ADD = Instruction 
+R1 = Register numéro 1 
+1 = valeur 1 
+2 = valeur 2 
+Objectif de l'instruction = Ajouter 1 a 4 puis stocker le resultat dans le registre nommé R1. 
+
 
 ### 3.2 Virtual processor
 
@@ -317,6 +327,6 @@ the virtual shoulder.
 
 ### 3.4 Assembly interpreter 
 
-### 3.5 User Interface 
+### 3.5 User Interface zé
 
 ## 4. Non Functional Requirement
