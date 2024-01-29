@@ -63,7 +63,7 @@
 
 | Role | Name | Signature | Date |
 |---|---|---|---|
-| Project Manager | Michelle Riff | ✅ | 30/01/2023 |
+| Project Manager | Michel Riff | ✅ | 30/01/2023 |
 | Program Manager | Raphaël Descamps| ✅ |30/01/2023 |
 | Tech Lead | Habi Cailleau | ✅ | 11/13/2023 |
 | Software Developer | Lucas Aubard | ✅ | 30/01/2023 |
