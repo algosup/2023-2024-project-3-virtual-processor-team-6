@@ -33,9 +33,11 @@
       - [3.2.3 Instruction Execution](#323-instruction-execution)
       - [3.2.4 Memory](#324-memory)
       - [3.2.5 Interrupts](#325-interrupts)
-    - [3.3 Assembly interpreter](#33-assembly-interpreter)
+    - [3.3 Interpréteur d'Assembleur](#33-interpréteur-dassembleur)
+      - [3.3.1 Analyse Syntaxique](#331-analyse-syntaxique)
+      - [3.3.2 Exécution](#332-exécution)
+      - [3.3.3 Gestion des Erreurs](#333-gestion-des-erreurs)
     - [3.4 User Interface](#34-user-interface)
-    - [3.4 User Interface](#34-user-interface-1)
       - [3.4.1 Assembly Language Program Input](#341-assembly-language-program-input)
         - [Example Assembly Program File:](#example-assembly-program-file)
       - [3.4.2 Runtime Display](#342-runtime-display)
@@ -338,15 +340,71 @@ interruptions, deciding their types, priority, and
 how our processor responds when it gets a tap on
 the virtual shoulder.
 
-### 3.3 Assembly interpreter 
 
+### 3.3 Interpréteur d'Assembleur
 
+L'interpréteur d'assembleur est chargé d'analyser et d'exécuter les programmes écrits en langage d'assemblage destinés au processeur virtuel. Il veille à ce que le programme respecte la syntaxe et la sémantique définies à la section 3.2 et fournit un mécanisme d'exécution efficace.
 
-### 3.4 User Interface 
+#### 3.3.1 Analyse Syntaxique
 
-Certainly! For the user interface section (3.4), you may describe the interaction between the user and your virtual processor system. Here's a template you can use and modify as needed:
+L'interpréteur commence par analyser le programme en langage d'assemblage fourni par l'utilisateur. Il suit les règles syntaxiques définies et tokenize le programme en le décomposant en instructions individuelles, opérandes et étiquettes. Le processus d'analyse identifie le type de chaque instruction et valide l'utilisation correcte des opérandes.
+
+#### 3.3.2 Exécution
+
+Une fois le programme en langage d'assemblage analysé, l'interpréteur entre dans la phase d'exécution. Il itère à travers chaque instruction, effectue l'opération spécifiée et met à jour l'état du processeur virtuel en conséquence. L'exécution inclut les étapes clés suivantes :
+
+- **Chargement de Valeurs Immédiates :**
+  - L'interpréteur gère les instructions impliquant le chargement de valeurs immédiates dans des registres.
+
+  ```assembly
+  LOAD R1, 42    ; Charge la valeur immédiate 42 dans le registre R1
+  ```
+
+- **Opérations sur les Registres :**
+  - Les instructions pour copier des valeurs entre les registres et effectuer des opérations arithmétiques ou logiques sont exécutées.
+
+  ```assembly
+  ADD R2, R1, R3 ; Ajoute les valeurs dans les registres R1 et R2 et stocke le résultat dans R3
+  ```
+
+- **Accès à la Mémoire :**
+  - L'interpréteur lit ou écrit à des adresses mémoire en fonction du contenu des registres.
+
+  ```assembly
+  LD R4, [R2]    ; Charge la valeur à l'adresse mémoire spécifiée par R2 dans le registre R4
+  ST R3, [R4]    ; Stocke la valeur du registre R3 à l'adresse mémoire spécifiée par R4
+  ```
+
+- **Sauts Conditionnels :**
+  - L'interpréteur gère les sauts, qu'ils soient inconditionnels ou conditionnels en fonction des résultats de comparaison.
+
+  ```assembly
+  CMP R3, R4     ; Compare les valeurs dans les registres R3 et R4
+  JE LABEL1      ; Sauter à LABEL1 si le résultat de la comparaison est égal (JNEQ peut être implémenté par inversion de la condition)
+  ```
+
+- **Appels de Sous-routines et Retours :**
+  - L'interpréteur gère les appels et les retours de sous-routines.
+
+  ```assembly
+  CALL SOUS_ROUTINE ; Appeler une sous-routine
+  RET            ; Retourner d'une sous-routine
+  ```
+
+- **Intégration du Débogueur :**
+  - Pendant l'exécution, l'interpréteur peut afficher des informations de débogage, telles que l'instruction en cours, le compteur de programme, et le contenu des registres.
+
+- **Gestion des Appels Systèmes Virtuels :**
+  - Si un appel système virtuel est rencontré, l'interpréteur interagit avec le terminal virtuel ou effectue l'action spécifiée.
+
+#### 3.3.3 Gestion des Erreurs
+
+L'interpréteur inclut des mécanismes de gestion des erreurs robustes pour détecter et signaler les erreurs de syntaxe, les erreurs sémantiques ou les erreurs d'exécution pendant l'exécution du programme. Des messages d'erreur clairs et des retours d'information informatifs aident les utilisateurs à identifier et à résoudre les problèmes dans leurs programmes en langage d'assemblage.
 
 ---
+
+N'hésitez pas à ajuster le contenu en fonction de la conception spécifique de votre interpréteur et des fonctionnalités supplémentaires que vous prévoyez d'inclure.
+
 
 ### 3.4 User Interface
 
