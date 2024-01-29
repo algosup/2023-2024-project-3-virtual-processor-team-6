@@ -33,8 +33,8 @@
       - [3.2.3 Instruction Execution](#323-instruction-execution)
       - [3.2.4 Memory](#324-memory)
       - [3.2.5 Interrupts](#325-interrupts)
-    - [3.4 Assembly interpreter](#34-assembly-interpreter)
-    - [3.5 User Interface zé](#35-user-interface-zé)
+    - [3.3 Assembly interpreter](#33-assembly-interpreter)
+    - [3.4 User Interface](#34-user-interface)
   - [4. Non Functional Requirement](#4-non-functional-requirement)
 
 </details>
@@ -269,7 +269,7 @@ Voici ci-dessus toutes les instructions que notre assembly sera composé. Ce son
 
 #### 3.1.4 Characteristic Syntax 
 
-Voici un exemple de ce qu'il faudrait ecrire dans l'invité de commande de notre virutal processor pour executer une ou plusieurs instruction: 
+Here is an example of what should be written in the command prompt of our virtual processor to execute one or more instructions:
 
 **ADD: R1, 1 , 4**
 
@@ -309,6 +309,9 @@ outline the steps for fetching, decoding, and
 executing each instruction. It's like teaching our
 processor a well-rehearsed routine.
 
+
+il va ouvrir un fichier texte pour ensuite lire le code qui y est ecrit en assemby pour ensuite dectecter si il y a une erreur ou elle est situer et sur quel ligne. 
+
 #### 3.2.4 Memory
 
 Our processor needs a memory system – a mental
@@ -316,7 +319,9 @@ space to store data and instructions. Let's sketch
 out how this memory works: the addressing method,
 its size, and the steps for loading and storing
 data. It's like building a mental filing cabinet
-for our processor's thoughts.
+for our processor's thoughts. 
+
+
 
 #### 3.2.5 Interrupts
 
@@ -327,8 +332,12 @@ interruptions, deciding their types, priority, and
 how our processor responds when it gets a tap on
 the virtual shoulder.
 
-### 3.4 Assembly interpreter 
+### 3.3 Assembly interpreter 
 
-### 3.5 User Interface zé
+
+
+### 3.4 User Interface 
+
+
 
 ## 4. Non Functional Requirement
