@@ -71,16 +71,15 @@
 | Term used | Definition |
 |---|---|
 | "Team" | ALGOSUP team 6 (2023-2024 - Project 3) |
-| "Language" | | 
+| "Language" | A set of symbols and rules for instructing computers. | 
 | "Assembly" | Low-level language for direct processor programming. |
 | "C" | The C language is a high-level, efficient and portable programming language, originally developed for UNIX. |
 | "Virtual Processor" | The term "virtual processor" refers to a simulated processing unit in a virtualized computing environment. |
 | "IDE" | An IDE (Integrated Development Environment) combines code editing, compilation, and debugging tools in a single interface for efficient development. |
 | "GCC" | GCC, or GNU Compiler Collection, is a set of open-source compilers for various languages, providing cross-platform compatibility and code optimization. |
-| "Register"|  |
-| "Label" | | 
-| "Interpreter"|  |
-| "Interpreter"|  |
+| "Register"     | A small, fast storage location in the CPU for temporary data and quick operations. |
+| "Label"        | A symbolic name in code used to mark positions, often the target of jumps or branches. |
+| "Interpreter"  | A program that directly executes code without prior compilation, translating and executing it line by line. |
 
 ### 2.2 Project Overview 
 
@@ -154,7 +153,7 @@ Incorporate security measures to prevent buffer overflow attacks and ensure the 
 
 ### 2.4 Project Roles 
 
-As defined by the project owner (ALGOSUP), the team is arranged in the following way :
+As defined by the project owner (ALGOSUP), the team is organized in the following way :
 
 | Role | Description | Name |
 |---|---|---|
