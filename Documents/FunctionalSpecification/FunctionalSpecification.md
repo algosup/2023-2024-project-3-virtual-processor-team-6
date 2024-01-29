@@ -94,27 +94,23 @@
 
 ### 2.2 Project Overview 
 
-Our team was tasked with creating a virtual
-processor and an interpreter for running and interpreting an assembly code on that virtual processor. Also creating a virtual system in order to see that the assembly program is actually running, and displaying text in a virtual terminal, that can be accessed from the assembly code.
+Our team was tasked with creating a virtual processor and an interpreter for running and interpreting assembly code on that virtual processor. Additionally, we were tasked with creating a virtual system to observe the assembly program actually running, and displaying text in a virtual terminal that can be accessed from the assembly code.
 
 ### 2.3 Project Definition. 
 
-The project involves creating a virtual processor
-and an interpreter to run and interprete an assembly code. The development will be in plain, portable C language, utilizing only C standard libraries and avoiding external libraries. The
-recommended tools include using gcc as a compiler
-and Visual Studio Code as the IDE.
+The project involves creating a virtual processor and an interpreter to run and interpret assembly code. The development will be in plain, portable C language, utilizing only C standard libraries and avoiding external libraries. The recommended tools include using GCC as a compiler and Visual Studio Code as the IDE.
 
 #### 2.3.1 Goals of this Project
     
-The primary goal of our team for this project is to have a meeting with the team members to invent assembly instructions and discuss how we are going to implement them.
+The primary goal of our team for this project is to conduct a meeting with team members to devise assembly instructions and discuss their implementation.
 
-Secondly, we have to write all the documents, both functional specification and technical specification. We also need to delve into the project's phase.
+Secondly, we need to document all aspects, including the functional specification and technical specification. We also need to delve into the various phases of the project.
 
-Thirdly, we enter the implementation phase of the project.
+Thirdly, we will enter the implementation phase of the project.
 
-Fourthly, we have to test all the different functions of the implemented code and compare with the desired results.
+Fourthly, we have to test all the different functions of the implemented code and compare the results with the desired outcomes.
 
-Finally, make sure that the code works properly and deliver the project on time
+Finally, we must ensure that the code works properly and deliver the project on time.
 
 ####  2.3.2 Our objectives
     
@@ -124,42 +120,35 @@ Develop a virtual processor that supports a simple assembly language, with a foc
 
 <b>Interpreter: </b>
 
-The interpreter will return error messages find out during execution, for example, if there is an error at the level “add: R1 ” Here we can see that we will have an error as we just having a single register that is the destination register as such the interpreter will send an error message specifying at what line we have an error
+The interpreter will return error messages discovered during execution. For example, if there is an error at the 'add: R1' level, we will receive an error message, indicating that there is an issue. In this case, the error message will specify the line where the error occurred, pointing out that there is an error since we only have a single register, which is the destination register.
 
 <b>Execution Accuracy:</b>
 
-Ensure the virtual processor accurately
-interprets and executes assembly language instructions, maintaining compatibility with established conventions and standards.
+Ensure that the virtual processor accurately interprets and executes assembly language instructions, maintaining compatibility with established conventions and standards.
 
 <b>User Interface:</b>
 
-Implement an virtual system to facilitate user interaction, allowing for the
-loading, execution of assembly programs. The virtual system should provide relevant information about the assembly .
+Implement a virtual system to facilitate user interaction, enabling the loading and execution of assembly programs. The virtual system should provide relevant information about the assembly, ensuring a user-friendly and informative experience.
 
 <b> Architecture: </b>
 
-Architecture: To implement our assembly code, we will inspire ourselves from the ARM 16-bit architecture and the LC3 architecture 16-bit too, as both of them are closely similar in their implementation.
+To implement our assembly code, we will draw inspiration from the ARM 16-bit architecture and the LC3 architecture, both of which are 16-bit and closely similar in their implementation.
 
 <b>Register and Memory Management:</b>
 
-Design the virtual processor to effectively manage registers for temporary data storage and
-intermediate results in 16 bits. Store and Load, jump, call, copy, compute operations, and compare program instructions and data.
+Design the virtual processor to effectively manage registers for temporary data storage and intermediate results in 16 bits. Implement functionalities for storing and loading, jumping, calling, copying, computing operations, and comparing program instructions and data.
 
 <b>Interrupt Handling:</b>
 
-Implement a mechanism for handling
-interruptions, encompassing both software and
-hardware interruptions. The virtual processor
-should respond appropriately to interrupt
-signals.
+Implement a mechanism for handling interruptions, encompassing both software and hardware interruptions. The virtual processor should respond appropriately to interrupt signals.
 
 <b>Performance and Portability:</b>
 
-Achieve acceptable performance for the execution of moderate-sized assembly programs. Ensure the source code's portability, allowing compatibility with various operating systems.
+Achieve acceptable performance for the execution of moderate-sized assembly programs. Ensure the source code's portability to guarantee compatibility with various operating systems.
 
 <b>Security Measures:</b>
 
-Incorporate security measures to prevent buffer overflow attacks and ensure the secure execution of programs. Ensure proper isolation between different executing processes.
+Incorporate security measures to prevent buffer overflow attacks and ensure the secure execution of programs. Implement proper isolation between different executing processes to enhance system security.
 
 ### 2.4 Project Roles 
 
@@ -273,9 +262,9 @@ fine optimization.
 | **"JE"** |Jumps to a specified memory address or label if the result of the last comparison was equal.|
 | **"CALL"** |Calls a subroutine or function at a specified memory address.| 
 | **"RET"** | Returns from a subroutine or function.|
-| **"AND"**|  | 
+| **"AND"** | Performs a bitwise AND operation on two numbers and stores the result. |
 
-Voici ci-dessus toutes les instructions que notre assembly sera composé. Ce sont les instructions basique de l'assembly normal. 
+Above are all the instructions that our assembly language will be composed of. These are the basic instructions of the normal assembler. 
 
 #### 3.1.4 Characteristic Syntax 
 
@@ -364,7 +353,7 @@ Une fois le programme en langage d'assemblage analysé, l'interpréteur entre da
   - Les instructions pour copier des valeurs entre les registres et effectuer des opérations arithmétiques ou logiques sont exécutées.
 
   ```assembly
-  ADD R2, R1, R3 ; Ajoute les valeurs dans les registres R1 et R2 et stocke le résultat dans R3
+  ADD: R2, R1, R3 ; Ajoute les valeurs dans les registres R1 et R2 et stocke le résultat dans R3
   ```
 
 - **Accès à la Mémoire :**
