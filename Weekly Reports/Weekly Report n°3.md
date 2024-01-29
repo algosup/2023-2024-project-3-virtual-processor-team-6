@@ -22,7 +22,7 @@ Throughout these days, each team member diligently worked on their assigned task
 ### 26th January
 Following in-depth discussions within the team, we made a strategic decision to adopt the ARM architecture for our project. The Project Charter was successfully completed, with the only remaining task being the linkage of milestones to other documentation.
 
-### KPI
+### KPI Analysis:
 
 | Team members | Task | Advance % |
 | ------------ | ---- | :-------: |
@@ -32,8 +32,6 @@ Following in-depth discussions within the team, we made a strategic decision to 
 | Bistrel TSANGUE CHOUNGOU | Coding | 10% |
 | Lucas AUBARD | Coding | 10% |
 | Loris DE MATTIA SEGALAT | Help to Code | - |
-
-### KPI Analysis:
 
 ### Challenges
 The intricate task of choosing an architecture for the virtual processor required careful consideration and team discussion.
