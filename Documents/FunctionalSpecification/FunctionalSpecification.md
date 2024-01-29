@@ -35,6 +35,11 @@
       - [3.2.5 Interrupts](#325-interrupts)
     - [3.3 Assembly interpreter](#33-assembly-interpreter)
     - [3.4 User Interface](#34-user-interface)
+    - [3.4 User Interface](#34-user-interface-1)
+      - [3.4.1 Assembly Language Program Input](#341-assembly-language-program-input)
+        - [Example Assembly Program File:](#example-assembly-program-file)
+      - [3.4.2 Runtime Display](#342-runtime-display)
+      - [3.4.3 Error Handling](#343-error-handling)
   - [4. Non Functional Requirement](#4-non-functional-requirement)
 
 </details>
@@ -321,8 +326,6 @@ its size, and the steps for loading and storing
 data. It's like building a mental filing cabinet
 for our processor's thoughts. 
 
-
-
 #### 3.2.5 Interrupts
 
 Sometimes our processor needs to take a break for
@@ -338,6 +341,65 @@ the virtual shoulder.
 
 ### 3.4 User Interface 
 
+Certainly! For the user interface section (3.4), you may describe the interaction between the user and your virtual processor system. Here's a template you can use and modify as needed:
 
+---
+
+### 3.4 User Interface
+
+The user interface for the virtual processor system consists of both the assembly language program input and the runtime display of information during program execution. The goal is to provide a seamless and informative experience for users interacting with the system.
+
+#### 3.4.1 Assembly Language Program Input
+
+Users interact with the virtual processor system by providing assembly language programs through text files. The format of these files follows the specifications outlined in section 3.2, adhering to the defined assembly language syntax. To facilitate ease of use, consider providing a sample template or guidelines for creating assembly programs.
+
+##### Example Assembly Program File:
+
+```assembly
+; Sample Assembly Program
+LOAD R1, 42      ; Load immediate value 42 into register R1
+ADD R2, R1, R3   ; Add values in registers R1 and R2 and store the result in R3
+CMP R3, R4       ; Compare values in registers R3 and R4
+JNEQ LABEL1      ; Jump to LABEL1 if the comparison result is not equal
+...
+
+LABEL1:          ; Define a label for conditional jumps
+...
+```
+
+#### 3.4.2 Runtime Display
+
+During the execution of an assembly program, the virtual processor system provides real-time information to the user, aiding in debugging and understanding the program flow. The following elements are displayed:
+
+- **Registers:** Display the contents of registers, updating after each instruction execution.
+  
+  ```
+  Registers:
+  R1: 42
+  R2: 0
+  R3: 42
+  ...
+  ```
+
+- **Memory:** Optionally, display the state of memory, especially when reading or writing to memory addresses.
+
+  ```
+  Memory:
+  0x00: 42
+  0x04: 0
+  0x08: 0
+  ...
+  ```
+
+- **Virtual Terminal Output:** If a virtual system call is implemented for displaying text in a virtual terminal, show the output of the virtual terminal.
+
+  ```
+  Virtual Terminal Output:
+  Hello, World!
+  ```
+
+#### 3.4.3 Error Handling
+
+The user interface should also handle errors gracefully, providing meaningful messages for syntax errors, semantic errors, or runtime errors during program execution. Clear error messages will assist users in identifying and resolving issues in their assembly programs.
 
 ## 4. Non Functional Requirement
