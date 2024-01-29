@@ -130,7 +130,7 @@ interprets and executes assembly language instructions, maintaining compatibilit
 Implement an virtual system to facilitate user interaction, allowing for the
 loading, execution of assembly programs. The virtual system should provide relevant information about the assembly .
 
-<b> Architectur </b>
+<b> Architectur: </b>
 
 Pour crée notre propore assembleur on s'insprire du ARM architecture 16-bits et du LC3 architecture
 
