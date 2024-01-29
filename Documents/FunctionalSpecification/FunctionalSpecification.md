@@ -192,56 +192,22 @@ As defined by the project owner (ALGOSUP), the team is organized in the followin
 
 #### 3.1.2 Context  
 
-The idea of creating a virtual processor dates back
-to the early days of computing when researchers and
-developers sought ways to simulate the behavior of
-a real processor in a controlled environment. The
-initial emulations of processors were developed to
-test software on different hardware architectures
-without the need for physical access to each type
-of processor.
+The concept of creating a virtual processor traces its origins back to the early days of computing when researchers and developers sought ways to simulate the behavior of a real processor in a controlled environment. Initial emulations of processors were developed to test software on various hardware architectures without requiring physical access to each type of processor.
 
-The need for virtual processors became more
-pronounced with the evolution of computer
-architectures and the emergence of distributed
-systems, virtual machines, and isolated execution
-environments.
+The demand for virtual processors became more significant with the evolution of computer architectures and the emergence of distributed systems, virtual machines, and isolated execution environments.
 
 
 #### 3.1.3 Assembly Language  
 
-Assembly language, often referred to as assembly
-code, is a low-level language specific to a
-particular hardware architecture. Each assembly
-language instruction typically corresponds to a
-machine instruction, making it conducive to direct
-programming of the processor. Programmers use
-assembly language to write more efficient programs
-by fully leveraging the hardware's capabilities.
+Assembly language, often referred to as assembly code, is a low-level language specific to a particular hardware architecture. Each assembly language instruction typically corresponds to a machine instruction, facilitating direct programming of the processor. Programmers use assembly language to write more efficient programs by fully leveraging the hardware's capabilities.
 
-However, assembly language can be challenging to
-learn and maintain due to its close connection to
-the underlying hardware architecture. Nevertheless,
-it provides precise control over the hardware,
-making it essential for developing embedded
-systems, device drivers, and other low-level
-software.
+However, learning and maintaining assembly language can be challenging due to its close connection to the underlying hardware architecture. Nevertheless, it provides precise control over the hardware, making it essential for developing embedded systems, device drivers, and other low-level software.
 
 #### 3.1.4 C Language  
 
-The C language, created by Dennis Ritchie in the
-early 1970s, is a higher-level programming language
-compared to assembly language. It offers a higher
-level of abstraction from the hardware, allowing
-programmers to write portable and easily
-understandable code while maintaining efficiency
-close to that of assembly language.
+The C language, created by Dennis Ritchie in the early 1970s, is a higher-level programming language compared to assembly language. It provides a higher level of abstraction from the hardware, allowing programmers to write portable and easily understandable code while maintaining efficiency close to that of assembly language.
 
-It is an imperative and procedural language,
-providing features such as memory management
-through pointers, bit manipulation, and the ability
-to code critical portions in assembly language for
-fine optimization.
+C is an imperative and procedural language, offering features such as memory management through pointers, bit manipulation, and the ability to code critical portions in assembly language for fine optimization.
 
 #### 3.1.3 Our Assembly Language 
 
@@ -268,7 +234,7 @@ Above are all the instructions that our assembly language will be composed of. T
 
 #### 3.1.4 Characteristic Syntax 
 
-Here is an example of what should be written in the command prompt of our virtual processor to execute one or more instructions:
+Here is an example of what should be entered in the command prompt of our virtual processor to execute one or more instructions:
 
 **ADD: R1, 1 , 4**
 
@@ -287,29 +253,17 @@ Instruction Objective = Add 1 to 2, then store the result in the register named 
 
 #### 3.2.1 Instruction Set
 
-As described in the table above in section 3.1.3, we have decided to select the basic instructions of the assembly language to avoid getting lost. Furthermore, the chosen instructions are those that allow arithmetic operations, logical maneuvers, and instructions to shuffle data in and out of memory. Essentially, anything fundamental for a processor to do its job.
-
+As described in the table above in section 3.1.3, we have decided to select the basic instructions of the assembly language to avoid confusion. Furthermore, the chosen instructions are those that allow for arithmetic operations, logical maneuvers, and instructions to move data in and out of memory. Essentially, everything fundamental for a processor to perform its tasks.
 
 #### 3.2.2 Register
 
-Our processor needs a set of internal registers to
-keep things organized during computation. Let’s lay
-out the purpose and limits of each register, like a
-choreography for our processor dance.
+Our processor needs a set of internal registers to keep things organized during computation. Let’s outline the purpose and limits of each register, like a choreography for our processor dance.
 
-Our virtual processor will be based on 16 bits, so we’ll have a total of 16 registers ranging from (R1 to R12, and we will have R_IP, (also known as Intra-Procedure-call scratch register), R_SP, (also known as Stack Pointer) R_LR, (also known as Link Register), R_PC, (also known as program counter) ). 
+Our virtual processor will be based on 16 bits, so we’ll have a total of 16 registers ranging from R1 to R12. Additionally, we will have specific registers such as R_IP (Intra-Procedure-call scratch register), R_SP (Stack Pointer), R_LR (Link Register), and R_PC (Program Counter). 
 
 #### 3.2.3 Instruction Execution
 
-Imagine each assembly instruction as a script. We
-need to decide how our virtual processor reads,
-understands, and acts upon these scripts. So, let’s
-outline the steps for fetching, decoding, and
-executing each instruction. It's like teaching our
-processor a well-rehearsed routine.
-
-
-il va ouvrir un fichier texte pour ensuite lire le code qui y est ecrit en assemby pour ensuite dectecter si il y a une erreur ou elle est situer et sur quel ligne. 
+Imagine each assembly instruction as a script. We need to decide how our virtual processor reads, understands, and acts upon these scripts. So, let’s outline the steps for fetching, decoding, and executing each instruction. It's like teaching our processor a well-rehearsed routine.
 
 #### 3.2.4 Memory
 
