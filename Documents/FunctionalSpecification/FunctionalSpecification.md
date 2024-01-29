@@ -401,11 +401,6 @@ Une fois le programme en langage d'assemblage analysé, l'interpréteur entre da
 
 L'interpréteur inclut des mécanismes de gestion des erreurs robustes pour détecter et signaler les erreurs de syntaxe, les erreurs sémantiques ou les erreurs d'exécution pendant l'exécution du programme. Des messages d'erreur clairs et des retours d'information informatifs aident les utilisateurs à identifier et à résoudre les problèmes dans leurs programmes en langage d'assemblage.
 
----
-
-N'hésitez pas à ajuster le contenu en fonction de la conception spécifique de votre interpréteur et des fonctionnalités supplémentaires que vous prévoyez d'inclure.
-
-
 ### 3.4 User Interface
 
 The user interface for the virtual processor system consists of both the assembly language program input and the runtime display of information during program execution. The goal is to provide a seamless and informative experience for users interacting with the system.
