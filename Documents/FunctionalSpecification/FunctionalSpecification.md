@@ -15,11 +15,10 @@
       - [2.3.1 Goals of this Project](#231-goals-of-this-project)
       - [2.3.2 Our objectives](#232-our-objectives)
     - [2.4 Project Roles](#24-project-roles)
-    - [2.5 Project Representatives](#25-project-representatives)
-    - [2.7 Project Plan](#27-project-plan)
-      - [2.7.1 Retro Planning](#271-retro-planning)
-      - [2.7.2 Milestone](#272-milestone)
-      - [2.7.3 Porject Constraints](#273-porject-constraints)
+    - [2.5 Project Plan](#25-project-plan)
+      - [2.5.1 Retro Planning](#251-retro-planning)
+      - [2.5.2 Milestone](#252-milestone)
+      - [2.5.3 Porject Constraints](#253-porject-constraints)
   - [3. Functional Requirements](#3-functional-requirements)
     - [3.1 Virtual Processor and languages Overview](#31-virtual-processor-and-languages-overview)
       - [3.1.2 Context](#312-context)
@@ -174,21 +173,19 @@ As defined by the project owner (ALGOSUP), the team is organized in the followin
 | Software Engineer | Writes the code.<br>Writes documentation<br>Participate in the technical  | Vivien Bistrel Tsangue |
 | Quality Assurance |  Tests all the functionalities of a product to find bugs and issue.<br>Document bugs and issues.<br>Write the test plan.<br>Check that issues have been fixed.| Loris De Mattia Segalata |
 
-### 2.5 Project Representatives
+### 2.5 Project Plan 
 
-### 2.7 Project Plan 
-
-#### 2.7.1 Retro Planning  
+#### 2.5.1 Retro Planning  
 
 <img src="../FunctionalSpecification/Pictures/RetroPlanning.png" alt="a yellow ball with a mouth">
  
-#### 2.7.2 Milestone   
+#### 2.5.2 Milestone   
 
 <img src="../FunctionalSpecification/Pictures/Milestone.png" alt="a yellow ball with a mouth">
 
 <br></br>
 
-#### 2.7.3 Porject Constraints
+#### 2.5.3 Porject Constraints
 
 | Constraints |
 |---|
