@@ -18,7 +18,7 @@
     - [2.5 Project Plan](#25-project-plan)
       - [2.5.1 Retro Planning](#251-retro-planning)
       - [2.5.2 Milestone](#252-milestone)
-      - [2.5.3 Porject Constraints](#253-porject-constraints)
+      - [2.5.3 Project Constraints](#253-project-constraints)
   - [3. Functional Requirements](#3-functional-requirements)
     - [3.1 Virtual Processor and languages Overview](#31-virtual-processor-and-languages-overview)
       - [3.1.2 Context](#312-context)
@@ -42,6 +42,7 @@
       - [3.4.2 Runtime Display](#342-runtime-display)
       - [3.4.3 Error Handling](#343-error-handling)
   - [4. Non Functional Requirement](#4-non-functional-requirement)
+  - [5. Conclusion](#5-conclusion)
 
 </details>
 </br>
@@ -62,12 +63,12 @@
 
 | Role | Name | Signature | Date |
 |---|---|---|---|
-| Project Manager | Michel Riff | ✅ | 30/01/2023 |
-| Program Manager | Raphaël Descamps| ✅ |30/01/2023 |
-| Tech Lead | Habi Cailleau | ✅ | 11/13/2023 |
-| Software Developer | Lucas Aubard | ✅ | 30/01/2023 |
-| Software Developer | Vivien Bistrel Tsangue |✅ | 30/01/2023|
-| Quality Assurance | Loris De Mattia Segalat | ✅ | 30/01/2023 |
+| Project Manager | Michel Riff | ✅ | 30/01/2024 |
+| Program Manager | Raphaël Descamps| ✅ |30/01/2024 |
+| Tech Lead | Habi Cailleau | ✅ | 30/01/2024 |
+| Software Developer | Lucas Aubard | ✅ | 30/01/2024 |
+| Software Developer | Vivien Bistrel Tsangue |✅ | 30/01/2024|
+| Quality Assurance | Loris De Mattia Segalat | ✅ | 30/01/2024 |
 
 
 ## 2. Introduction
@@ -185,13 +186,14 @@ As defined by the project owner (ALGOSUP), the team is organized in the followin
 
 <br></br>
 
-#### 2.5.3 Porject Constraints
+#### 2.5.3 Project Constraints
 
 | Constraints |
 |---|
 | We have to code in C. |
 | We can't use any external library beside C standard libraries. |
 | We have to create an assembly with basic instructions. |
+|Avoid using x86 architecture instruction |
 
 <br></br> 
 
@@ -256,7 +258,7 @@ fine optimization.
 
 | Instruction | Objective | 
 |---|---|
-| "ADD" | Takes two numbers, adds them together and stores the result in a register. |
+| **"ADD"** | Takes two numbers, adds them together and stores the result in a register. |
 | **"SUB"** |Subtracts the second number from the first and stores the result in a register.|
 | **"DIV"** |Divides the first number by the second and stores the result in a register.|
 | **"MUL"** |Multiplies two numbers and stores the result in a register.|
@@ -265,12 +267,13 @@ fine optimization.
 | **"OR"** | Performs a bitwise OR operation on two numbers and stores the result in a register.|
 | **"XOR"** |Performs a bitwise XOR operation on two numbers and stores the result in a register.|
 | **"JMP"** |Jumps to a specified memory address or label.|
-| **"NOR"** |Performs a bitwise NOR operation on two numbers and stores the result in a register.|
+| **"NOT"** |Performs a bitwise NOR operation on two numbers and stores the result in a register.|
 | **"LOAD"** | Loads a value from memory into a register.|
 | **"STORE"** |Stores the value from a register into memory.|
 | **"JE"** |Jumps to a specified memory address or label if the result of the last comparison was equal.|
 | **"CALL"** |Calls a subroutine or function at a specified memory address.| 
 | **"RET"** | Returns from a subroutine or function.|
+| **"AND"**|  | 
 
 Voici ci-dessus toutes les instructions que notre assembly sera composé. Ce sont les instructions basique de l'assembly normal. 
 
@@ -340,7 +343,7 @@ the virtual shoulder.
 
 ### 3.3 Interpréteur d'Assembleur
 
-L'interpréteur d'assembleur est chargé d'analyser et d'exécuter les programmes écrits en langage d'assemblage destinés au processeur virtuel. Il veille à ce que le programme respecte la syntaxe et la sémantique définies à la section 3.2 et fournit un mécanisme d'exécution efficace.
+L'interpréteur d'assembleur est chargé d'analyser et d'exécuter les programmes écrits en langage d'assemblage destinés au processeur virtuel. Il veille à ce que le programme respecte la syntaxe et la sémantique définies à la section 3.2.5 et fournit un mécanisme d'exécution efficace.
 
 #### 3.3.1 Analyse Syntaxique
 
@@ -354,7 +357,7 @@ Une fois le programme en langage d'assemblage analysé, l'interpréteur entre da
   - L'interpréteur gère les instructions impliquant le chargement de valeurs immédiates dans des registres.
 
   ```assembly
-  LOAD R1, 42    ; Charge la valeur immédiate 42 dans le registre R1
+  LOAD: R1, 42    ; Charge la valeur immédiate 42 dans le registre R1
   ```
 
 - **Opérations sur les Registres :**
@@ -456,3 +459,5 @@ During the execution of an assembly program, the virtual processor system provid
 The user interface should also handle errors gracefully, providing meaningful messages for syntax errors, semantic errors, or runtime errors during program execution. Clear error messages will assist users in identifying and resolving issues in their assembly programs.
 
 ## 4. Non Functional Requirement
+
+## 5. Conclusion
