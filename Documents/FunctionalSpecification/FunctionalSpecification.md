@@ -41,9 +41,6 @@
       - [3.4.2 Runtime Display](#342-runtime-display)
       - [3.4.3 Error Handling](#343-error-handling)
   - [4. Non-Functional Requirement](#4-non-functional-requirement)
-    - [4.1 Portability](#41-portability)
-    - [4.2 Maintenance](#42-maintenance)
-    - [4.3 Ease of Use](#43-ease-of-use)
   - [5. Conclusion](#5-conclusion)
 
 </details>
@@ -308,7 +305,7 @@ Once the assembly language program is analyzed, the interpreter enters the execu
   - Instructions to copy values between registers and perform arithmetic or logical operations are executed.
 
   ```assembly
-  ADD: R2, R1, R3 ; Adds the values in registers R1 and R2 and stores the result in R3
+  ADD: R2, R1, R3 ; Adds the values in registers R1 and R3 and stores the result in R2
   ```
 
 - **Memory Access:**
@@ -390,17 +387,23 @@ The user interface should also handle errors gracefully, providing meaningful me
 
 ## 4. Non-Functional Requirement
 
-### 4.1 Portability
+Performance:
+- Response Time: Define the maximum acceptable time for the virtual processor to respond to instructions.
 
-The system must be developed in the C language to ensure maximum portability. It should be compatible with different operating systems, and the use of features specific to any operating system must be avoided.
+- Throughput: Specify the number of instructions the virtual processor should be able to execute per unit of time.
 
-### 4.2 Maintenance
+Reliability:
+- Availability: Specify the percentage of time the virtual processor should be available for executing instructions.
 
-The source code must be clear, well-commented, and adhere to best coding practices. Comprehensive documentation for future developers must be provided, covering both the system architecture and the specified assembly language.
+- Fault Tolerance: Define how the virtual processor should handle errors or unexpected situations during execution.
 
-### 4.3 Ease of Use
+Scalability:
+- Load Handling: Specify how the virtual processor should scale in terms of handling an increasing number of instructions or tasks.
+- Concurrency: Define the maximum number of parallel instructions the virtual processor can handle.
 
-The user interface, including program input in assembly language and output during execution, must be user-friendly. Error messages should be explicit and assist users in quickly identifying issues in their code.
+Compatibility:
+- Assembly Language Support: Specify which assembly language(s) the virtual processor should be compatible with.
+- Binary Compatibility: Define compatibility requirements with existing binary formats or toolchains.
 
 ## 5. Conclusion
 
