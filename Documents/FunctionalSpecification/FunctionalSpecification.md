@@ -32,24 +32,18 @@
       - [3.2.3 Instruction Execution](#323-instruction-execution)
       - [3.2.4 Memory](#324-memory)
       - [3.2.5 Interrupts](#325-interrupts)
-    - [3.3 Interpréteur d'Assembleur](#33-interpréteur-dassembleur)
-      - [3.3.1 Analyse Syntaxique](#331-analyse-syntaxique)
-      - [3.3.2 Exécution](#332-exécution)
-      - [3.3.3 Gestion des Erreurs](#333-gestion-des-erreurs)
+    - [3.3 Assembler Interpreter](#33-assembler-interpreter)
+      - [3.3.1 Syntax Analysis](#331-syntax-analysis)
+      - [3.3.2 Execution](#332-execution)
+      - [3.3.3 Error Handling](#333-error-handling)
     - [3.4 User Interface](#34-user-interface)
       - [3.4.1 Assembly Language Program Input](#341-assembly-language-program-input)
-        - [Example Assembly Program File:](#example-assembly-program-file)
       - [3.4.2 Runtime Display](#342-runtime-display)
       - [3.4.3 Error Handling](#343-error-handling)
-  - [4. Non Functional Requirement](#4-non-functional-requirement)
-    - [4. Exigences Non-Fonctionnelles](#4-exigences-non-fonctionnelles)
-      - [4.1 Portabilité](#41-portabilité)
-      - [4.2 Performance](#42-performance)
-      - [4.5 Maintenance](#45-maintenance)
-      - [4.6 Facilité d'utilisation](#46-facilité-dutilisation)
-      - [4.7 Évolutivité](#47-évolutivité)
-      - [4.8 Testabilité](#48-testabilité)
-      - [4.9 Performances du Système de Fichiers](#49-performances-du-système-de-fichiers)
+  - [4. Non-Functional Requirement](#4-non-functional-requirement)
+    - [4.1 Portability](#41-portability)
+    - [4.2 Maintenance](#42-maintenance)
+    - [4.3 Ease of Use](#43-ease-of-use)
   - [5. Conclusion](#5-conclusion)
 
 </details>
@@ -291,66 +285,65 @@ interruptions, deciding their types, priority, and
 how our processor responds when it gets a tap on
 the virtual shoulder.
 
+### 3.3 Assembler Interpreter
 
-### 3.3 Interpréteur d'Assembleur
+The assembler interpreter is responsible for analyzing and executing programs written in assembly language intended for the virtual processor. It ensures that the program adheres to the syntax and semantics defined in Section 3.2.5 and provides an efficient execution mechanism.
 
-L'interpréteur d'assembleur est chargé d'analyser et d'exécuter les programmes écrits en langage d'assemblage destinés au processeur virtuel. Il veille à ce que le programme respecte la syntaxe et la sémantique définies à la section 3.2.5 et fournit un mécanisme d'exécution efficace.
+#### 3.3.1 Syntax Analysis
 
-#### 3.3.1 Analyse Syntaxique
+The interpreter begins by analyzing the assembly language program provided by the user. It follows the defined syntactic rules and tokenizes the program by breaking it down into individual instructions, operands, and labels. The analysis process identifies the type of each instruction and validates the correct use of operands.
 
-L'interpréteur commence par analyser le programme en langage d'assemblage fourni par l'utilisateur. Il suit les règles syntaxiques définies et tokenize le programme en le décomposant en instructions individuelles, opérandes et étiquettes. Le processus d'analyse identifie le type de chaque instruction et valide l'utilisation correcte des opérandes.
+#### 3.3.2 Execution
 
-#### 3.3.2 Exécution
+Once the assembly language program is analyzed, the interpreter enters the execution phase. It iterates through each instruction, performs the specified operation, and updates the state of the virtual processor accordingly. The execution includes the following key steps:
 
-Une fois le programme en langage d'assemblage analysé, l'interpréteur entre dans la phase d'exécution. Il itère à travers chaque instruction, effectue l'opération spécifiée et met à jour l'état du processeur virtuel en conséquence. L'exécution inclut les étapes clés suivantes :
-
-- **Chargement de Valeurs Immédiates :**
-  - L'interpréteur gère les instructions impliquant le chargement de valeurs immédiates dans des registres.
-
-  ```assembly
-  LOAD: R1, 42    ; Charge la valeur immédiate 42 dans le registre R1
-  ```
-
-- **Opérations sur les Registres :**
-  - Les instructions pour copier des valeurs entre les registres et effectuer des opérations arithmétiques ou logiques sont exécutées.
+- **Loading Immediate Values:**
+  - The interpreter handles instructions involving the loading of immediate values into registers.
 
   ```assembly
-  ADD: R2, R1, R3 ; Ajoute les valeurs dans les registres R1 et R2 et stocke le résultat dans R3
+  LOAD: R1, 42    ; Loads the immediate value 42 into register R1
   ```
 
-- **Accès à la Mémoire :**
-  - L'interpréteur lit ou écrit à des adresses mémoire en fonction du contenu des registres.
+- **Operations on Registers:**
+  - Instructions to copy values between registers and perform arithmetic or logical operations are executed.
 
   ```assembly
-  LD R4, [R2]    ; Charge la valeur à l'adresse mémoire spécifiée par R2 dans le registre R4
-  ST R3, [R4]    ; Stocke la valeur du registre R3 à l'adresse mémoire spécifiée par R4
+  ADD: R2, R1, R3 ; Adds the values in registers R1 and R2 and stores the result in R3
   ```
 
-- **Sauts Conditionnels :**
-  - L'interpréteur gère les sauts, qu'ils soient inconditionnels ou conditionnels en fonction des résultats de comparaison.
+- **Memory Access:**
+  - The interpreter reads from or writes to memory addresses based on the contents of registers.
 
   ```assembly
-  CMP R3, R4     ; Compare les valeurs dans les registres R3 et R4
-  JE LABEL1      ; Sauter à LABEL1 si le résultat de la comparaison est égal (JNEQ peut être implémenté par inversion de la condition)
+  LD R4, [R2]    ; Loads the value at the memory address specified by R2 into register R4
+  ST R3, [R4]    ; Stores the value from register R3 at the memory address specified by R4
   ```
 
-- **Appels de Sous-routines et Retours :**
-  - L'interpréteur gère les appels et les retours de sous-routines.
+- **Conditional Jumps:**
+  - The interpreter handles jumps, whether unconditional or conditional based on comparison results.
 
   ```assembly
-  CALL SOUS_ROUTINE ; Appeler une sous-routine
-  RET            ; Retourner d'une sous-routine
+  CMP R3, R4     ; Compares the values in registers R3 and R4
+  JE LABEL1      ; Jumps to LABEL1 if the comparison result is equal (JNEQ can be implemented by inverting the condition)
   ```
 
-- **Intégration du Débogueur :**
-  - Pendant l'exécution, l'interpréteur peut afficher des informations de débogage, telles que l'instruction en cours, le compteur de programme, et le contenu des registres.
+- **Subroutine Calls and Returns:**
+  - The interpreter manages subroutine calls and returns.
 
-- **Gestion des Appels Systèmes Virtuels :**
-  - Si un appel système virtuel est rencontré, l'interpréteur interagit avec le terminal virtuel ou effectue l'action spécifiée.
+  ```assembly
+  CALL SUBROUTINE ; Calls a subroutine
+  RET            ; Returns from a subroutine
+  ```
 
-#### 3.3.3 Gestion des Erreurs
+- **Debugger Integration:**
+  - During execution, the interpreter can display debugging information, such as the current instruction, program counter, and register contents.
 
-L'interpréteur inclut des mécanismes de gestion des erreurs robustes pour détecter et signaler les erreurs de syntaxe, les erreurs sémantiques ou les erreurs d'exécution pendant l'exécution du programme. Des messages d'erreur clairs et des retours d'information informatifs aident les utilisateurs à identifier et à résoudre les problèmes dans leurs programmes en langage d'assemblage.
+- **Handling Virtual System Calls:**
+  - If a virtual system call is encountered, the interpreter interacts with the virtual terminal or performs the specified action.
+
+#### 3.3.3 Error Handling
+
+The interpreter includes robust error-handling mechanisms to detect and report syntax errors, semantic errors, or runtime errors during program execution. Clear error messages and informative feedback assist users in identifying and resolving issues in their assembly language programs.
 
 ### 3.4 User Interface
 
@@ -359,20 +352,6 @@ The user interface for the virtual processor system consists of both the assembl
 #### 3.4.1 Assembly Language Program Input
 
 Users interact with the virtual processor system by providing assembly language programs through text files. The format of these files follows the specifications outlined in section 3.2, adhering to the defined assembly language syntax. To facilitate ease of use, consider providing a sample template or guidelines for creating assembly programs.
-
-##### Example Assembly Program File:
-
-```assembly
-; Sample Assembly Program
-LOAD R1, 42      ; Load immediate value 42 into register R1
-ADD R2, R1, R3   ; Add values in registers R1 and R2 and store the result in R3
-CMP R3, R4       ; Compare values in registers R3 and R4
-JNEQ LABEL1      ; Jump to LABEL1 if the comparison result is not equal
-...
-
-LABEL1:          ; Define a label for conditional jumps
-...
-```
 
 #### 3.4.2 Runtime Display
 
@@ -409,39 +388,19 @@ During the execution of an assembly program, the virtual processor system provid
 
 The user interface should also handle errors gracefully, providing meaningful messages for syntax errors, semantic errors, or runtime errors during program execution. Clear error messages will assist users in identifying and resolving issues in their assembly programs.
 
-## 4. Non Functional Requirement
+## 4. Non-Functional Requirement
 
-### 4. Exigences Non-Fonctionnelles
+### 4.1 Portability
 
-Les exigences non-fonctionnelles définissent les critères de qualité, les contraintes et les aspects non directement liés aux fonctionnalités du système. Ces exigences fournissent un cadre pour évaluer la performance, la sécurité, la maintenance et d'autres aspects cruciaux du système. Voici une liste d'exigences non-fonctionnelles pour votre projet :
+The system must be developed in the C language to ensure maximum portability. It should be compatible with different operating systems, and the use of features specific to any operating system must be avoided.
 
-#### 4.1 Portabilité
+### 4.2 Maintenance
 
-Le système doit être développé en langage C de manière à assurer une portabilité maximale. Il doit être compatible avec différents systèmes d'exploitation, et l'utilisation de fonctionnalités spécifiques à un système d'exploitation doit être évitée.
+The source code must be clear, well-commented, and adhere to best coding practices. Comprehensive documentation for future developers must be provided, covering both the system architecture and the specified assembly language.
 
-#### 4.2 Performance
+### 4.3 Ease of Use
 
-Le temps d'exécution des programmes en langage d'assemblage sur le processeur virtuel doit être raisonnable. Des optimisations peuvent être implémentées pour maximiser l'efficacité de l'interprétation sans compromettre la clarté du code source.
-
-#### 4.5 Maintenance
-
-Le code source doit être clair, bien commenté et suivre les meilleures pratiques de codage. Une documentation exhaustive pour les développeurs futurs doit être fournie, couvrant à la fois l'architecture du système et le langage d'assemblage spécifié.
-
-#### 4.6 Facilité d'utilisation
-
-L'interface utilisateur, y compris la saisie du programme en langage d'assemblage et la sortie pendant l'exécution, doit être conviviale. Les messages d'erreur doivent être explicites et aider les utilisateurs à identifier rapidement les problèmes dans leur code.
-
-#### 4.7 Évolutivité
-
-Le système doit être conçu de manière à prendre en charge une augmentation du nombre d'instructions et de fonctionnalités sans compromettre la stabilité et la performance du système.
-
-#### 4.8 Testabilité
-
-Le système doit être testable à plusieurs niveaux, de l'unité à l'intégration. Des mécanismes de test automatisés doivent être développés pour garantir la fiabilité du système.
-
-#### 4.9 Performances du Système de Fichiers
-
-Si des fichiers sont utilisés pour stocker des programmes en langage d'assemblage, le système doit être capable de gérer efficacement l'entrée/sortie tout en maintenant de bonnes performances globales.
+The user interface, including program input in assembly language and output during execution, must be user-friendly. Error messages should be explicit and assist users in quickly identifying issues in their code.
 
 ## 5. Conclusion
 
