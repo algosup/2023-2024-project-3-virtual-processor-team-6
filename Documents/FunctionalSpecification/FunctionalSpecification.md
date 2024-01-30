@@ -315,24 +315,24 @@ Once the assembly language program is analyzed, the interpreter enters the execu
   - The interpreter reads from or writes to memory addresses based on the contents of registers.
 
   ```assembly
-  LD R4, [R2]    ; Loads the value at the memory address specified by R2 into register R4
-  ST R3, [R4]    ; Stores the value from register R3 at the memory address specified by R4
+  LOAD: R4, [R2]    ; Loads the value at the memory address specified by R2 into register R4
+  STORE: R3, [R4]    ; Stores the value from register R3 at the memory address specified by R4
   ```
 
 - **Conditional Jumps:**
   - The interpreter handles jumps, whether unconditional or conditional based on comparison results.
 
   ```assembly
-  CMP R3, R4     ; Compares the values in registers R3 and R4
-  JE LABEL1      ; Jumps to LABEL1 if the comparison result is equal (JNEQ can be implemented by inverting the condition)
+  CMP: R3, R4     ; Compares the values in registers R3 and R4
+  JMP: LABEL1      ; Jumps to LABEL1 if the comparison result is equal (JNEQ can be implemented by inverting the condition)
   ```
 
 - **Subroutine Calls and Returns:**
   - The interpreter manages subroutine calls and returns.
 
   ```assembly
-  CALL SUBROUTINE ; Calls a subroutine
-  RET            ; Returns from a subroutine
+  CALL: SUBROUTINE ; Calls a subroutine
+  RET:            ; Returns from a subroutine
   ```
 
 - **Debugger Integration:**
