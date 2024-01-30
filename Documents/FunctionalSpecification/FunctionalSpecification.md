@@ -404,12 +404,8 @@ The user interface, including program input in assembly language and output duri
 
 ## 5. Conclusion
 
-Le développement du processeur virtuel et de son interpréteur en langage d'assemblage constitue une étape cruciale dans la réalisation de ce projet ambitieux. En résumé, nous avons défini un ensemble d'instructions minimaliste pour le langage d'assemblage, établi les fonctionnalités de l'interpréteur en C, et spécifié les exigences fonctionnelles et non-fonctionnelles du système.
+The development of the virtual processor and its assembly language interpreter constitutes the main stage in the realization of this project. In summary, we have defined a minimalist set of instructions for the assembly language, established the functionalities of the interpreter in C, and specified the functional and non-functional requirements of the system.
 
-La conception modulaire et portable du système permettra son intégration aisée dans divers environnements. Les performances du processeur virtuel seront optimisées tout en garantissant une facilité d'utilisation et une extensibilité maximale.
+The interpreter will be capable of handling programs written in the specified assembly language from a text file, ensuring clear and precise error detection and reporting.
 
-L'interpréteur sera capable de gérer des programmes écrits dans le langage d'assemblage spécifié, garantissant la validité sémantique et rapportant des erreurs de manière claire et précise. La visualisation en temps réel de l'état du processeur, y compris les registres, la mémoire, et les sorties du terminal virtuel, offrira aux utilisateurs une expérience immersive et informative.
-
-La mise en œuvre de tests unitaires et de programmes de démonstration permettra de valider la fiabilité et la robustesse du système. Une documentation exhaustive accompagnera le code source, facilitant ainsi la maintenance et les futures améliorations du projet.
-
-En conclusion, le projet vise à créer un environnement d'exécution fiable et performant pour des programmes en langage d'assemblage minimaliste. Le respect des exigences énoncées dans ce document garantira le succès du projet, offrant aux utilisateurs une plateforme d'apprentissage, de développement et de test pratique pour le domaine de l'architecture des processeurs et de la programmation bas niveau.
+In conclusion, the project aims to create a reliable and efficient execution environment for programs using our version of the assembly language. Adherence to the requirements outlined in this document will ensure the success of the project, providing users with a practical learning, development, and testing platform for the field of processor architecture and low-level programming.
