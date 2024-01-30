@@ -83,6 +83,12 @@ Virtual System Call Implementation:
 
 ![RACI](picture/RACI.png)
 
+Here's the breakdown of the RACI roles:
+
+- R stands for Responsible indicating the person responsible for executing the task.
+- A stands for Accountable indicating the person ultimately accountable for the task's success.
+- C stands for Consulted meaning individuals who provide input and expertise but are not directly responsible for the task's completion.
+- I stands for Informed indicating individuals that need to be informed about task progress but have no direct responsibility for it.
 - - -
 
 ### Milestones
