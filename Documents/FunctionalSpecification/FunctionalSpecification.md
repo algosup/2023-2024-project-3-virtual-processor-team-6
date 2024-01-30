@@ -50,9 +50,7 @@
       - [4.7 Évolutivité](#47-évolutivité)
       - [4.8 Testabilité](#48-testabilité)
       - [4.9 Performances du Système de Fichiers](#49-performances-du-système-de-fichiers)
-      - [4.10 Interface Utilisateur Graphique (Facultatif)](#410-interface-utilisateur-graphique-facultatif)
   - [5. Conclusion](#5-conclusion)
-    - [5. Conclusion](#5-conclusion-1)
 
 </details>
 </br>
@@ -445,13 +443,7 @@ Le système doit être testable à plusieurs niveaux, de l'unité à l'intégrat
 
 Si des fichiers sont utilisés pour stocker des programmes en langage d'assemblage, le système doit être capable de gérer efficacement l'entrée/sortie tout en maintenant de bonnes performances globales.
 
-#### 4.10 Interface Utilisateur Graphique (Facultatif)
-
-Si une interface utilisateur graphique (GUI) est implémentée pour faciliter la saisie des programmes, elle doit être intuitive et conviviale, offrant une expérience utilisateur améliorée.
-
 ## 5. Conclusion
-
-### 5. Conclusion
 
 Le développement du processeur virtuel et de son interpréteur en langage d'assemblage constitue une étape cruciale dans la réalisation de ce projet ambitieux. En résumé, nous avons défini un ensemble d'instructions minimaliste pour le langage d'assemblage, établi les fonctionnalités de l'interpréteur en C, et spécifié les exigences fonctionnelles et non-fonctionnelles du système.
 
