@@ -101,10 +101,10 @@ Virtual System Call Implementation:
 ### Deliverables
 In accordance with the outlined milestones, the project will culminate in the delivery of the following key deliverables:
 
-- Final Product
+- Final Product (Main Branch)
 - [Functional](./Documents/FunctionalSpecification/FunctionalSpecification.md)
 - [Technical](./Documents/TechnicalSpecification/TechnicalSpecification.md)
-- [Test Plan](./Documents/TestPlan/TestPlan.md)
-- [Weekly Reports and Management Planning](./Documents/Weeklyreports/Management.md)
+- Test Plan (QA Branch)
+- Weekly Reports and Management Planning (Management Branch)
 
 In conclusion, the project will be officially presented to the client through a concise and informative 15-minute presentation, summarizing the accomplished work and highlighting the key features and functionalities of the virtual processor system.
