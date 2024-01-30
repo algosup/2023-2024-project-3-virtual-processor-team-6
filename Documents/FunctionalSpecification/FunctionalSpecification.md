@@ -42,7 +42,17 @@
       - [3.4.2 Runtime Display](#342-runtime-display)
       - [3.4.3 Error Handling](#343-error-handling)
   - [4. Non Functional Requirement](#4-non-functional-requirement)
+    - [4. Exigences Non-Fonctionnelles](#4-exigences-non-fonctionnelles)
+      - [4.1 Portabilité](#41-portabilité)
+      - [4.2 Performance](#42-performance)
+      - [4.5 Maintenance](#45-maintenance)
+      - [4.6 Facilité d'utilisation](#46-facilité-dutilisation)
+      - [4.7 Évolutivité](#47-évolutivité)
+      - [4.8 Testabilité](#48-testabilité)
+      - [4.9 Performances du Système de Fichiers](#49-performances-du-système-de-fichiers)
+      - [4.10 Interface Utilisateur Graphique (Facultatif)](#410-interface-utilisateur-graphique-facultatif)
   - [5. Conclusion](#5-conclusion)
+    - [5. Conclusion](#5-conclusion-1)
 
 </details>
 </br>
@@ -403,4 +413,52 @@ The user interface should also handle errors gracefully, providing meaningful me
 
 ## 4. Non Functional Requirement
 
+### 4. Exigences Non-Fonctionnelles
+
+Les exigences non-fonctionnelles définissent les critères de qualité, les contraintes et les aspects non directement liés aux fonctionnalités du système. Ces exigences fournissent un cadre pour évaluer la performance, la sécurité, la maintenance et d'autres aspects cruciaux du système. Voici une liste d'exigences non-fonctionnelles pour votre projet :
+
+#### 4.1 Portabilité
+
+Le système doit être développé en langage C de manière à assurer une portabilité maximale. Il doit être compatible avec différents systèmes d'exploitation, et l'utilisation de fonctionnalités spécifiques à un système d'exploitation doit être évitée.
+
+#### 4.2 Performance
+
+Le temps d'exécution des programmes en langage d'assemblage sur le processeur virtuel doit être raisonnable. Des optimisations peuvent être implémentées pour maximiser l'efficacité de l'interprétation sans compromettre la clarté du code source.
+
+#### 4.5 Maintenance
+
+Le code source doit être clair, bien commenté et suivre les meilleures pratiques de codage. Une documentation exhaustive pour les développeurs futurs doit être fournie, couvrant à la fois l'architecture du système et le langage d'assemblage spécifié.
+
+#### 4.6 Facilité d'utilisation
+
+L'interface utilisateur, y compris la saisie du programme en langage d'assemblage et la sortie pendant l'exécution, doit être conviviale. Les messages d'erreur doivent être explicites et aider les utilisateurs à identifier rapidement les problèmes dans leur code.
+
+#### 4.7 Évolutivité
+
+Le système doit être conçu de manière à prendre en charge une augmentation du nombre d'instructions et de fonctionnalités sans compromettre la stabilité et la performance du système.
+
+#### 4.8 Testabilité
+
+Le système doit être testable à plusieurs niveaux, de l'unité à l'intégration. Des mécanismes de test automatisés doivent être développés pour garantir la fiabilité du système.
+
+#### 4.9 Performances du Système de Fichiers
+
+Si des fichiers sont utilisés pour stocker des programmes en langage d'assemblage, le système doit être capable de gérer efficacement l'entrée/sortie tout en maintenant de bonnes performances globales.
+
+#### 4.10 Interface Utilisateur Graphique (Facultatif)
+
+Si une interface utilisateur graphique (GUI) est implémentée pour faciliter la saisie des programmes, elle doit être intuitive et conviviale, offrant une expérience utilisateur améliorée.
+
 ## 5. Conclusion
+
+### 5. Conclusion
+
+Le développement du processeur virtuel et de son interpréteur en langage d'assemblage constitue une étape cruciale dans la réalisation de ce projet ambitieux. En résumé, nous avons défini un ensemble d'instructions minimaliste pour le langage d'assemblage, établi les fonctionnalités de l'interpréteur en C, et spécifié les exigences fonctionnelles et non-fonctionnelles du système.
+
+La conception modulaire et portable du système permettra son intégration aisée dans divers environnements. Les performances du processeur virtuel seront optimisées tout en garantissant une facilité d'utilisation et une extensibilité maximale.
+
+L'interpréteur sera capable de gérer des programmes écrits dans le langage d'assemblage spécifié, garantissant la validité sémantique et rapportant des erreurs de manière claire et précise. La visualisation en temps réel de l'état du processeur, y compris les registres, la mémoire, et les sorties du terminal virtuel, offrira aux utilisateurs une expérience immersive et informative.
+
+La mise en œuvre de tests unitaires et de programmes de démonstration permettra de valider la fiabilité et la robustesse du système. Une documentation exhaustive accompagnera le code source, facilitant ainsi la maintenance et les futures améliorations du projet.
+
+En conclusion, le projet vise à créer un environnement d'exécution fiable et performant pour des programmes en langage d'assemblage minimaliste. Le respect des exigences énoncées dans ce document garantira le succès du projet, offrant aux utilisateurs une plateforme d'apprentissage, de développement et de test pratique pour le domaine de l'architecture des processeurs et de la programmation bas niveau.
