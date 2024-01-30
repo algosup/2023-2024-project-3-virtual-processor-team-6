@@ -1,33 +1,34 @@
-#include <stdlib.h>
-#include <stdio.h>
+#include <string.h>
 #include "gate_operation.h"
 #include "operation.h"
+#include "mnemonics.h"
 
-int main(int argc, const char* argv[])
+void execute_file(const char* filename)
 {
-
-    uint16_t arm_regs [16];
-    enum
+    FILE* file = fopen(filename, "r+");
+    if (file == NULL)
     {
-        PC_START = 0x3000
-    };
-
-    arm_regs[R_PC] = PC_START;
-
-    int running = 1;
-
-    while(running)
-    {
-        uint16_t instruct = mem_read(arm_regs[R_PC]++);
-        uint16_t op = instruct >> 12;
-
-        switch (op)
-        {
-        case OP_add:
-             ADD();
-             break;
-        default:
-            break;
-        }
+        printf("Error: Could not open file %s\n", filename);
+        return;
     }
+
+    char line[256];
+    while (fgets(line, sizeof(line), file))
+    {
+        // Remove the newline character
+        line[strcspn(line, "\n")] = 0;
+
+        // Print the line
+        printf("%s\n", line);
+    }
+
+    fclose(file);
+}
+
+int main()
+{
+    // Execute the assembly instructions in the file
+    execute_file("Arm_Assembly.txt");
+
+    return 0;
 }

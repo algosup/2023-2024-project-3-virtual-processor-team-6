@@ -21,6 +21,7 @@ void SUB();
 void DIV();
 void MUL();
 
+// Function to sign extend a bit field.
 uint16_t sign_extend(uint16_t x, int bit_count)
 {
     if ((x >> (bit_count - 1)) & 1)
@@ -30,58 +31,69 @@ uint16_t sign_extend(uint16_t x, int bit_count)
     return x;
 }
 
+// Function to add two values and store the result.
 void ADD()
 {
-    uint16_t R1 = (instruct >> 9) & 0x7; // destination address
-    uint16_t R2 = (instruct >> 7) & 0x7; // first register
-    uint16_t R3 = (instruct >> 4) & 0x7; // second register
-    uint16_t imm_val = (instruct >> 5) & 0x1; //whether we have an immediate mode or not
+    uint16_t destReg = (instruct >> 9) & 0x7;
+    uint16_t firstReg = (instruct >> 7) & 0x7;
+    uint16_t secondReg = (instruct >> 4) & 0x7;
+    uint16_t immediateMode = (instruct >> 5) & 0x1;
 
-    if (imm_val)
+    if (immediateMode)
     {
         uint16_t imm5 = sign_extend(instruct & 0x1F, 5);
-        arm_regs[R1] = arm_regs[R2] + imm5;
+        arm_regs[destReg] = arm_regs[firstReg] + imm5;
     }
     else
     {
-        arm_regs[R1] = arm_regs[R2] + arm_regs[R3];
+        arm_regs[destReg] = arm_regs[firstReg] + arm_regs[secondReg];
     }
 }
 
+// Function to subtract two values and store the result.
 void SUB()
 {
-    uint16_t R1 = (instruct >> 9) & 0x7; // destination address
-    uint16_t R2 = (instruct >> 7) & 0x7; // first register
-    uint16_t R3 = (instruct >> 4) & 0x7; // second register
-    uint16_t imm_val = (instruct >> 5) & 0x1; //whether we have an immediate mode or not
+    uint16_t destReg = (instruct >> 9) & 0x7;
+    uint16_t firstReg = (instruct >> 7) & 0x7;
+    uint16_t secondReg = (instruct >> 4) & 0x7;
+    uint16_t immediateMode = (instruct >> 5) & 0x1;
 
-    if (imm_val)
+    if (immediateMode)
     {
         uint16_t imm5 = sign_extend(instruct & 0x1F, 5);
-        arm_regs[R1] = arm_regs[R2] - imm5;
+        arm_regs[destReg] = arm_regs[firstReg] - imm5;
     }
     else
     {
-        arm_regs[R1] = arm_regs[R2] - arm_regs[R3];
+        arm_regs[destReg] = arm_regs[firstReg] - arm_regs[secondReg];
     }
 }
 
+// Function to divide two values and store the result.
 void DIV()
 {
-    uint16_t R1 = (instruct >> 9) & 0x7; // destination address
-    uint16_t R2 = (instruct >> 7) & 0x7; // first register
-    uint16_t R3 = (instruct >> 4) & 0x7; // second register
+    uint16_t destReg = (instruct >> 9) & 0x7;
+    uint16_t firstReg = (instruct >> 7) & 0x7;
+    uint16_t secondReg = (instruct >> 4) & 0x7;
 
-    arm_regs[R1] = arm_regs[R2] / arm_regs[R3];
+    // Check for division by zero
+    if (arm_regs[secondReg] == 0)
+    {
+        printf("Error: Division by zero\n");
+        return;
+    }
+
+    arm_regs[destReg] = arm_regs[firstReg] / arm_regs[secondReg];
 }
 
+// Function to multiply two values and store the result.
 void MUL()
 {
-    uint16_t R1 = (instruct >> 9) & 0x7; // destination address
-    uint16_t R2 = (instruct >> 7) & 0x7; // first register
-    uint16_t R3 = (instruct >> 4) & 0x7; // second register
+    uint16_t destReg = (instruct >> 9) & 0x7;
+    uint16_t firstReg = (instruct >> 7) & 0x7;
+    uint16_t secondReg = (instruct >> 4) & 0x7;
 
-    arm_regs[R1] = arm_regs[R2] * arm_regs[R3];
+    arm_regs[destReg] = arm_regs[firstReg] * arm_regs[secondReg];
 }
 
 #endif

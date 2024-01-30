@@ -6,8 +6,8 @@
 
 #define MEMORY_MAX (1 << 16)
 uint16_t memory[MEMORY_MAX];
-// uint16_t reg[];
-uint16_t mem_read(u_int16_t address)
+
+uint16_t mem_read(uint16_t address)
 {
     return memory[address];
 }
@@ -37,34 +37,28 @@ enum registers
     R_SP, // (also known as Stack Pointer)
     R_LR, // (also known as Link Register)
     R_PC, // (also known as Program Counter)
-
 };
 
+uint16_t registers[16];
 
-
-void XOR();
-void AND();
-void OR();
-void NOT();
-
-void XOR()
+void XOR(uint16_t reg1, uint16_t reg2)
 {
-
+    registers[reg1] = registers[reg1] ^ registers[reg2];
 }
 
-void AND()
+void AND(uint16_t reg1, uint16_t reg2)
 {
-
+    registers[reg1] = registers[reg1] & registers[reg2];
 }
 
-void OR()
+void OR(uint16_t reg1, uint16_t reg2)
 {
-
+    registers[reg1] = registers[reg1] | registers[reg2];
 }
 
-void NOT()
+void NOT(uint16_t reg1)
 {
-    
+    registers[reg1] = ~registers[reg1];
 }
 
 #endif
