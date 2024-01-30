@@ -18,6 +18,7 @@ The primary objective of this endeavor is to design and implement a virtual proc
 
 ### Organization
 
+The documents on the main branch might not be completed, especially for the Technical Specification.
 
 
 ### Deadline
