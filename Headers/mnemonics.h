@@ -33,15 +33,6 @@ uint16_t MOV(uint16_t memoryLocation, uint16_t registerIndex)
    return memoryLocation = registerIndex;
 }
 
-uint16_t LOAD(int registerIndex, int memoryLocation)
-{
-
-}
-
-uint16_t STORE(int registerIndex, int memoryLocation)
-{
-
-}
 
 uint16_t CMP(int registerIndex1, int registerIndex2)
 {
@@ -53,6 +44,7 @@ uint16_t CMP(int registerIndex1, int registerIndex2)
     {
         flags = 0;
     }
+    return 0;
 }
 
 uint16_t JMP(int address)
@@ -70,11 +62,6 @@ uint16_t JE(int address)
     {
         return 0;
     }
-}
-
-uint16_t CALL(int address)
-{
-    
 }
 
 uint16_t RET()
