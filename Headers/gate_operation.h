@@ -33,6 +33,7 @@ void initialize_arm_regs() {
     };
     arm_regs[R_PC] = PC_START;
 }
+<<<<<<< Updated upstream:Headers/gate_operation.h
 uint16_t AND(uint16_t op1, uint16_t op2) {
     return op1 & op2;
 }
@@ -44,5 +45,22 @@ uint16_t XOR(uint16_t op1, uint16_t op2) {
 }
 uint16_t NOT(uint16_t op1) {
     return ~op1;
+=======
+
+uint16_t AND(uint16_t op1, uint16_t op2) {
+    return op1 & op2;
+}
+
+uint16_t OR(uint16_t op1, uint16_t op2) {
+    return op1 | op2;
+}
+
+uint16_t XOR(uint16_t op1, uint16_t op2) {
+    return op1 ^ op2;
+}
+
+uint16_t NOT(uint16_t op1) {
+    return ~ op1;
+>>>>>>> Stashed changes:gate_operation.h
 }
 #endif

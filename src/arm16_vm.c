@@ -5,6 +5,7 @@
 #include "../Headers/operation.h"
 #include "../Headers/mnemonics.h"
 
+#define NOT(x) ((~(x)) & 0xF)
 void execute_instruction(const char *instruction)
 {
 
@@ -34,32 +35,45 @@ void execute_instruction(const char *instruction)
     }
 
 
-    // Execute the corresponding operation
-if (strcmp(op, "ADD:") == 0) {
-    arm_regs[dest_reg] = ADD(op1_val, op2_val);
-    printf("result = %d \n", arm_regs[dest_reg]);
-} else if (strcmp(op, "SUB:") == 0) {
-    arm_regs[dest_reg] = SUB(op1_val, op2_val);
-    printf("result = %d \n", arm_regs[dest_reg]);
-} else if (strcmp(op, "MUL:") == 0) {
-    arm_regs[dest_reg] = MUL(op1_val, op2_val);
-    printf("result = %d \n", arm_regs[dest_reg]);
-} else if (strcmp(op, "DIV:") == 0) {
-    if (op2_val != 0) {  // Check for division by zero
-        arm_regs[dest_reg] = DIV(op1_val, op2_val);
+        // Execute the corresponding operation
+    if (strcmp(op, "ADD:") == 0) {
+        arm_regs[dest_reg] = ADD(op1_val, op2_val);
         printf("result = %d \n", arm_regs[dest_reg]);
-    } else {
-        printf("Error: Division by zero\n");
+    } else if (strcmp(op, "SUB:") == 0) {
+        arm_regs[dest_reg] = SUB(op1_val, op2_val);
+        printf("result = %d \n", arm_regs[dest_reg]);
+    } else if (strcmp(op, "MUL:") == 0) {
+        arm_regs[dest_reg] = MUL(op1_val, op2_val);
+        printf("result = %d \n", arm_regs[dest_reg]);
+    } else if (strcmp(op, "DIV:") == 0) {
+        if (op2_val != 0) {  // Check for division by zero
+            arm_regs[dest_reg] = DIV(op1_val, op2_val);
+            printf("result = %d \n", arm_regs[dest_reg]);
+        } else {
+            printf("Error: Division by zero\n");
+        }
+    } else if (strcmp(op, "MOV:") == 0) {
+        arm_regs[dest_reg] = MOV(dest_reg, op1_val);
+        printf("mov = %d \n", arm_regs[dest_reg]);
+    }else if (strcmp(op, "ADD:") == 0) {
+        // ...
+    } else if (strcmp(op, "AND:") == 0) {
+        arm_regs[dest_reg] = AND(op1_val, op2_val);
+        printf("result = %d \n", arm_regs[dest_reg]);
+    } else if (strcmp(op, "OR:") == 0) {
+        arm_regs[dest_reg] = OR(op1_val, op2_val);
+        printf("result = %d \n", arm_regs[dest_reg]);
+    } else if (strcmp(op, "XOR:") == 0) {
+        arm_regs[dest_reg] = XOR(op1_val, op2_val);
+        printf("result = %d \n", arm_regs[dest_reg]);
+    } else if (strcmp(op, "NOT:") == 0) {
+        arm_regs[dest_reg] = NOT(op1_val);
+        printf("result = %d \n", arm_regs[dest_reg]);
     }
-} else if (strcmp(op, "MOV:") == 0) {
-    arm_regs[dest_reg] = MOV(dest_reg, op1_val);
-    printf("mov = %d \n", arm_regs[dest_reg]);
-} else {
-    // Handle other operations if needed
-    printf("Unsupported operation: %s\n", op);
-}
-    
-
+    else {
+        // Handle other operations if needed
+        printf("Unsupported operation: %s\n", op);
+    }
 
 }
 
