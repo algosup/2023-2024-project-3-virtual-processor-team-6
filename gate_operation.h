@@ -12,17 +12,10 @@ uint16_t mem_read(uint16_t address)
     return memory[address];
 }
 
-enum logic
-{
-    xor_g,
-    and_g,
-    or_g,
-    not_g,
-};
 
 enum registers
 {
-    R1,
+    R1 = 0,
     R2,
     R3,
     R4,
@@ -39,26 +32,34 @@ enum registers
     R_PC, // (also known as Program Counter)
 };
 
-uint16_t registers[16];
+
+uint16_t arm_regs[16]; // Increase the size to 16 to accommodate all registers
+
+void initialize_arm_regs() {
+    enum {
+        PC_START = 0x3000,
+    };
+    arm_regs[R_PC] = PC_START;
+}
 
 void XOR(uint16_t reg1, uint16_t reg2)
 {
-    registers[reg1] = registers[reg1] ^ registers[reg2];
+    arm_regs[reg1] = arm_regs[reg1] ^ arm_regs[reg2];
 }
 
 void AND(uint16_t reg1, uint16_t reg2)
 {
-    registers[reg1] = registers[reg1] & registers[reg2];
+    arm_regs[reg1] = arm_regs[reg1] & arm_regs[reg2];
 }
 
 void OR(uint16_t reg1, uint16_t reg2)
 {
-    registers[reg1] = registers[reg1] | registers[reg2];
+    arm_regs[reg1] = arm_regs[reg1] | arm_regs[reg2];
 }
 
 void NOT(uint16_t reg1)
 {
-    registers[reg1] = ~registers[reg1];
+    arm_regs[reg1] = ~arm_regs[reg1];
 }
 
 #endif

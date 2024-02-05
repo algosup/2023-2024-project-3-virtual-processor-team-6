@@ -6,7 +6,6 @@
 #include "gate_operation.h"
 
 uint16_t instruct = 15;
-uint16_t arm_regs[16];
 
 enum operation
 {
@@ -16,84 +15,33 @@ enum operation
     OP_mul,
 };
 
-void ADD();
-void SUB();
-void DIV();
-void MUL();
-
-// Function to sign extend a bit field.
-uint16_t sign_extend(uint16_t x, int bit_count)
+uint16_t ADD(uint16_t rs1, uint16_t rs2) 
 {
-    if ((x >> (bit_count - 1)) & 1)
-    {
-        x |= (0xFFFF << bit_count);
-    }
-    return x;
-}
-
-// Function to add two values and store the result.
-void ADD()
-{
-    uint16_t destReg = (instruct >> 9) & 0x7;
-    uint16_t firstReg = (instruct >> 7) & 0x7;
-    uint16_t secondReg = (instruct >> 4) & 0x7;
-    uint16_t immediateMode = (instruct >> 5) & 0x1;
-
-    if (immediateMode)
-    {
-        uint16_t imm5 = sign_extend(instruct & 0x1F, 5);
-        arm_regs[destReg] = arm_regs[firstReg] + imm5;
-    }
-    else
-    {
-        arm_regs[destReg] = arm_regs[firstReg] + arm_regs[secondReg];
-    }
+    return rs1 + rs2;
 }
 
 // Function to subtract two values and store the result.
-void SUB()
-{
-    uint16_t destReg = (instruct >> 9) & 0x7;
-    uint16_t firstReg = (instruct >> 7) & 0x7;
-    uint16_t secondReg = (instruct >> 4) & 0x7;
-    uint16_t immediateMode = (instruct >> 5) & 0x1;
-
-    if (immediateMode)
-    {
-        uint16_t imm5 = sign_extend(instruct & 0x1F, 5);
-        arm_regs[destReg] = arm_regs[firstReg] - imm5;
-    }
-    else
-    {
-        arm_regs[destReg] = arm_regs[firstReg] - arm_regs[secondReg];
-    }
+uint16_t SUB(uint16_t rs1, uint16_t rs2)
+{ 
+    return rs1 - rs2;
 }
 
 // Function to divide two values and store the result.
-void DIV()
+uint16_t DIV(uint16_t rs1, uint16_t rs2)
 {
-    uint16_t destReg = (instruct >> 9) & 0x7;
-    uint16_t firstReg = (instruct >> 7) & 0x7;
-    uint16_t secondReg = (instruct >> 4) & 0x7;
-
-    // Check for division by zero
-    if (arm_regs[secondReg] == 0)
-    {
+    if (rs2 != 0) {
+        return rs1 / rs2;
+    } else {
+        // Handle division by zero error (you may want to customize this based on your requirements)
         printf("Error: Division by zero\n");
-        return;
+        exit(EXIT_FAILURE);
     }
-
-    arm_regs[destReg] = arm_regs[firstReg] / arm_regs[secondReg];
 }
 
 // Function to multiply two values and store the result.
-void MUL()
+uint16_t MUL(uint16_t rs1, uint16_t rs2)
 {
-    uint16_t destReg = (instruct >> 9) & 0x7;
-    uint16_t firstReg = (instruct >> 7) & 0x7;
-    uint16_t secondReg = (instruct >> 4) & 0x7;
-
-    arm_regs[destReg] = arm_regs[firstReg] * arm_regs[secondReg];
+    return rs1 * rs2;
 }
 
 #endif
