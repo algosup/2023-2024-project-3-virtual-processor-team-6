@@ -1,9 +1,9 @@
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include "gate_operation.h"
-#include "operation.h"
-#include "mnemonics.h"
+#include "../Headers/gate_operation.h"
+#include "../Headers/operation.h"
+#include "../Headers/mnemonics.h"
 
 void execute_instruction(const char *instruction)
 {
