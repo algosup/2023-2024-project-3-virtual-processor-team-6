@@ -19,12 +19,13 @@
 | Software Developer | Vivien Bistrel Tsangue  |           | 30/01/2024 |
 | Quality Assurance  | Loris De Mattia Segalat |           | 30/01/2024 |
 
+---
+<br>
+<details>
+<summary> Table of Contents </summary>
 <br>
 
-# Table of Contents
-
 - [Technical specification | team 6](#technical-specification--team-6)
-- [Table of Contents](#table-of-contents)
 - [1. Introduction](#1-introduction)
   - [1.1 Document objectives \& clarification](#11-document-objectives--clarification)
   - [1.2 Overview](#12-overview)
@@ -39,16 +40,16 @@
     - [1.4.2 Setup and Installation](#142-setup-and-installation)
     - [1.4.3 Execution](#143-execution)
 - [2.Project Infrastructure](#2project-infrastructure)
-  - [2.1 Folder structure](#21-folder-structure)
-  - [2.2 Directory and Naming Convention](#22-directory-and-naming-convention)
-    - [2.2.1 Directory Structure](#221-directory-structure)
-    - [2.2.2 Naming Conventions](#222-naming-conventions)
-    - [2.2.3 Formatting conventions](#223-formatting-conventions)
-    - [2.2.3.1 Identation](#2231-identation)
-    - [2.2.3.2 Braces](#2232-braces)
-    - [2.2.3.3 Line Length](#2233-line-length)
-    - [2.2.3.4 Blank Lines](#2234-blank-lines)
-    - [2.2.3.5 Comments](#2235-comments)
+  - [2.1 Directory and Naming Convention](#21-directory-and-naming-convention)
+    - [2.1.1 Directory Structure](#211-directory-structure)
+    - [2.1.2 Naming Conventions](#212-naming-conventions)
+    - [2.1.3 Formatting conventions](#213-formatting-conventions)
+    - [2.1.3.1 Identation](#2131-identation)
+    - [2.1.3.2 Braces](#2132-braces)
+    - [2.1.3.3 Line Length](#2133-line-length)
+    - [2.1.3.4 Blank Lines](#2134-blank-lines)
+    - [2.1.3.5 Comments](#2135-comments)
+  - [2.2 Folder structure](#22-folder-structure)
   - [2.3 Assembly Language Design](#23-assembly-language-design)
     - [2.3.1 Immediate Value Storage into a Register](#231-immediate-value-storage-into-a-register)
     - [2.3.2 Register-to-Register Value Copying](#232-register-to-register-value-copying)
@@ -60,7 +61,11 @@
     - [2.3.7 Subroutine Call and Return:](#237-subroutine-call-and-return)
     - [2.3.8 Basic Arithmetic Operations: Addition, Subtraction, Multiplication, and Division:](#238-basic-arithmetic-operations-addition-subtraction-multiplication-and-division)
     - [2.3.9 Basic Logical Operations: OR, AND, XOR, and NOT](#239-basic-logical-operations-or-and-xor-and-not)
-
+- [dont forget to add our assembly language](#dont-forget-to-add-our-assembly-language)
+- [3.Technical specification](#3technical-specification)
+  - [3.1 Interpreter](#31-interpreter)
+</details>
+<br>
 
 
 
@@ -178,31 +183,94 @@ The software requirements are essential for creating, compiling, and executing t
 - **Operating System**: Any modern and widely-used operating system, such as Windows, Linux, or macOS.
 - **C Compiler**: The project is developed in plain, portable C language, and a C compiler is necessary. [GCC](https://gcc.gnu.org/install/download.html) (GNU Compiler Collection) is recommended for this purpose.
 Integrated 
-- **Integrated Development Environment (IDE)**: __Visual Studio Code__ is the recommended IDE for its features and ease of use.
-  - It's important to ensure that the __C/C++ for Visual Studio Code__ extension is installed to enhance C/C++ development within Visual Studio Code. 
+- **Integrated Development Environment (IDE)**: [Visual Studio Code](https://code.visualstudio.com) is the recommended IDE for its features and ease of use.
+  - It's important to ensure that the [C/C++ for Visual Studio Code](https://code.visualstudio.com/docs/languages/cpp) extension is installed to enhance C/C++ development within Visual Studio Code. 
 
 
 ### 1.4.2 Setup and Installation
 
-(to do)
+<br>
+
+To set up the virtual processor interpreter on your local machine, please follow these steps:
+
+<br>
+
+1. Clone the Repository:
+    - Open a terminal or Command Prompt on your machine.
+    - Execute the following command to clone the repository:
+
+```bash
+git clone https://github.com/algosup/2023-2024-project-3-virtual-processor-team-6
+```
+
+<br>
+
+2. Navigate to the Project Directory:
+    - Move into the cloned repository directory:
+
+```bash
+cd 2023-2024-project-3-virtual-processor-team-6
+```
+<br>
+
+3. Installation with Visual Studio Code:
+    - Open Visual Studio Code on your Windows machine.
+    - Click on "File" > "Clone Repository."
+    - In the URL tab, enter the following URL:
+
+
+
+```bash
+https://github.com/algosup/2023-2024-project-3-virtual-processor-team-6.git
+```
+
+   - Click "Clone" and then navigate to "Repository" > "Open in Visual Studio Code." 
+
+<br>
+
+By following these steps, you will have successfully cloned the repository and set up the virtual processor project on your Windows machine using Visual Studio Code. Feel free to reach out if you encounter any issues or require further assistance.
+
+<br>
+
+
+
 
 ### 1.4.3 Execution
 
-(to do )
+After successfully installing the virtual processor interpreter on your Windows machine, follow these steps to execute the assembly programs:
+
+1. Open Visual Studio Code:
+    - Launch Visual Studio Code on your Windows machine.
+
+<br>
+
+2. Load Assembly Program:
+    - Open the assembly program file (with a .asm extension) that you want to run using Visual Studio Code.
+
+<br>
+
+3. Run the Program:
+    - Within Visual Studio Code, locate the "Run" or "Execute" option. This may be present in the toolbar or accessible through a specific command.
+
+<br>
+
+
+By following these steps, you can load and execute assembly programs within Visual Studio Code on your Windows environment. If you encounter any issues or have specific instructions for running programs, refer to the project documentation or seek guidance from our team.
+
+<br>
 
 # 2.Project Infrastructure
 
-## 2.1 Folder structure
 
-## 2.2 Directory and Naming Convention
+## 2.1 Directory and Naming Convention
 
 The directory structure and naming conventions play a crucial role in maintaining a well-organized and easily navigable project. Adhering to consistent conventions ensures clarity and enhances collaboration among team members.
 
-### 2.2.1 Directory Structure
+### 2.1.1 Directory Structure
 
 The project directory should be organized logically, separating source code, documentation, and other relevant files. All the code will be written in C language and we will use the C18 standard.
 
-### 2.2.2 Naming Conventions
+### 2.1.2 Naming Conventions
 Implementing and adhering to consistent naming conventions significantly enhances code readability and maintainability. The developers should adopt the following naming conventions:
 
 - Files:
@@ -234,11 +302,12 @@ Implementing and adhering to consistent naming conventions significantly enhance
 <br>
 By adhering to these directory and naming conventions, the project maintains a clean and organized structure, promoting collaboration and code clarity.
 
-### 2.2.3 Formatting conventions 
+
+### 2.1.3 Formatting conventions 
 
 Consistent code formatting is essential for improving code readability and maintaining a uniform coding style across the project. Adhering to a set of formatting conventions ensures that the codebase remains coherent and facilitates collaboration among team members.
 
-### 2.2.3.1 Identation
+### 2.1.3.1 Identation
 
 We use indentation with **four spaces per level**. This allow us to avoid using tabs for indentation.
 
@@ -254,7 +323,7 @@ void exampleFunction() {
 }
 ```
 
-### 2.2.3.2 Braces
+### 2.1.3.2 Braces
 
 Place opening braces **on the same line as the statement or declaration they belong to**. Closing braces should be **on a new line, aligned with the corresponding opening brace**.
 
@@ -270,7 +339,7 @@ void anotherFunction() {
 }
 ```
 
-### 2.2.3.3 Line Length
+### 2.1.3.3 Line Length
 
 Limit lines to a reasonable length (e.g., **80-120 characters**) to prevent horizontal scrolling and improve readability. Break long expressions or statements into multiple lines when necessary.
 
@@ -280,7 +349,7 @@ Example :
 int result = addNumbers(a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p);
 ```
 
-### 2.2.3.4 Blank Lines
+### 2.1.3.4 Blank Lines
 
 Use blank lines to **separate logical sections** within functions or between different functions. This enhances visual clarity and organization.
 
@@ -299,7 +368,7 @@ void functionTwo() {
 }
 ```
 
-### 2.2.3.5 Comments
+### 2.1.3.5 Comments
 
 Include descriptive comments to explain complex sections of code, provide context, or document the purpose of functions and variables. Follow a consistent style for comments, such as starting with **// for single-line comments** and using __/* */ for multi-line comments__.
 
@@ -313,6 +382,10 @@ Example:
  * providing additional details.
  */
  ```
+
+## 2.2 Folder structure
+
+
 
  ## 2.3 Assembly Language Design
  
@@ -497,6 +570,61 @@ MVN R12, R3      ; Perform bitwise NOT operation on register R3 and store the re
 - XOR Operation (``EOR``): Sets each bit to 1 if the corresponding bits of the operands are different.
   
 - NOT Operation (``MVN``): Flips each bit, changing 1s to 0s and vice versa
+
+
+
+
+# dont forget to add our assembly language 
+
+# 3.Technical specification
+
+## 3.1 Interpreter 
+
+The interpreter component of the virtual processor is responsible for executing assembly language instructions and detecting errors during execution. Error handling in the interpreter involves identifying and reporting errors encountered during the execution of assembly code. This section outlines the error handling strategy, implementation details, and includes a diagram illustrating the error handling process.
+
+Error Handling Strategy:
+
+1. Define Error Types: Identify the different types of errors that may occur during assembly code execution, such as syntax errors, semantic errors, or runtime errors.
+
+2. Error Reporting: Develop a mechanism to report errors encountered during execution. Error messages should provide relevant information, including the type of error, the line number where the error occurred, and a description of the issue.
+
+3. Error Recovery: Implement strategies to recover from certain types of errors when possible. This may involve halting execution, skipping erroneous instructions, or providing corrective actions to users.
+
+
+Error Handling Implementation:
+
+1. Error Detection: During execution, the interpreter checks each assembly language instruction for errors. Errors may include invalid opcode, incorrect operand format, or attempts to access unavailable resources.
+
+2. Error Reporting: When an error is detected, the interpreter generates an error message containing information about the error type and the location in the assembly code where the error occurred. This message is then passed to the error handling module for further processing.
+
+3. Error Handling Module: The error handling module receives error messages from the interpreter and processes them accordingly. It may log errors to a file, display them in the user interface, or take other appropriate actions based on the severity and type of error.
+
+Error Handling Process Diagram:
+(TO DO WITH AN APP)
+```
+                      +----------------------+
+                      |   Assembly Code      |
+                      +----------------------+
+                                 |
+                                 v
+                  +--------------+------------+
+                  |       Interpreter       |
+                  +--------------+------------+
+                                 |
+                   +-------------+------------+
+                   |    Error Handling       |
+                   |        Module           |
+                   +-------------+------------+
+                                 |
+                                 v
+                    +------------+-----------+
+                    |     User Interface     |
+                    |     (Error Message)    |
+                    +------------+-----------+
+
+```
+
+Implementing robust error handling in the interpreter component ensures that errors encountered during assembly code execution are properly detected, reported, and handled. This enhances the reliability and usability of the virtual processor, providing users with meaningful feedback in case of errors and facilitating troubleshooting and debugging efforts.
 
 
 
