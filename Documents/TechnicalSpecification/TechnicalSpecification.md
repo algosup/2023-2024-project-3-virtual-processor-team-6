@@ -51,7 +51,7 @@
     - [2.1.3.5 Comments](#2135-comments)
   - [2.2 Folder structure](#22-folder-structure)
   - [2.3 Assembly Language Design](#23-assembly-language-design)
-    - [2.3.1 Immediate Value Storage into a Register](#231-immediate-value-storage-into-a-register)
+    - [2.3.1 Storing an immediate Value Storage into a Register](#231-storing-an-immediate-value-storage-into-a-register)
     - [2.3.2 Register-to-Register Value Copying](#232-register-to-register-value-copying)
     - [2.3.3 Memory Value Read from the Address Stored in a Register](#233-memory-value-read-from-the-address-stored-in-a-register)
     - [2.3.4 Register Value Stored into Memory at the Address Contained in Another Register](#234-register-value-stored-into-memory-at-the-address-contained-in-another-register)
@@ -64,6 +64,18 @@
 - [dont forget to add our assembly language](#dont-forget-to-add-our-assembly-language)
 - [3.Technical specification](#3technical-specification)
   - [3.1 Interpreter](#31-interpreter)
+    - [3.1.1 Error Handling Mechanism](#311-error-handling-mechanism)
+      - [3.1.1.1 Technical Execution Process :](#3111-technical-execution-process-)
+      - [3.1.1.2 Error Handling](#3112-error-handling)
+      - [3.1.1.3 Output Handling](#3113-output-handling)
+      - [3.1.1.4 Examples](#3114-examples)
+  - [3.2 Assembler](#32-assembler)
+    - [3.2.1 Assembler Functionality](#321-assembler-functionality)
+    - [3.2.1.1 Parsing](#3211-parsing)
+    - [3.2.1.2 Symbol Table](#3212-symbol-table)
+    - [3.2.1.3 Translation](#3213-translation)
+    - [3.2.1.4 Error Handling](#3214-error-handling)
+    - [3.2.1.5 Optimization (Optional)](#3215-optimization-optional)
 </details>
 <br>
 
@@ -158,9 +170,9 @@ Certain aspects are explicitly excluded from the project's scope:
 | Instruction           | A basic operation or command in a computer program's machine language, typically representing a single operation of the processor.                                       |
 | Subroutine            | A reusable and self-contained block of code that performs a specific task, often called by other parts of the program.                                                   |
 | Semantic Validity     | The correctness of the meaning and intent of a program's code, ensuring that it adheres to the rules and logic of the programming language.                              |
-
-
-
+|Chunk parsing          |Chunk parsingrefers to the process of dividing the binary data representing the assembly code into fixed-size chunks, typically 32 bits each. These chunks are then sequentially processed by the interpreter.                                                                                                                                                         |
+|Memory allocation      |Memory allocation involves reserving and assigning memory space to store the instructions and associated data during the execution of the assembly code.                  |
+|Tokenization           | Tokenization is the process of breaking down a sequence of characters or text into smaller meaningful units called tokens                                                |
 
 
 ## 1.4 Implementation 
@@ -389,7 +401,7 @@ Example:
 
  ## 2.3 Assembly Language Design
  
- ### 2.3.1 Immediate Value Storage into a Register
+ ### 2.3.1 Storing an immediate Value Storage into a Register
 
 Allows loading a constant value directly into a register, providing quick data initialization :
 
@@ -580,51 +592,259 @@ MVN R12, R3      ; Perform bitwise NOT operation on register R3 and store the re
 
 ## 3.1 Interpreter 
 
-The interpreter component of the virtual processor is responsible for executing assembly language instructions and detecting errors during execution. Error handling in the interpreter involves identifying and reporting errors encountered during the execution of assembly code. This section outlines the error handling strategy, implementation details, and includes a diagram illustrating the error handling process.
-
-Error Handling Strategy:
-
-1. Define Error Types: Identify the different types of errors that may occur during assembly code execution, such as syntax errors, semantic errors, or runtime errors.
-
-2. Error Reporting: Develop a mechanism to report errors encountered during execution. Error messages should provide relevant information, including the type of error, the line number where the error occurred, and a description of the issue.
-
-3. Error Recovery: Implement strategies to recover from certain types of errors when possible. This may involve halting execution, skipping erroneous instructions, or providing corrective actions to users.
+An interpreter is a program that directly executes the instructions in a high-level language, without converting it into machine code. In programming, we can execute a program in two ways. Firstly, through compilation and secondly, through an interpreter. The common way is to use a compiler so that's what we gonna do.
 
 
-Error Handling Implementation:
+### 3.1.1 Error Handling Mechanism
 
-1. Error Detection: During execution, the interpreter checks each assembly language instruction for errors. Errors may include invalid opcode, incorrect operand format, or attempts to access unavailable resources.
+The interpreter component of the virtual processor is responsible for executing assembly language instructions and managing the execution flow. It comprises several key phases:
 
-2. Error Reporting: When an error is detected, the interpreter generates an error message containing information about the error type and the location in the assembly code where the error occurred. This message is then passed to the error handling module for further processing.
 
-3. Error Handling Module: The error handling module receives error messages from the interpreter and processes them accordingly. It may log errors to a file, display them in the user interface, or take other appropriate actions based on the severity and type of error.
+- Lexical Analysis: This initial phase involves tokenizing the assembly code, breaking it down into a sequence of lexemes or tokens, each representing a fundamental unit of the assembly language, such as instructions, labels, operands, and directives.
 
-Error Handling Process Diagram:
-(TO DO WITH AN APP)
+- Syntax Analysis: Following lexical analysis, the syntax analysis phase parses the tokenized assembly code to ensure it conforms to the grammar rules of the assembly language. This phase checks for syntactic correctness, including the proper arrangement of tokens and adherence to language syntax.
+
+- Semantic Analysis: Semantic analysis focuses on validating the meaning and context of the assembly code. It verifies that the instructions and operands used in the code are semantically valid and compatible with the processor architecture.
+
+- Execution Engine: Once the assembly code passes through the lexical, syntax, and semantic analysis phases, it enters the execution engine. Here, the interpreter sequentially executes each valid instruction, updating the processor state and memory as necessary. The execution engine also handles control flow instructions like jumps, calls, and returns.
+
+- Output and Debugging: During execution, the interpreter generates output based on the program's behavior. This output may include the results of arithmetic or logical operations, intermediate values, or program status information. Additionally, the interpreter provides debugging information to assist developers in identifying and resolving issues in the assembly code.
+
+#### 3.1.1.1 Technical Execution Process :
+
+The execution process of the interpreter involves several steps:
+
+1. Read Binary File: The interpreter starts by reading the binary file containing the assembly code instructions.
+
+2. Chunk Parsing: It parses the binary data in fixed-size chunks, typically 32 bits each, corresponding to one instruction.
+
+3. Memory Allocation: For each chunk, the interpreter allocates memory to store the instruction and its associated data.
+
+4. Opcode Extraction: It extracts the opcode from the first segment of the chunk, determining the type of operation to perform.
+
+5. Operand Parsing: Depending on the opcode, the interpreter parses the subsequent segments of the chunk to identify operands, such as registers, memory addresses, or immediate values.
+
+6. Execution: With the opcode and operands identified, the interpreter executes the instruction accordingly. This involves performing arithmetic, logical, or control flow operations.
+
+7. Looping: The interpreter repeats this process until it reaches the end of the binary file, processing each chunk sequentially.
+
+In summary, the interpreter's comprehensive analysis and execution phases ensure the accurate and efficient execution of assembly code on the virtual processor, making it a critical component of the system.
+
+
+
+
 ```
-                      +----------------------+
-                      |   Assembly Code      |
-                      +----------------------+
-                                 |
-                                 v
-                  +--------------+------------+
-                  |       Interpreter       |
-                  +--------------+------------+
-                                 |
-                   +-------------+------------+
-                   |    Error Handling       |
-                   |        Module           |
-                   +-------------+------------+
-                                 |
-                                 v
-                    +------------+-----------+
-                    |     User Interface     |
-                    |     (Error Message)    |
-                    +------------+-----------+
+Technical Execution Process
+ _____________________________
+|                             |
+|   Read Binary File          |
+|_____________________________|
+              |
+              v
+ _____________________________
+|                             |
+|   Chunk Parsing              |
+|_____________________________|
+              |
+              v
+ _____________________________
+|                             |
+|   Memory Allocation         |
+|_____________________________|
+              |
+              v
+ _____________________________
+|                             |
+|   Opcode Extraction         |
+|_____________________________|
+              |
+              v
+ _____________________________
+|                             |
+|   Operand Parsing           |
+|_____________________________|
+              |
+              v
+ _____________________________
+|                             |
+|   Execution                 |
+|_____________________________|
+              |
+              v
+ _____________________________
+|                             |
+|   Looping                   |
+|_____________________________|
+
 
 ```
 
-Implementing robust error handling in the interpreter component ensures that errors encountered during assembly code execution are properly detected, reported, and handled. This enhances the reliability and usability of the virtual processor, providing users with meaningful feedback in case of errors and facilitating troubleshooting and debugging efforts.
+#### 3.1.1.2 Error Handling
+The interpreter incorporates robust error handling mechanisms to detect and report errors encountered during assembly code execution. Error handling includes the following stages:
+
+1. Error Detection: The interpreter detects errors such as invalid syntax, semantic inconsistencies, or runtime issues during execution.
+
+2. Error Reporting: When an error is detected, the interpreter generates informative error messages containing details about the error type, location, and potential causes.
+
+3. Error Handling Module: An error handling module receives error messages from the interpreter and processes them accordingly. It may log errors to a file, display them in the user interface, or take other appropriate actions based on the severity and type of error.
 
 
+#### 3.1.1.3 Output Handling
+The interpreter generates output during execution, providing insights into the behavior of the assembly code. Output handling includes the following steps:
 
+1. Execution Phase: During execution, the interpreter produces output based on the program's behavior, such as computed values, memory contents, or program status.
+
+2. Output Generation: The interpreter formats and generates output based on the execution phase, presenting relevant information to the user or other components of the system.
+
+3. Debugging Information: Alongside regular output, the interpreter may also provide debugging information to assist developers in understanding the program's behavior, identifying errors, and optimizing performance.
+
+These textual descriptions complement the diagrams, providing a comprehensive overview of the interpreter's functionality and operation.
+
+#### 3.1.1.4 Examples 
+
+- Invalid Syntax Error:
+
+    - Description: The interpreter encounters assembly code that does not conform to the syntax rules of the language.
+    - Example: Missing operand in an instruction.
+    - Error Message: "``SyntaxError: Missing operand at line 42.``"
+
+- Semantic Error:
+
+    - Description: The interpreter identifies an operation that is syntactically correct but semantically invalid or inconsistent.
+    - Example: Trying to perform a division operation with a register containing zero.
+    - Error Message: "``SemanticError: Division by zero at line 23.``"
+
+- Runtime Error:
+
+    - Description: An error occurs during the execution of the program due to unforeseen circumstances, such as accessing an invalid memory address or attempting an unsupported operation.
+    - Example: Attempting to access memory beyond the allocated space.
+    - Error Message: "``RuntimeError: Invalid memory access at address 0x12345678.``"
+
+- File I/O Error:
+
+     -Description: An error occurs while attempting to read or write to a file, such as a missing file or insufficient permissions.
+     -Example: Trying to open a nonexistent binary file.
+    - Error Message: "``FileIOError: Unable to open file 'program.bin' for reading.``"
+
+- Invalid Instruction Error:
+
+    - Description: The interpreter encounters an opcode that is not recognized or supported by the processor architecture.
+    - Example: Encountering an unknown opcode during opcode extraction.
+    - Error Message: "``InvalidInstructionError: Unsupported opcode '0xFF' at line 10.``"
+
+- Memory Allocation Error:
+
+    - Description: The interpreter fails to allocate memory for storing instructions or data.
+    - Example: Insufficient memory available for allocating a new chunk.
+    - Error Message: "``MemoryAllocationError: Unable to allocate memory for new chunk.``"
+
+These examples demonstrate various types of errors that the interpreter might encounter during execution. Each error is accompanied by an informative error message indicating the type of error and its location within the code, facilitating debugging and troubleshooting.
+
+
+## 3.2 Assembler 
+
+### 3.2.1 Assembler Functionality
+
+### 3.2.1.1 Parsing
+The parsing stage of the assembler involves breaking down the input assembly code into meaningful tokens such as instructions, operands, labels, and comments. This process includes:
+
+- Tokenization: Breaking the input text into tokens based on whitespace and delimiters.
+
+- Identification of Instructions: Recognizing mnemonic instructions and validating their correctness.
+  
+- Operand Parsing: Identifying and parsing operands, which may include registers, memory addresses, immediate values, or labels.
+  
+- Label Detection: Identifying labels and associating them with memory addresses.
+
+### 3.2.1.2 Symbol Table
+The assembler maintains a symbol table to manage labels and their corresponding memory addresses. Key functionalities include:
+
+- Symbol Insertion: Storing labels along with their memory addresses in the symbol table.
+
+- Symbol Resolution: Resolving symbolic references to memory addresses during translation.
+
+- Error Handling: Detecting duplicate labels or conflicting symbols and reporting errors accordingly.
+
+### 3.2.1.3 Translation
+
+The translation stage involves converting assembly instructions into machine code. This process includes:
+
+- Opcode Generation: Mapping mnemonic instructions to their corresponding machine code representations.
+
+- Operand Encoding: Encoding operands according to the instruction format and addressing modes.
+
+- Symbol Resolution: Resolving symbolic references to memory addresses using the symbol table.
+
+- Output Generation: Generating machine code output for each instruction.
+
+### 3.2.1.4 Error Handling
+
+The assembler performs comprehensive error handling to detect and report syntax errors, semantic errors, and other issues. Key functionalities include:
+
+- __Syntax Error Detection__ : Identifying syntax errors such as invalid instructions, missing operands, or incorrect syntax.
+  
+Example :
+
+```bash
+Input Assembly Code:
+MOV R1, R2  # Missing operand
+```
+Error Message:
+
+```mathematica
+Syntax Error: Missing operand for MOV instruction at line 1
+```
+<br>
+
+- __Semantic Error Detection__: Detecting semantic errors such as invalid operand types or conflicting symbols.
+  
+Example :
+```bash
+Input Assembly Code:
+ADD R1, #5  # Operand type mismatch
+```
+
+Error message :
+
+```mathematica
+Semantic Error: Invalid operand type for ADD instruction at line 1
+```
+<br>
+
+- __Error Reporting__: Providing informative error messages indicating the nature and location of the error to aid debugging.
+
+
+Example :
+```bash
+Input Assembly Code:
+DIV R1, R2  # Division by zero
+```
+
+Error message : 
+
+```mathematica
+Error: Division by zero detected at line 1
+```
+<br>
+
+- __Graceful Recovery__: Attempting to recover from errors to continue processing subsequent instructions if possible.
+  
+Example : 
+
+```bash
+Input Assembly Code:
+MOV R1, R2
+ADD R1, #5  # Invalid instruction
+MOV R2, #10
+```
+
+Error message :
+
+```mathematica
+Error: Invalid instruction detected at line 2
+```
+In this example, the interpreter detects an invalid instruction at line 2. Despite the error, it gracefully recovers by continuing to process subsequent instructions. Therefore, the execution of the remaining valid instructions (MOV R2, #10) can proceed without interruption...
+
+### 3.2.1.5 Optimization (Optional)
+
+Optionally, the assembler may include optimization techniques to improve the efficiency of generated machine code. This could involve instruction reordering, constant folding, or other optimizations to enhance performance...
