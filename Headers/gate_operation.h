@@ -8,6 +8,12 @@ uint16_t mem_read(uint16_t address)
 {
     return memory[address];
 }
+
+uint16_t AND(uint16_t op1, uint16_t op2);
+uint16_t OR(uint16_t op1, uint16_t op2);
+uint16_t XOR(uint16_t op1, uint16_t op2);
+uint16_t NOR(uint16_t op1, uint16_t op2);
+
 enum registers
 {
     R1 = 0,
@@ -25,6 +31,7 @@ enum registers
     R_SP, // (also known as Stack Pointer)
     R_LR, // (also known as Link Register)
     R_PC, // (also known as Program Counter)
+    INVALID = -1,
 };
 uint16_t arm_regs[16]; // Increase the size to 16 to accommodate all registers
 void initialize_arm_regs() {

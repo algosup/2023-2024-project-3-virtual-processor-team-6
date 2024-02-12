@@ -10,10 +10,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="854a178e-fed5-4cd2-ac1b-4f221821b091" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Arm_Assembly.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Arm_Assembly.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/arm16_vm" beforeDir="false" afterPath="$PROJECT_DIR$/arm16_vm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/arm16_vm.c" beforeDir="false" afterPath="$PROJECT_DIR$/arm16_vm.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/operation.h" beforeDir="false" afterPath="$PROJECT_DIR$/operation.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vscode/settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/.vscode/settings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Headers/gate_operation.h" beforeDir="false" afterPath="$PROJECT_DIR$/Headers/gate_operation.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Headers/mnemonics.h" beforeDir="false" afterPath="$PROJECT_DIR$/Headers/mnemonics.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Headers/operation.h" beforeDir="false" afterPath="$PROJECT_DIR$/Headers/operation.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Arm_Assembly.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Arm_Assembly.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/arm16_vm" beforeDir="false" afterPath="$PROJECT_DIR$/src/arm16_vm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/arm16_vm.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/arm16_vm.c" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,33 +33,33 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 4
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
   <component name="ProjectId" id="2bfXwKbL0S9OkIGgqHyhJcF9XXE" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.RadMigrateCodeStyle": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.cidr.known.project.marker": "true",
-    "RunOnceActivity.readMode.enableVisualFormatting": "true",
-    "cf.first.check.clang-format": "false",
-    "cidr.known.project.marker": "true",
-    "git-widget-placeholder": "Code",
-    "last_opened_file_path": "/Users/bistrel-tsangue/Documents/2023-2024-project-3-virtual-processor-team-6",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.RadMigrateCodeStyle&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
+    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Code&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/bistrel-tsangue/Documents/2023-2024-project-3-virtual-processor-team-6&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -64,7 +68,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1706607344030</updated>
-      <workItem from="1706607345455" duration="1244000" />
+      <workItem from="1706607345455" duration="2538000" />
+      <workItem from="1707467500400" duration="595000" />
     </task>
     <servers />
   </component>

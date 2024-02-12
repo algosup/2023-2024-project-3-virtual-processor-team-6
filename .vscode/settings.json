@@ -58,7 +58,8 @@
   "C_Cpp_Runner.msvcSecureNoWarnings": false,
   "files.associations": {
     "ARM_VM.C": "cpp",
-    "compare": "cpp"
+    "compare": "cpp",
+    "stdio.h": "c"
   },
   "C_Cpp.errorSquiggles": "disabled"
 }

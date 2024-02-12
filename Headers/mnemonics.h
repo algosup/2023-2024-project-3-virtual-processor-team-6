@@ -5,25 +5,22 @@
 #include <stdio.h>
 #include "gate_operation.h"
 #define MEMORY_SIZE 100 // Define the memory size constant
-
-enum mnemonics
+#define MAX_LABELS 100
+struct
 {
-    load,
-    store,
-    cmp,
-    jmp,
-    je,
-    call,
-    ret,
-};
+    char name[50];
+    int lines;
+}labels[MAX_LABELS];
+int num_labels = 0;
+
 
 int flags; // Declare the flags variable
 uint16_t MOV(uint16_t registerIndex, uint16_t memoryLocation);
 uint16_t LOAD(int registerIndex, int memoryLocation);
 uint16_t STORE(int registerIndex, int memoryLocation);
 uint16_t CMP(int registerIndex1, int registerIndex2);
-uint16_t JMP(int address);
-uint16_t JE(int address);
+void JMP(char* dest);
+uint16_t JE(uint16_t address);
 uint16_t CALL(int address);
 uint16_t RET();
 
@@ -47,12 +44,9 @@ uint16_t CMP(int registerIndex1, int registerIndex2)
     return 0;
 }
 
-uint16_t JMP(int address)
-{
-    return address;
-}
 
-uint16_t JE(int address)
+
+uint16_t JE(uint16_t address)
 {
     if (flags == 1)
     {
