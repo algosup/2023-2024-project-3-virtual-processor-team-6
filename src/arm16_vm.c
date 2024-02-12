@@ -91,7 +91,7 @@ void execute_instruction(const char *instruction,  int line)
         arm_regs[dest_reg] = NOT(op1_val);
         printf("  result = %d \n", arm_regs[dest_reg]);
     }
-    // else if(strcmp(op, "JMP:") == 0)
+    //    else if(strcmp(op, "JMP:") == 0)
     // {
     //     int i;
     //     for(i = 0; i < num_labels; i++)
