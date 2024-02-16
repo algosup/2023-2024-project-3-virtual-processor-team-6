@@ -16,7 +16,7 @@ uint16_t NOR(uint16_t op1, uint16_t op2);
 
 enum registers
 {
-    R1 = 0,
+    R1 = 1,
     R2,
     R3,
     R4,
@@ -31,7 +31,7 @@ enum registers
     R_SP, // (also known as Stack Pointer)
     R_LR, // (also known as Link Register)
     R_PC, // (also known as Program Counter)
-    INVALID = -1,
+   // INVALID = -1,
 };
 uint16_t arm_regs[16]; // Increase the size to 16 to accommodate all registers
 void initialize_arm_regs() {
@@ -54,6 +54,5 @@ uint16_t NOT(uint16_t op1) {
 uint16_t XOR(uint16_t op1, uint16_t op2) {
     return op1 ^ op2;
 }
-
 
 #endif
