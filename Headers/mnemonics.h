@@ -47,11 +47,43 @@ uint16_t MOV(uint16_t registerIndex, uint16_t value)
     arm_regs[registerIndex] = value;
     return arm_regs[registerIndex];
 }
+u_int16_t JE(u_int16_t address)
+{
+    if (flags == 0)
+    {
+        return address;
+    }
+    return 0;
+}
+
+u_int16_t CALL(u_int16_t address)
+{
+    return address;
+}
+
+uint16_t CMP(uint16_t registerIndex1, uint16_t registerIndex2)
+{
+    if (arm_regs[registerIndex1] == arm_regs[registerIndex2])
+    {
+        flags = 0;
+    }
+    else if (arm_regs[registerIndex1] > arm_regs[registerIndex2])
+    {
+        flags = 1;
+    }
+    else
+    {
+        flags = -1;
+    }
+    return flags;
+}
 
 uint16_t RET()
 {
     return 0;
 }
+
+
 
 
 #endif
