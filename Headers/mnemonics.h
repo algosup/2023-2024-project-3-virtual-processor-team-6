@@ -13,12 +13,11 @@
 
 
 
-int flags; 
+int flags;
 uint16_t MOV(uint16_t registerIndex, uint16_t memoryLocation);
 void LOAD(enum registers sourceReg, enum registers destReg);
 void STORE(enum registers sourceReg, enum registers destReg);
 uint16_t CMP(uint16_t registerIndex1, uint16_t registerIndex2);
-void JMP(char* label_name);
 uint16_t JE(uint16_t address);
 uint16_t CALL(uint16_t address);
 uint16_t RET();

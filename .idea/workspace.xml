@@ -10,6 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="854a178e-fed5-4cd2-ac1b-4f221821b091" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Headers/gate_operation.h" beforeDir="false" afterPath="$PROJECT_DIR$/Headers/gate_operation.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Headers/mnemonics.h" beforeDir="false" afterPath="$PROJECT_DIR$/Headers/mnemonics.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Arm_Assembly.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Arm_Assembly.txt" afterDir="false" />
@@ -67,7 +68,7 @@
       <option name="presentableId" value="Default" />
       <updated>1706607344030</updated>
       <workItem from="1706607345455" duration="2538000" />
-      <workItem from="1707467500400" duration="621000" />
+      <workItem from="1707467500400" duration="20299000" />
     </task>
     <servers />
   </component>
