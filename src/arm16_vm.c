@@ -15,9 +15,9 @@ enum registers reg_name_to_enum(const char* reg_name) {
     return -1; // Return -1 for error
 }
 #define MAX_LABELS 300
-struct label
+struct label 
 {
-    char name[250];
+    char name[256];
     uint16_t lines_number;
     uint16_t start_line;
     uint16_t end_line;
@@ -26,13 +26,14 @@ uint16_t label_count = 0;
 uint16_t current_end_line = 0;
 uint16_t current_start_line = 0;
 
-void execute_instruction(const char *instruction,  int line)
+void execute_instruction(const char *instruction, int line)
 {
      char op[15];
 
     arm_regs[R_PC]++; // Increment the program counter
 
     if(instruction[strlen(instruction) - 1] == ';') {
+        // This is a label
         strncpy(op, instruction, strlen(instruction) - 1);
         op[strlen(instruction)] = '\0';
         if(label_count > 0) {
@@ -57,63 +58,89 @@ void execute_instruction(const char *instruction,  int line)
 
     // Convert register names to enum values
     enum registers dest_reg = reg_name_to_enum(dest);
+
     if (op1[0] == 'R') {
         op1_val = arm_regs[reg_name_to_enum(op1)];
-    } else {
+    }
+    else
+    {
         op1_val = atoi(op1);
     }
 
-    if (op2[0] == 'R') {
+    if (op2[0] == 'R')
+    {
         op2_val = arm_regs[reg_name_to_enum(op2)];
-    } else {
+    }
+    else
+    {
         op2_val = atoi(op2);
     }
 
-
-
-        // Execute the corresponding operation
-    if (strcmp(op, "ADD:") == 0) {
+    // Execute the corresponding operation
+    if (strcmp(op, "ADD:") == 0)
+    {
         arm_regs[dest_reg] = ADD(op1_val, op2_val);
-        printf("  result = %d \n", (int)arm_regs[dest_reg]);
+        printf("  result = %d \n", arm_regs[dest_reg]);
     } else if (strcmp(op, "SUB:") == 0) {
         arm_regs[dest_reg] = SUB(op1_val, op2_val);
-        printf("  result = %d \n", (int)arm_regs[dest_reg]);
+        printf("  result = %d \n", arm_regs[dest_reg]);
     } else if (strcmp(op, "MUL:") == 0) {
         arm_regs[dest_reg] = MUL(op1_val, op2_val);
-        printf("  result = %d \n", (int)arm_regs[dest_reg]);
+        printf("  result = %d \n", arm_regs[dest_reg]);
     } else if (strcmp(op, "DIV:") == 0) {
         if (op2_val != 0) {  // Check for division by zero
             arm_regs[dest_reg] = DIV(op1_val, op2_val);
-            printf("  result = %d \n", (int)arm_regs[dest_reg]);
+            printf("  result = %d \n", arm_regs[dest_reg]);
         } else {
             printf("Error: Division by zero\n");
         }
-    } else if (strcmp(op, "MOV:") == 0) {
+    }
+    else if (strcmp(op, "JE:") == 0)
+    {
+        char target_label[256];
+        sscanf(instruction, "JE: %s", target_label);
+        if (flags == 0)
+        { // Check if the zero flag is set
+            for (int i = 0; i < label_count; i++)
+            {
+                if (strcmp(labels[i].name, target_label) == 0)
+                {
+                    // Found the target label
+                    arm_regs[R_PC] = labels[i].lines_number;
+                    return;
+                }
+            }
+            printf("Error: Label not found: %s\n", target_label);
+            exit(1);
+        }
+    }
+    else if (strcmp(op, "MOV:") == 0)
+    {
         arm_regs[dest_reg] = MOV(dest_reg, op1_val);
-        printf("  mov = %d \n", (int)arm_regs[dest_reg]);
+        printf("  mov = %d \n", arm_regs[dest_reg]);
     } else if (strcmp(op, "AND:") == 0) {
         arm_regs[dest_reg] = AND(op1_val, op2_val);
-        printf("  result = %d \n", (int)arm_regs[dest_reg]);
+        printf("  result = %d \n", arm_regs[dest_reg]);
     } else if (strcmp(op, "OR:") == 0) {
         arm_regs[dest_reg] = OR(op1_val, op2_val);
-        printf("  result = %d \n", (int)arm_regs[dest_reg]);
+        printf("  result = %d \n", arm_regs[dest_reg]);
     } else if (strcmp(op, "XOR:") == 0) {
         arm_regs[dest_reg] = XOR(op1_val, op2_val);
-        printf("  result = %d \n", (int)arm_regs[dest_reg]);
+        printf("  result = %d \n", arm_regs[dest_reg]);
     } else if (strcmp(op, "NOT:") == 0) {
         arm_regs[dest_reg] = NOT(op1_val);
-        printf("  result = %d \n", (int)arm_regs[dest_reg]);
+        printf("  result = %d \n", arm_regs[dest_reg]);
     } else if (strcmp(op, "LOAD:") == 0) {
         LOAD(dest_reg, op1_val);
-        printf("  Loaded value from memory address in %d to %d\n", dest_reg, (int)op1_val);
+        printf("  Loaded value from memory address in %d to %d\n", dest_reg, op1_val);
     } else if (strcmp(op, "STORE:") == 0) {
         STORE(dest_reg, op1_val);
-        printf("  Stored value from %d to memory address in %d\n", dest_reg, (int)op1_val);
+        printf("  Stored value from %d to memory address in %d\n", dest_reg, op1_val);
     } else if (strcmp(op, "JMP:") == 0) {
         // This is a jump instruction
         char target_label[256];
-        sscanf(instruction, "    JMP: %s", target_label);
-        printf("Debug: target_label = %s\n", target_label); // Add this line to check if the label is recognized
+         sscanf(instruction, "    JMP: %s", target_label);
+        printf("Debug: target_label = %s\n", target_label); 
         for (int i = 0; i < label_count; i++) {
             if (strcmp(labels[i].name, target_label) == 0) {
                 // Found the target label
@@ -125,15 +152,12 @@ void execute_instruction(const char *instruction,  int line)
             }
         }
         printf("Error: Label not found: %s\n", target_label);
-        exit(1);
     }else {
         // Handle other operations if needed
         printf("Unsupported operation: %s\n", op);
         exit(1);
     }
-
 }
-
 
 int main()
 {
