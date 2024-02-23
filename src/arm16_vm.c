@@ -98,26 +98,22 @@ void execute_instruction(const char *instruction, int line) {
         } else {
             printf("Error: Division by zero\n");
         }
-    }
-    else if (strcmp(op, "JE:") == 0)
-    {
-        char target_label[256];
-        sscanf(instruction, "JE: %s", target_label);
-        if (flags == 0)
-        { // Check if the zero flag is set
-            for (int i = 0; i < label_count; i++)
-            {
-                if (strcmp(labels[i].name, target_label) == 0)
-                {
-                    // Found the target label
-                    arm_regs[R_PC] = labels[i].lines_number;
-                    return;
-                }
+    } else if (strcmp(op, "JE:") == 0) {
+    char target_label[256];
+    sscanf(instruction, "%*s %s", target_label); // Extract target label
+    if (flags == 1) { // Check if the zero flag is set
+        for (int i = 0; i < label_count; i++) {
+            if (strcmp(labels[i].name, target_label) == 0) {
+                // Found the target label
+                arm_regs[R_PC] = labels[i].start_line;
+                return;
             }
-            printf("Error: Label not found: %s\n", target_label);
-            exit(1);
         }
+        printf("Error: Label not found: %s\n", target_label);
+        exit(1);
     }
+}
+
     else if (strcmp(op, "MOV:") == 0)
     {
         arm_regs[dest_reg] = MOV(dest_reg, op1_val);

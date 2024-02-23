@@ -1,10 +1,10 @@
 START;
     ADD: R1 R2 5
-    MOV: R2 5
+    MOV: R2 6
     ADD: R3 R2 R1
     ADD: R4 R3 R1
     CMP: R2 R1 R2
-    JMP: CENTER
+    JE: CENTER
     SUB: R1 R4 R3
 LOOP;
     ADD: R1 R2 R3
