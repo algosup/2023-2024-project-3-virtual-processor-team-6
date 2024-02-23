@@ -7,13 +7,15 @@ START;
     SUB: R1 R4 R3
 LOOP;
     ADD: R1 R2 R3
-    SUB: R4 R2 R1
+    SUB: R4 R1 R2
     SUB: R2 R4 R2
+    RET
 CENTER;
     ADD: R1 R2 R3
     SUB: R4 R1 R2
     SUB: R2 R4 R2
     MUL: R1 R4 R2
+    CALL: LOOP
     DIV: R1 R4 R2
     XOR: R6 R2 R1
     AND: R1 R3 R2

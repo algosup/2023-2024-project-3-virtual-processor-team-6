@@ -11,16 +11,16 @@
 #include <time.h>
 #include "gate_operation.h"
 
-
+#define MAX_STACK 1000
+uint16_t stack[MAX_STACK];
 
 int flags;
 uint16_t MOV(uint16_t registerIndex, uint16_t memoryLocation);
 void LOAD(enum registers sourceReg, enum registers destReg);
 void STORE(enum registers sourceReg, enum registers destReg);
 uint16_t CMP(uint16_t registerIndex1, uint16_t registerIndex2);
-uint16_t JE(uint16_t address);
-uint16_t CALL(uint16_t address);
-uint16_t RET();
+void push(uint16_t value);
+uint16_t pop();
 
 
 void LOAD(enum registers sourceReg, enum registers destReg) {
@@ -46,15 +46,6 @@ uint16_t MOV(uint16_t registerIndex, uint16_t value)
     arm_regs[registerIndex] = value;
     return arm_regs[registerIndex];
 }
-u_int16_t JE(u_int16_t address)
-{
-    if (flags == 0)
-    {
-        return address;
-    }
-    return 0;
-}
-
 u_int16_t CALL(u_int16_t address)
 {
     return address;
@@ -76,6 +67,22 @@ uint16_t CMP(uint16_t registerIndex1, uint16_t registerIndex2)
     }
     return flags;
 }
+void push(uint16_t value) {
+    if (arm_regs[R_SP] == MAX_STACK) {
+        printf("Error: Stack overflow\n");
+        exit(1);
+    }
+    stack[arm_regs[R_SP]++] = value;
+}
+
+uint16_t pop() {
+    if (arm_regs[R_SP] == 0) {
+        printf("Error: Stack underflow\n");
+        exit(1);
+    }
+    return stack[--arm_regs[R_SP]];
+}
+
 
 uint16_t RET()
 {

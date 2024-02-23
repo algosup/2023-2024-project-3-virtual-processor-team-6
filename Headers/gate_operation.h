@@ -31,7 +31,6 @@ enum registers
     R_SP, // (also known as Stack Pointer)
     R_LR, // (also known as Link Register)
     R_PC, // (also known as Program Counter)
-   // INVALID = -1,
 };
 uint16_t arm_regs[16]; // Increase the size to 16 to accommodate all registers
 void initialize_arm_regs() {
