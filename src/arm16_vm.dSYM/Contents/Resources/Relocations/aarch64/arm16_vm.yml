@@ -1,0 +1,27 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/lucas-aubard/Documents/GitHub/2023-2024-project-3-virtual-processor-team-6/src/arm16_vm'
+relocations:
+  - { offsetInCU: 0x26, offset: 0x26, size: 0x8, addend: 0x0, symName: _mem_read, symObjAddr: 0x0, symBinAddr: 0x10000341C, symSize: 0x24 }
+  - { offsetInCU: 0x3F, offset: 0x3F, size: 0x8, addend: 0x0, symName: _instruct, symObjAddr: 0x9CC, symBinAddr: 0x100008000, symSize: 0x0 }
+  - { offsetInCU: 0x74, offset: 0x74, size: 0x8, addend: 0x0, symName: _num_labels, symObjAddr: 0x27B0, symBinAddr: 0x100008004, symSize: 0x0 }
+  - { offsetInCU: 0xB4, offset: 0xB4, size: 0x8, addend: 0x0, symName: _memory, symBinAddr: 0x10000960C, symSize: 0x0 }
+  - { offsetInCU: 0xD8, offset: 0xD8, size: 0x8, addend: 0x0, symName: _arm_regs, symBinAddr: 0x100008008, symSize: 0x0 }
+  - { offsetInCU: 0xF9, offset: 0xF9, size: 0x8, addend: 0x0, symName: _labels, symBinAddr: 0x10000802C, symSize: 0x0 }
+  - { offsetInCU: 0x143, offset: 0x143, size: 0x8, addend: 0x0, symName: _flags, symBinAddr: 0x100008028, symSize: 0x0 }
+  - { offsetInCU: 0x14C, offset: 0x14C, size: 0x8, addend: 0x0, symName: _initialize_arm_regs, symObjAddr: 0x24, symBinAddr: 0x100003440, symSize: 0x14 }
+  - { offsetInCU: 0x1E7, offset: 0x1E7, size: 0x8, addend: 0x0, symName: _mem_read, symObjAddr: 0x0, symBinAddr: 0x10000341C, symSize: 0x24 }
+  - { offsetInCU: 0x20F, offset: 0x20F, size: 0x8, addend: 0x0, symName: _AND, symObjAddr: 0x38, symBinAddr: 0x100003454, symSize: 0x24 }
+  - { offsetInCU: 0x245, offset: 0x245, size: 0x8, addend: 0x0, symName: _OR, symObjAddr: 0x5C, symBinAddr: 0x100003478, symSize: 0x24 }
+  - { offsetInCU: 0x27B, offset: 0x27B, size: 0x8, addend: 0x0, symName: _NOT, symObjAddr: 0x80, symBinAddr: 0x10000349C, symSize: 0x1C }
+  - { offsetInCU: 0x2A3, offset: 0x2A3, size: 0x8, addend: 0x0, symName: _XOR, symObjAddr: 0x9C, symBinAddr: 0x1000034B8, symSize: 0x24 }
+  - { offsetInCU: 0x2D9, offset: 0x2D9, size: 0x8, addend: 0x0, symName: _ADD, symObjAddr: 0xC0, symBinAddr: 0x1000034DC, symSize: 0x24 }
+  - { offsetInCU: 0x30F, offset: 0x30F, size: 0x8, addend: 0x0, symName: _SUB, symObjAddr: 0xE4, symBinAddr: 0x100003500, symSize: 0x24 }
+  - { offsetInCU: 0x345, offset: 0x345, size: 0x8, addend: 0x0, symName: _DIV, symObjAddr: 0x108, symBinAddr: 0x100003524, symSize: 0x58 }
+  - { offsetInCU: 0x37B, offset: 0x37B, size: 0x8, addend: 0x0, symName: _MUL, symObjAddr: 0x160, symBinAddr: 0x10000357C, symSize: 0x24 }
+  - { offsetInCU: 0x3B1, offset: 0x3B1, size: 0x8, addend: 0x0, symName: _MOV, symObjAddr: 0x184, symBinAddr: 0x1000035A0, symSize: 0x3C }
+  - { offsetInCU: 0x3E7, offset: 0x3E7, size: 0x8, addend: 0x0, symName: _CMP, symObjAddr: 0x1C0, symBinAddr: 0x1000035DC, symSize: 0x58 }
+  - { offsetInCU: 0x41D, offset: 0x41D, size: 0x8, addend: 0x0, symName: _reg_name_to_enum, symObjAddr: 0x218, symBinAddr: 0x100003634, symSize: 0x60 }
+  - { offsetInCU: 0x461, offset: 0x461, size: 0x8, addend: 0x0, symName: _execute_instruction, symObjAddr: 0x278, symBinAddr: 0x100003694, symSize: 0x574 }
+  - { offsetInCU: 0x4F5, offset: 0x4F5, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x7EC, symBinAddr: 0x100003C08, symSize: 0x1E0 }
+...
