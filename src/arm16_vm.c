@@ -140,6 +140,9 @@ void execute_instruction(const char *instruction, int line) {
     } else if (strcmp(op, "STORE:") == 0) {
         STORE(dest_reg, op1_val);
         printf("  Stored value from %d to memory address in %d\n", dest_reg, op1_val);
+    } else if (strcmp(op, "CMP:") == 0) {
+        arm_regs[dest_reg] = CMP(reg_name_to_enum(op1), reg_name_to_enum(op2));
+        printf("     %s = %d \n", dest, arm_regs[dest_reg]);
     } else if (strcmp(op, "JMP:") == 0) {
         char target_label[256];
          sscanf(instruction, "    JMP: %s", target_label);

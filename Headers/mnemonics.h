@@ -18,7 +18,7 @@ int flags;
 uint16_t MOV(uint16_t registerIndex, uint16_t memoryLocation);
 void LOAD(enum registers sourceReg, enum registers destReg);
 void STORE(enum registers sourceReg, enum registers destReg);
-uint16_t CMP(uint16_t registerIndex1, uint16_t registerIndex2);
+uint16_t CMP(enum registers reg1, enum registers reg2);
 void push(uint16_t value);
 uint16_t pop();
 
@@ -51,21 +51,17 @@ u_int16_t CALL(u_int16_t address)
     return address;
 }
 
-uint16_t CMP(uint16_t registerIndex1, uint16_t registerIndex2)
-{
-    if (arm_regs[registerIndex1] == arm_regs[registerIndex2])
-    {
-        flags = 0;
+uint16_t CMP(enum registers reg1, enum registers reg2) {
+    uint16_t val1 = arm_regs[reg1];
+    uint16_t val2 = arm_regs[reg2];
+
+    if (val1 == val2) {
+        return 0; // Registers are equal
+    } else if (val1 > val2) {
+        return 1; // Register 1 is greater than register 2
+    } else {
+        return -1; // Register 1 is less than register 2
     }
-    else if (arm_regs[registerIndex1] > arm_regs[registerIndex2])
-    {
-        flags = 1;
-    }
-    else
-    {
-        flags = -1;
-    }
-    return flags;
 }
 void push(uint16_t value) {
     if (arm_regs[R_SP] == MAX_STACK) {
@@ -88,8 +84,6 @@ uint16_t RET()
 {
     return 0;
 }
-
-
 
 
 #endif
