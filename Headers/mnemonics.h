@@ -80,10 +80,4 @@ uint16_t pop() {
 }
 
 
-uint16_t RET()
-{
-    return 0;
-}
-
-
 #endif

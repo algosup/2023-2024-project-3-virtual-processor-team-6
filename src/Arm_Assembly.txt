@@ -6,6 +6,7 @@ START;
     CMP: R2 R1 R2
     JE: CENTER
     SUB: R1 R4 R3
+    JMP: CENTER
 LOOP;
     ADD: R1 R2 R3
     SUB: R4 R1 R2

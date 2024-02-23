@@ -5,7 +5,6 @@
 #include <stdio.h>
 #include "gate_operation.h"
 
-uint16_t instruct = 15;
 
 uint16_t ADD(uint16_t op1, uint16_t op2);
 uint16_t SUB(uint16_t rs1, uint16_t rs2);
