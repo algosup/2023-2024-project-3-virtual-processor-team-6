@@ -31,12 +31,12 @@ Certainly! Here's some advice on how to clone the repository:
 
    Modify the assembly code in this file according to your requirements and save the changes.
 
-5. **Compile the Code:** Before running the program, you might need to compile it. If necessary, compile the `arm16_vm.c` program using a C compiler. For example, if you're using GCC, you can compile it with the following command:
+4. **Compile the Code:** Before running the program, you might need to compile it. If necessary, compile the `arm16_vm.c` program using a C compiler. For example, if you're using GCC, you can compile it with the following command:
    ```bash
    gcc src/arm16_vm.c -o arm16_vm
    ```
 
-6. **Execute the Program:** After compilation (if needed), execute the program by running the compiled executable. If you compiled with GCC in the previous step, you can run the program with:
+5. **Execute the Program:** After compilation (if needed), execute the program by running the compiled executable. If you compiled with GCC in the previous step, you can run the program with:
    ```bash
    ./arm16_vm
    ```
