@@ -66,7 +66,7 @@ These steps should successfully launch the program and allow you to interact wit
 
 - **[Test Plan](QA/Test_plan.md)**: The test plan defines the testing strategy, including test cases and procedures, to ensure the quality and reliability of the software.
 
-- **[Project Charter](Documents/ProjectCharter/ProjectCharter.md)**: The project charter establishes the project's objectives, scope, stakeholders, and resources, providing a high-level overview of the project's goals and constraints.
+- **[Project Charter](Management/ProjectCharter/ProjectCharter.md)**: The project charter establishes the project's objectives, scope, stakeholders, and resources, providing a high-level overview of the project's goals and constraints.
 
 
 - - -
