@@ -137,13 +137,7 @@ void execute_instruction(const char *instruction, int line) {
         STORE(dest_reg, op1_val);
         printf("  Stored value from %d to memory address in %d\n", dest_reg, op1_val);
     } else if (strcmp(op, "CMP:") == 0) {
-    int result = arm_regs[reg_name_to_enum(op1)] - arm_regs[reg_name_to_enum(op2)];
-    // Set flags based on the result
-    if (result == 0) {
-        flags = 1; // Set zero flag if result is zero
-    } else {
-        flags = 0; // Clear zero flag if result is not zero
-    }
+        CMP(reg_name_to_enum(dest), reg_name_to_enum(op1));
     // No need to print the result for CMP
     } else if (strcmp(op, "JMP:") == 0) {
         char target_label[256];
